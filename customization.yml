@@ -1,33 +1,250 @@
 # ==========================================
 # AETHERIA — Opciones de Personalización
 # ==========================================
+# Modifica estos valores para personalizar tu experiencia.
+# Reinicia el servidor para aplicar cambios.
 
-# Overworld
-overworld-biome-size: 1.0
-overworld-ocean-size: 1.0
-overworld-river-width: 1.5          # Ríos anchos tipo Origen
-overworld-cave-density: 1.0         # De Hydraxia
-overworld-floating-islands: true    # De Aeropelago
-overworld-floating-island-rarity: 0.15
+# ==========================================
+# OVERWORLD
+# ==========================================
+overworld:
+  # Tamaño de biomas (1.0 = default)
+  biome-size: 1.0
 
-# Nether (basado en Tartarus)
-nether-biome-size: 1.0
-nether-lava-sea-level: 32
-nether-structures-vanilla: true     # Fortalezas y Bastiones
-nether-ore-vanilla: true            # Oro, Cuarzo, Escombros
+  # Tamaño de océanos
+  ocean-size: 1.0
 
-# End (basado en ReimagEND)
-end-preset: RINGS_OF_LIFE           # RINGS_OF_LIFE, NORMAL, VANILLA_ISH, BETTEREND, AETHER_WORLD
-end-dragon-pit-radius: 40
-end-aether-pockets: true
-end-aether-pocket-rarity: 0.25
-end-void-biomes: true
+  # Anchos de ríos (1.5 = más anchos tipo Origen)
+  river-width: 1.5
 
-# Fracturas Dimensionales (NUEVO)
-fracture-overworld-nether: true     # Zonas de OW con piedra negra/magma
-fracture-overworld-end: true        # Zonas de OW con chorus/end stone
-fracture-nether-overworld: true     # Zonas de Nether con grass/agua
-fracture-nether-end: true           # Zonas de Nether con end stone/chorus
-fracture-end-overworld: true        # Aether Pockets
-fracture-end-nether: true           # Zonas de End con netherrack/lava
-fracture-rarity: 0.08               # 8% del mundo afectado
+  # Densidad de cuevas (1.0 = default, 2.0 = muchas cuevas)
+  cave-density: 1.0
+
+  # Islas flotantes
+  floating-islands:
+    enabled: true
+    rarity: 0.2
+    min-height: 100
+    max-height: 200
+    size: 8-25
+
+  # Llanuras agostadas
+  scorched-plains:
+    enabled: true
+    rarity: 0.3
+    magma-fissures: true
+    volcanic-ash: true
+
+  # Ríos anchos tipo Origen
+  origin-style-rivers: true
+
+  # Islas de Aeropelago
+  archipelago-islands: true
+
+# ==========================================
+# NETHER (basado en Tartarus)
+# ==========================================
+nether:
+  # Tamaño de biomas
+  biome-size: 1.0
+
+  # Nivel del mar de lava
+  lava-sea-level: 32
+
+  # Estructuras de fortalezas y bastiones
+  structures-vanilla: true
+  structures-custom: true
+
+  # Fortalezas y bastiones
+  fortresses:
+    enabled: true
+    rarity: 0.007
+
+  bastions:
+    enabled: true
+    rarity: 0.006
+
+  # Biomas custom
+  flaming-hellscapes:
+    enabled: true
+    lava-seas: true
+    obsidian-pillars: true
+    ancient-debris-exposed: true
+
+  crystalline-veldts:
+    enabled: true
+    quartz-formations: true
+    exposed-geodes: true
+
+  the-boundary:
+    enabled: true
+    void-rifts: true
+    floating-bedrock: true
+
+# ==========================================
+# END (basado en Reimagined End)
+# ==========================================
+end:
+  # Preset del End
+  # Opciones: RINGS_OF_LIFE, NORMAL, VANILLA_ISH, BETTER_END, AETHER_WORLD
+  preset: RINGS_OF_LIFE
+
+  # Radio del pit del dragón
+  dragon-pit-radius: 40
+
+  # Bolsillos de éter (aether pockets)
+  aether-pockets:
+    enabled: true
+    rarity: 0.25
+
+  # Biomas de vacío
+  void-biomes:
+    enabled: true
+    rarity: 0.3
+
+  # Ciudades del End
+  end-cities:
+    enabled: true
+    rarity: 0.4
+
+  # Biomas custom
+  netherfracture-isles:
+    enabled: true
+    corruption-fissures: true
+    hybrid-flora: true
+
+  overworlx-remnants:
+    enabled: true
+    petrified-trees: true
+    stagnant-water: true
+
+# ==========================================
+# FRACTURAS DIMENSIONALES
+# ==========================================
+dimensional-fractures:
+  # Zonas de OW con piedra negra/magma (conexión con Nether)
+  overworld-nether:
+    enabled: true
+    grass-to-nylium: true
+    stone-to-blackstone: true
+    magma-pools: true
+
+  # Zonas de OW con chorus/end stone (conexión con End)
+  overworld-end:
+    enabled: true
+    grass-to-endstone: true
+    chorus-plants: true
+    end-crystals: false
+
+  # Zonas de Nether con end stone/chorus (conexión con End)
+  nether-end:
+    enabled: true
+    netherrack-to-endstone: true
+    crying-obsidian-clusters: true
+
+  # Rareza general de fracturas
+  rarity: 0.08
+
+# ==========================================
+# ESTRUCTURAS GLOBALES
+# ==========================================
+structures:
+  # Overworld
+  ancient-ruins:
+    enabled: true
+    decay-level: 0.4-0.8
+
+  floating-towers:
+    enabled: true
+    min-height: 100
+
+  crystal-shrines:
+    enabled: true
+    amethyst-chambers: true
+
+  aether-gates:
+    enabled: true
+    dimensional-rifts: true
+
+  trial-chambers:
+    enabled: true
+    ominous-trials: true
+
+  trail-ruins:
+    enabled: true
+    suspicious-gravel: true
+
+  # Nether
+  soul-spires:
+    enabled: true
+    bone-pillars: true
+
+  obsidian-pillars:
+    enabled: true
+    crystal-formations: true
+
+  boundary-rifts:
+    enabled: true
+    void-connections: true
+
+  # End
+  fracture-nexus:
+    enabled: true
+    three-way-portal: true
+
+# ==========================================
+# PALETAS Y BLOQUES
+# ==========================================
+palettes:
+  # Usar paletas vanilla o custom
+  mode: custom
+
+  # Mezcla de paletas (transiciones suaves entre biomas)
+  blend:
+    enabled: true
+    resolution: 2
+    amplitude: 2
+
+  # Ore generation
+  ores:
+    vanilla: true
+    custom-veins: false
+
+  # Vegetación
+  vegetation:
+    density: 1.0
+    custom-grass: true
+    hanging-vines: true
+
+# ==========================================
+# ATMÓSFERA Y EFECTOS
+# ==========================================
+atmosphere:
+  # Partículas ambientales
+  particles:
+    enabled: true
+    density: 0.5
+
+  # Sonidos ambientales
+  ambient-sounds:
+    enabled: true
+    volume: 0.3
+
+  # Niebla en fracturas
+  fracture-fog:
+    enabled: true
+    color: "#4A0080"
+    density: 0.6
+
+# ==========================================
+# RENDIMIENTO
+# ==========================================
+performance:
+  # Distancia de renderizado de estructuras
+  structure-render-distance: 96
+
+  # Caché de biomas
+  biome-cache: 512
+
+  # Hilos de generación
+  generator-threads: 4

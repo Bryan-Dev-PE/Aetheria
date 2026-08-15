@@ -1,24 +1,34 @@
+# ==========================================
+# AETHERIA — Pack de Generación de Mundos
+# ==========================================
+
 id: AETHERIA
-version: 1.0.0
-author: "Community Convergence Pack"
+version: 0.2.0
+authors:
+  - "Ryan-Dev-PE"
+description: "Generador de mundos dimensionales con biomas customizados y estructuras del config Aetheria"
 
-# Soporte para las 3 dimensiones en un solo pack
-generator: NOISE_3D
+depends:
+  terrascript:
+    load: PRE_WORLDS_LAST
+    path: "terrascript.pack.yaml"
+    download: true
+    url: "https://github.com/TerraCommunity/TerraScript"
+    branch: master
 
-# Configuración por dimensión (Terra 6.4+)
-dimensions:
-  overworld:
-    vanilla: "minecraft:overworld"
-    vanilla-generation: "minecraft:overworld"
-    biomes: $biome-distribution/stages/overworld_distribution.yml:biomes
-  nether:
-    vanilla: "minecraft:the_nether"
-    vanilla-generation: "minecraft:nether"
-    biomes: $biome-distribution/stages/nether_distribution.yml:biomes
-  the_end:
-    vanilla: "minecraft:the_end"
-    vanilla-generation: "minecraft:end"
-    biomes: $biome-distribution/stages/end_distribution.yml:biomes
+biomes-provider:
+  paper-provider:
+    load: PROBABILITY_FIXED
+    path: "paper-provider.pack.yaml"
+    download: true
+    url: "https://github.com/PolyhedralDev/PaperProvider"
+    branch: master
+  biome-provider-pipeline:
+    load: PROBABILITY_FIXED_LATEST
+    path: "biome-provider-pipeline.pack.yml"
+    download: true
+    url: "https://github.com/PolyhedralDev/BiomeProviderPipeline"
+    branch: master
 
 addons:
   biome-provider-pipeline: "2.+"
@@ -43,42 +53,167 @@ addons:
   structure-block-shortcut: "1.+"
   terrascript-function-sampler: "1.+"
 
-# Stages globales aplicables a las 3 dimensiones
+# ==========================================
+# ESTADOS GLOBALES (aplicables a las 3 dimensiones)
+# ==========================================
 stages:
-  - id: global-preprocessors
+  # Pre-procesamiento
+  - id: 'global-preprocessors'
     type: FEATURE
   - id: preprocessors
     type: FEATURE
+
+  # Formación del terreno
   - id: landforms
     type: FEATURE
   - id: slabs
     type: FEATURE
+
+  # Depósitos y minerales
   - id: ores
     type: FEATURE
   - id: deposits
     type: FEATURE
+
+  # Vegetación
   - id: trees
     type: FEATURE
   - id: flora
     type: FEATURE
-  - id: dimensional-fractures    # NUEVO: fracturas entre dimensiones
+
+  # Fracturas dimensionales
+  - id: dimensional-fractures
     type: FEATURE
+
+  # Estructuras
+  - id: structures-overworld
+    type: FEATURE
+  - id: structures-nether
+    type: FEATURE
+  - id: structures-end
+    type: FEATURE
+  - id: structures-dimensional
+    type: FEATURE
+
+  # Post-procesamiento
   - id: postprocessors
     type: FEATURE
 
+# ==========================================
+# FUNCIONES MATEMÁTICAS
+# ==========================================
 functions:
   "<<":
     - math/functions/terrace.yml:functions
     - math/functions/lerp.yml:functions
     - math/functions/maskSmooth.yml:functions
-    - math/functions/dimensionalBlend.yml:functions  # Función de mezcla dimensional
 
+# ==========================================
+# SAMPLERS (Ruido y distribución)
+# ==========================================
 samplers:
   "<<":
-    - math/samplers/simplex.yml:samplers
+    - math/samplers/samplex.yml:samplers
     - math/samplers/spots.yml:samplers
-    - math/samplers/fractureNoise.yml:samplers        # Ruido para fracturas
+    - math/samplers/fractureNoise.yml:samplers
 
+# ==========================================
+# PALETAS COMPARTIDAS
+# ==========================================
+palettes:
+  "<<":
+    - palettes/shared/base_stone.yml:palettes
+    - palettes/shared/ores.yml:palettes
+    - palettes/shared/vegetation.yml:palettes
+
+# ==========================================
+# PALETAS POR DIMENSIÓN
+# ==========================================
+  overworld:
+    "<<":
+      - palettes/overworld/plains.yml:palettes
+      - palettes/overworld/forest.yml:palettes
+      - palettes/overworld/ocean.yml:palettes
+      - palettes/overworld/cave.yml:palettes
+      - palettes/overworld/mountain.yml:palettes
+      - palettes/overworld/river.yml:palettes
+      - palettes/overworld/desert.yml:palettes
+      - palettes/overworld/snow.yml:palettes
+      - palettes/overworld/jungle.yml:palettes
+      - palettes/overworld/swamp.yml:palettes
+      - palettes/overworld/mushroom.yml:palettes
+      - palettes/overworld/scorched_plains.yml:palettes
+      - palettes/overworld/floating_isles.yml:palettes
+
+  nether:
+    "<<":
+      - palettes/nether/basalt_deltas.yml:palettes
+      - palettes/nether/crimson_forest.yml:palettes
+      - palettes/nether/warped_forest.yml:palettes
+      - palettes/nether/soul_sand_valley.yml:palettes
+      - palettes/nether/nether_wastes.yml:palettes
+      - palettes/nether/flaming_hellscapes.yml:palettes
+      - palettes/nether/crystalline_veldts.yml:palettes
+      - palettes/nether/the_boundary.yml:palettes
+
+  end:
+    "<<":
+      - palettes/end/main_island.yml:palettes
+      - palettes/end/outer_islands.yml:palettes
+      - palettes/end/chorus_forest.yml:palettes
+      - palettes/end/end_cities.yml:palettes
+      - palettes/end/netherfracture_isles.yml:palettes
+      - palettes/end/overworlx_remnants.yml:palettes
+      - palettes/end/void.yml:palettes
+
+# ==========================================
+# ESTRUCTURAS POR DIMENSIÓN
+# ==========================================
+structures:
+  overworld:
+    "<<":
+      - structures/overworld/ruined_portal.yml:structures
+      - structures/overworld/ancient_ruins.yml:structures
+      - structures/overworld/floating_tower.yml:structures
+      - structures/overworld/crystal_shrine.yml:structures
+      - structures/overworld/aether_gates.yml:structures
+      - structures/overworld/dungeon.yml:structures
+      - structures/overworld/mineshaft.yml:structures
+      - structures/overworld/stronghold.yml:structures
+      - structures/overworld/desert_temple.yml:structures
+      - structures/overworld/jungle_temple.yml:structures
+      - structures/overworld/ocean_monument.yml:structures
+      - structures/overworld/woodland_mansion.yml:structures
+      - structures/overworld/pillager_outpost.yml:structures
+      - structures/overworld/village.yml:structures
+      - structures/overworld/shipwreck.yml:structures
+      - structures/overworld/ocean_ruin.yml:structures
+      - structures/overworld/trial_chamber.yml:structures
+      - structures/overworld/trail_ruins.yml:structures
+
+  nether:
+    "<<":
+      - structures/nether/bastion_remnant.yml:structures
+      - structures/nether/nether_fortress.yml:structures
+      - structures/nether/soul_spire.yml:structures
+      - structures/nether/obsidian_pillar.yml:structures
+      - structures/nether/boundary_rift.yml:structures
+      - structures/nether/ruined_portal.yml:structures
+      - structures/nether/fossil.yml:structures
+
+  end:
+    "<<":
+      - structures/end/obsidian_platform.yml:structures
+      - structures/end/exit_portal.yml:structures
+      - structures/end/dimensional_fracture_nexus.yml:structures
+
+  dimensional:
+    "<<":
+      - structures/dimensional/aether_bridge.yml:structures
+
+# ==========================================
+# CONFIGURACIÓN DE MEZCLA (BLEND)
+# ==========================================
 blend:
   palette:
     resolution: 2
@@ -86,5 +221,8 @@ blend:
     sampler:
       type: WHITE_NOISE
 
+# ==========================================
+# CONFIGURACIÓN DE INCLINACIÓN (SLANT)
+# ==========================================
 slant:
   calculation-method: DotProduct

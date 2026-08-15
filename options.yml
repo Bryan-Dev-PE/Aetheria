@@ -2,28 +2,172 @@
 # AETHERIA — Configuración de Opciones
 # ==========================================
 
-# Tamaño de biomas (1.0 = default, 2.0 = el doble, 0.5 = mitad)
-biome-size: 1.0
+# ==========================================
+# TAMAÑO DE BIOMAS
+# ==========================================
+# Escala global (1.0 = default, 2.0 = el doble, 0.5 = mitad)
+biome-size-global: 1.0
 
-# Rareza de biomas específicos (1.0 = default, mayor = más común)
+# Por dimensión
+biome-size:
+  overworld: 1.0
+  nether: 1.0
+  end: 1.0
+
+# ==========================================
+# RAREZA DE BIOMAS
+# ==========================================
+# Valores: 0.0 = inexistente, 1.0 = default, >1.0 = más común
 rarity:
-  # Overworld
+  # --- Overworld ---
+  # Biomas vanilla
+  PLAINS: 1.0
+  FOREST: 1.0
+  OCEAN: 1.0
+  DEEP_OCEAN: 1.0
+  DESERT: 1.0
+  SNOWY_PLAINS: 1.0
+  JUNGLE: 1.0
+  SWAMP: 1.0
+  MUSHROOM_FIELDS: 0.3
+  DARK_FOREST: 1.0
+  SAVANNA: 1.0
+  BADLANDS: 1.0
+  MOUNTAINS: 1.0
+  TAIGA: 1.0
+  BEACH: 1.0
+  RIVER: 1.0
+
+  # Biomas custom Aetheria
   AETHERIA_SCORCHED_PLAINS: 0.3
-  AETHERIA_VOID_TAINTED: 0.2
-  AETHERIA_FLOATING_ISLES: 0.5
-  
-  # Nether
+  AETHERIA_FLOATING_ISLES: 0.2
+  AETHERIA_VOID_TAINTED: 0.15
+
+  # --- Nether ---
+  # Biomas vanilla
+  NETHER_WASTES: 1.0
+  SOUL_SAND_VALLEY: 1.0
+  CRIMSON_FOREST: 1.0
+  WARPED_FOREST: 1.0
+  BASALT_DELTAS: 1.0
+
+  # Biomas custom Aetheria
   NETHERRA_FLAMING_HELLSCAPES: 1.0
   NETHERRA_CRYSTALLINE_VELDTS: 0.6
   NETHERRA_THE_BOUNDARY: 0.4
-  
+
+  # --- End ---
+  # Biomas vanilla
+  END_MIDLANDS: 1.0
+  END_HIGHLANDS: 1.0
+  END_BARRENS: 1.0
+  SMALL_END_ISLANDS: 1.0
+
+  # Biomas custom Aetheria
+  ENDBA_NETHERFRACTURE_ISLES: 0.3
+  ENDRA_OVERWORLX_REMNANTS: 0.2
+
+# ==========================================
+# RAREZA DE ESTRUCTURAS
+# ==========================================
+structure-rarity:
+  # Overworld
+  AETHERIA_OW_RUINED_PORTAL: 0.008
+  AETHERIA_OW_ANCIENT_RUINS: 0.005
+  AETHERIA_OW_FLOATING_TOWER: 0.003
+  AETHERIA_OW_CRYSTAL_SHRINE: 0.004
+  AETHERIA_OW_AETHER_GATES: 0.002
+  AETHERIA_OW_DUNGEON: 0.01
+  AETHERIA_OW_MINESHAFT: 0.008
+  AETHERIA_OW_STRONGHOLD: 0.003
+  AETHERIA_OW_DESERT_TEMPLE: 0.006
+  AETHERIA_OW_JUNGLE_TEMPLE: 0.005
+  AETHERIA_OW_OCEAN_MONUMENT: 0.003
+  AETHERIA_OW_WOODLAND_MANSION: 0.002
+  AETHERIA_OW_PILLAGER_OUTPOST: 0.006
+  AETHERIA_OW_VILLAGE: 0.008
+  AETHERIA_OW_SHIPWRECK: 0.008
+  AETHERIA_OW_OCEAN_RUIN: 0.01
+  AETHERIA_OW_TRIAL_CHAMBER: 0.004
+  AETHERIA_OW_TRAIL_RUINS: 0.006
+
+  # Nether
+  AETHERIA_NETHER_BASTION_REMNANT: 0.006
+  AETHERIA_NETHER_NETHER_FORTRESS: 0.007
+  AETHERIA_NETHER_SOUL_SPIRE: 0.004
+  AETHERIA_NETHER_OBSIDIAN_PILLAR: 0.005
+  AETHERIA_NETHER_BOUNDARY_RIFT: 0.003
+  AETHERIA_NETHER_RUINED_PORTAL: 0.008
+  AETHERIA_NETHER_FOSSIL: 0.005
+
   # End
-  ENDRA_NETHERFRACTURE_ISLES: 0.3
-  ENDRA_OVERWORLD_REMNANTS: 0.2
+  AETHERIA_END_OBSIDIAN_PLATFORM: 1.0  # Fijo, siempre presente
+  AETHERIA_END_EXIT_PORTAL: 1.0        # Fijo, siempre presente
+  AETHERIA_DIMENSIONAL_FRACTURE_NEXUS: 0.001
 
-# Biomas desactivables
+  # Dimensional
+  AETHERIA_DIMENSIONAL_AETHER_BRIDGE: 0.005
+
+# ==========================================
+# BIOMAS DESACTIVABLES
+# ==========================================
+# Lista de biomas a desactivar (comenta o elimina para activar)
 disabled:
-  - none  # Por defecto todos activos
+  # - none  # Por defecto todos activos
+  # Descomenta los que quieras desactivar:
+  # - AETHERIA_SCORCHED_PLAINS
+  # - AETHERIA_FLOATING_ISLES
+  # - NETHERRA_FLAMING_HELLSCAPES
+  # - NETHERRA_THE_BOUNDARY
+  # - ENDBA_NETHERFRACTURE_ISLES
+  # - ENDRA_OVERWORLX_REMNANTS
 
-# Fracturas
+# ==========================================
+# FRACTURAS DIMENSIONALES
+# ==========================================
+fractures:
+  enabled: true
+  intensity: 0.08           # 0.0 a 1.0
+  overworld-nether: true
+  overworld-end: true
+  nether-end: true
+
+  # Rareza de puntos de conexión
+  nexus-rarity: 0.001
+  gate-rarity: 0.002
+  rift-rarity: 0.003
+
+# ==========================================
+# INTENSIDAD DE FRACTURAS (LEGACY)
+# ==========================================
 fracture-intensity: 0.08    # 0.0 a 1.0
+
+# ==========================================
+# GENERACIÓN DE MINERALES
+# ==========================================
+ore-generation:
+  enabled: true
+  vanilla-ores: true
+  custom-ores: false
+
+# ==========================================
+# CAVERNAS Y ESTRUCTURAS SUBTERRÁNEAS
+# ==========================================
+caves:
+  enabled: true
+  lush-caves: true
+  dripstone-caves: true
+  deep-dark: true
+
+  # Rareza de cuevas especiales
+  lush-cave-rarity: 0.08
+  dripstone-cave-rarity: 0.06
+  deep-dark-rarity: 0.04
+
+# ==========================================
+# RENDIMIENTO
+# ==========================================
+performance:
+  structure-cache-size: 256
+  biome-cache-size: 512
+  chunk-generator-threads: 4
