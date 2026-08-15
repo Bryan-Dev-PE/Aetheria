@@ -1,0 +1,42 @@
+# ==========================================
+# AETHERIA — Nether: Bosque Distorsionado
+# ==========================================
+
+id: AETHERIA_NETHER_WARPED_FOREST
+type: PALETTE
+
+# Suelo distorsionado
+surface:
+  materials:
+    "minecraft:warped_nylium": 6
+    "minecraft:netherrack": 3
+    "minecraft:soul_soil": 1
+  layers: 2
+
+# Vegetación distorsionada
+warped-flora:
+  materials:
+    "minecraft:warped_fungus": 3
+    "minecraft:warped_roots": 4
+    "minecraft:twisting_vines": 3
+    "minecraft:nether_sprouts": 2
+    "minecraft:crimson_fungus": 1
+  density: 0.6
+  radius: 3-5
+
+# Hongos gigantes distorsionados
+giant-warped-fungi:
+  materials:
+    "minecraft:warped_stem[axis=y]": 1
+    "minecraft:warped_wart_block": 1
+    "minecraft:shroomlight": 1
+  type: FUNGUS
+  rarity: 0.12
+  height: 6-14
+
+# Endermitas (bioma de endermen)
+end-signature:
+  materials:
+    "minecraft:chorus_plant": 1
+    "minecraft:chorus_flower": 1
+  rarity: 0.05

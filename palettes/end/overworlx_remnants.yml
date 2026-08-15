@@ -1,0 +1,56 @@
+# ==========================================
+# AETHERIA — End: Restos del Overworld
+# Bioma raro: fragmentos del Overworld atrapados en el End
+# ==========================================
+
+id: ENDRA_OVERWORLX_REMNANTS
+type: PALETTE
+
+# Suelo de reminiscencia
+remnant-surface:
+  materials:
+    "minecraft:grass_block": 3
+    "minecraft:dirt": 2
+    "minecraft:stone": 2
+    "minecraft:end_stone": 2
+    "minecraft:coarse_dirt": 1
+  layers: 2-3
+
+# Árboles petrificados
+petrified-trees:
+  materials:
+    "minecraft:oak_log[axis=y]": 2
+    "minecraft:stone": 2
+    "minecraft:oak_leaves[persistent=true]": 1
+    "minecraft:cobblestone": 1
+  type: PETRIFIED_TREE
+  rarity: 0.2
+  height: 4-8
+
+# Agua estancada
+stagnant-water:
+  materials:
+    "minecraft:water": 1
+  type: POOL
+  rarity: 0.15
+  radius: 2-5
+
+# Flores fosilizadas
+fossilized-flowers:
+  materials:
+    "minecraft:dead_bush": 2
+    "minecraft:poppy": 1
+    "minecraft:dandelion": 1
+    "minecraft:stone": 1
+  density: 0.2
+  radius: 1-3
+
+# Piedras musgosas
+mossy-remnants:
+  materials:
+    "minecraft:mossy_cobblestone": 2
+    "minecraft:moss_block": 2
+    "minecraft:stone": 1
+  type: PATCH
+  rarity: 0.1
+  radius: 2-4

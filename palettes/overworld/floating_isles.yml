@@ -1,0 +1,80 @@
+# ==========================================
+# AETHERIA — Overworld: Islas Flotantes
+# Bioma raro: fragmentos de tierra suspendidos en el aire
+# ==========================================
+
+id: AETHERIA_FLOATING_ISLES
+type: PALETTE
+
+# Núcleo de las islas (sin bedrock debajo)
+island-core:
+  materials:
+    "minecraft:stone": 4
+    "minecraft:andesite": 2
+    "minecraft:diorite": 1
+    "minecraft:granite": 1
+  layers: 4-8
+
+# Suelo de la isla
+island-surface:
+  top:
+    materials:
+      "minecraft:grass_block": 5
+      "minecraft:podzol": 2
+      "minecraft:mycelium": 1
+      "minecraft:moss_block": 1
+    layers: 1
+  
+  sub:
+    materials:
+      "minecraft:dirt": 3
+      "minecraft:coarse_dirt": 1
+    layers: 2-3
+
+# Borde de la isla (caída)
+island-edge:
+  materials:
+    "minecraft:stone": 3
+    "minecraft:gravel": 2
+    "minecraft:andesite": 1
+  layers: 1-2
+  slope: 0.8
+
+# Vegetación aérea
+aerial-flora:
+  materials:
+    "minecraft:grass": 3
+    "minecraft:tall_grass": 2
+    "minecraft:azure_bluet": 1
+    "minecraft:oxeye_daisy": 1
+    "minecraft:cornflower": 1
+    "minecraft:lily_of_the_valley": 1
+  density: 0.5
+  radius: 2-4
+
+# Vides colgantes
+hanging-vines:
+  materials:
+    "minecraft:cave_vines": 3
+    "minecraft:weeping_vines": 1
+    "minecraft:twisting_vines": 1
+  length: 3-12
+  rarity: 0.4
+
+# Cristales de aether (variante overworld)
+aether-rystals:
+  materials:
+    "minecraft:amethyst_cluster": 2
+    "minecraft:large_amethyst_bud": 1
+    "minecraft:medium_amethyst_bud": 1
+    "minecraft:small_amethyst_bud": 1
+  rarity: 0.08
+
+# Cascadas que caen al vacío
+void-falls:
+  materials:
+    "minecraft:water": 1
+  type: FALL
+  rarity: 0.15
+  min-length: 5
+  max-length: 30

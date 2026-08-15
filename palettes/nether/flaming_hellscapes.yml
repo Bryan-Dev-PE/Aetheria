@@ -1,0 +1,63 @@
+# ==========================================
+# AETHERIA — Nether: Paisajes Infernales Ardientes
+# Bioma raro del Nether: extensión de lava y fuego eterno
+# ==========================================
+
+id: NETHERRA_FLAMING_HELLSCAPES
+type: PALETTE
+
+# Suelo de fuego eterno
+surface:
+  materials:
+    "minecraft:magma_block": 4
+    "minecraft:obsidian": 3
+    "minecraft:crying_obsidian": 2
+    "minecraft:blackstone": 2
+    "minecraft:ancient_debris": 1
+  layers: 2-3
+
+# Océanos de lava
+lava-seas:
+  materials:
+    "minecraft:lava": 1
+  type: LAKE
+  rarity: 0.4
+  depth: 2-8
+  radius: 10-30
+
+# Columnas de obsidiana ardiente
+obsidian-pillars:
+  materials:
+    "minecraft:obsidian": 3
+    "minecraft:crying_obsidian": 2
+    "minecraft:magma_block": 2
+    "minecraft:blackstone": 1
+  height: 5-20
+  rarity: 0.2
+  radius: 2-4
+
+# Lluvia de ceniza
+ash-rain:
+  materials:
+    "minecraft:ash": 1
+    "minecraft:basalt": 1
+  type: PARTICLE_ZONE
+  density: 0.7
+  height: 64-128
+
+# Ancient debris expuesto
+exposed-debris:
+  materials:
+    "minecraft:ancient_debris": 1
+    "minecraft:blackstone": 3
+  rarity: 0.05
+  min-y: 8
+  max-y: 22
+
+# Fuego azul (alma ardiente)
+blue-fire:
+  materials:
+    "minecraft:soul_fire": 1
+    "minecraft:soul_soil": 1
+  density: 0.4
+  radius: 2-5

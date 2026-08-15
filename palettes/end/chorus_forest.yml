@@ -1,0 +1,41 @@
+# ==========================================
+# AETHERIA — End: Bosque de Chorus
+# ==========================================
+
+id: AETHERIA_END_CHORUS_FOREST
+type: PALETTE
+
+# Suelo del bosque
+surface:
+  materials:
+    "minecraft:end_stone": 5
+    "minecraft:purpur_block": 3
+    "minecraft:end_stone_bricks": 2
+  layers: 2-3
+
+# Árboles de chorus
+chorus-trees:
+  materials:
+    "minecraft:chorus_plant[up=true,down=true]": 4
+    "minecraft:chorus_flower[age=5]": 1
+    "minecraft:purpur_block": 1
+  type: CHORUS_TREE
+  rarity: 0.5
+  height: 4-12
+  radius: 2-4
+
+# Suelo de purpur
+purpur-floor:
+  materials:
+    "minecraft:purpur_block": 3
+    "minecraft:purpur_pillar[axis=y]": 2
+    "minecraft:purpur_slab": 1
+  layers: 1
+  coverage: 0.3
+
+# Flores de end
+end-flowers:
+  materials:
+    "minecraft:chorus_flower": 1
+  density: 0.2
+  radius: 1-2

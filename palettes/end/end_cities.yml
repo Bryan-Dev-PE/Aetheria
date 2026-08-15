@@ -1,0 +1,52 @@
+# ==========================================
+# AETHERIA — End: Ciudades del End
+# ==========================================
+
+id: AETHERIA_END_CITIES
+type: PALETTE
+
+# Suelo de ciudad
+city-floor:
+  materials:
+    "minecraft:purpur_block": 4
+    "minecraft:purpur_pillar[axis=y]": 2
+    "minecraft:end_stone_bricks": 2
+    "minecraft:purpur_stairs": 1
+    "minecraft:purpur_slab": 1
+  layers: 2-3
+
+# Muros de ciudad
+city-walls:
+  materials:
+    "minecraft:purpur_block": 3
+    "minecraft:purpur_pillar[axis=y]": 2
+    "minecraft:end_stone_bricks": 2
+    "minecraft:magenta_stained_glass": 1
+    "minecraft:purpur_stairs": 1
+  height: 5-15
+  thickness: 1-2
+
+# Banderas
+end-banners:
+  materials:
+    "minecraft:black_banner": 1
+    "minecraft:magenta_banner": 1
+  type: BANNER
+  rarity: 0.1
+
+# Farolas
+end-lanterns:
+  materials:
+    "minecraft:end_rod": 1
+    "minecraft:purpur_slab": 1
+  type: LAMP_POST
+  rarity: 0.15
+  height: 2-4
+
+# Cofres de botín
+loot-chests:
+  materials:
+    "minecraft:ender_chest": 1
+  type: CHEST
+  rarity: 0.05
+  loot-table: "minecraft:chests/end_city_treasure"

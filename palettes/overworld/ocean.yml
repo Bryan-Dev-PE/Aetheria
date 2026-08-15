@@ -1,0 +1,52 @@
+# ==========================================
+# AETHERIA — Overworld: Océanos
+# ==========================================
+
+id: AETHERIA_OW_OCEAN
+type: PALETTE
+
+extends: AETHERIA_BASE_STONE
+
+# Suelo oceánico
+surface:
+  top:
+    materials:
+      "minecraft:sand": 6
+      "minecraft:gravel": 3
+      "minecraft:clay": 1
+    layers: 2-4
+  
+  sub:
+    materials:
+      "minecraft:sandstone": 3
+      "minecraft:stone": 1
+    layers: 3
+
+# Vegetación marina
+marine-vegetation:
+  warm:
+    materials:
+      "minecraft:seagrass": 5
+      "minecraft:tall_seagrass": 2
+      "minecraft:sea_pickel": 1
+    depth: 1-8
+    temperature: warm
+  
+  cold:
+    materials:
+      "minecraft:seagrass": 3
+      "minecraft:kelp": 4
+    depth: 1-12
+    temperature: cold
+
+# Arrecifes de coral
+coral-reef:
+  materials:
+    "minecraft:tube_coral_block": 2
+    "minecraft:brain_coral_block": 2
+    "minecraft:bubble_coral_block": 2
+    "minecraft:fire_coral_block": 2
+    "minecraft:horn_coral_block": 2
+    "minecraft:dead_coral_block": 1
+  rarity: 0.15
+  biomes: [warm_ocean, lukewarm_ocean]

@@ -1,0 +1,68 @@
+# ==========================================
+# AETHERIA — Overworld: Montañas
+# ==========================================
+
+id: AETHERIA_OW_MOUNTAIN
+type: PALETTE
+
+extends: AETHERIA_BASE_STONE
+
+# Gradient de altura para montañas
+altitude-bands:
+  # Cumbres (Y > 160)
+  peak:
+    min-y: 160
+    materials:
+      "minecraft:snow_block": 3
+      "minecraft:powder_snow": 2
+      "minecraft:packed_ice": 1
+      "minecraft:stone": 1
+    layers: 2-5
+  
+  # Laderas altas (Y 120-160)
+  high-slope:
+    min-y: 120
+    materials:
+      "minecraft:stone": 4
+      "minecraft:andesite": 2
+      "minecraft:gravel": 2
+      "minecraft:snow": 1
+    layers: 2
+  
+  # Laderas medias (Y 80-120)
+  mid-slope:
+    min-y: 80
+    materials:
+      "minecraft:stone": 3
+      "minecraft:andesite": 2
+      "minecraft:dirt": 2
+      "minecraft:grass_block": 1
+    layers: 2
+  
+  # Pie de montaña (Y < 80)
+  foothill:
+    materials:
+      "minecraft:grass_block": 4
+      "minecraft:dirt": 3
+      "minecraft:stone": 2
+      "minecraft:coarse_dirt": 1
+    layers: 2
+
+# Formaciones rocosas
+rock-formations:
+  materials:
+    "minecraft:stone": 5
+    "minecraft:andesite": 3
+    "minecraft:diorite": 2
+    "minecraft:granite": 2
+    "minecraft:calcite": 1
+  type: OUTCROP
+  rarity: 0.1
+
+# Cascadas
+waterfalls:
+  materials:
+    "minecraft:water": 1
+  type: FALL
+  rarity: 0.05
+  min-y: 80

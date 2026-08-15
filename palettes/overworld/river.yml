@@ -1,0 +1,43 @@
+# ==========================================
+# AETHERIA — Overworld: Ríos
+# ==========================================
+
+id: AETHERIA_OW_RIVER
+type: PALETTE
+
+extends: AETHERIA_BASE_STONE
+
+# Cauce del río
+riverbed:
+  materials:
+    "minecraft:sand": 4
+    "minecraft:gravel": 3
+    "minecraft:clay": 2
+    "minecraft:dirt": 1
+  layers: 2-3
+
+# Agua
+water:
+  materials:
+    "minecraft:water": 1
+  layers: 2-6
+
+# Orillas
+banks:
+  materials:
+    "minecraft:sand": 3
+    "minecraft:grass_block": 2
+    "minecraft:dirt": 2
+    "minecraft:clay": 1
+  layers: 2
+  slope: 0.3
+
+# Vegetación de ribera
+riparian-vegetation:
+  materials:
+    "minecraft:sugar_cane": 4
+    "minecraft:seagrass": 2
+    "minecraft:lily_pad": 2
+    "minecraft:oak_log": 1
+  density: 0.5
+  radius: 2-4

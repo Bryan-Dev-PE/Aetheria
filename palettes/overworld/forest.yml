@@ -1,0 +1,48 @@
+# ==========================================
+# AETHERIA — Overworld: Bosques
+# ==========================================
+
+id: AETHERIA_OW_FOREST
+type: PALETTE
+
+extends: AETHERIA_BASE_STONE
+
+surface:
+  top:
+    materials:
+      "minecraft:grass_block": 8
+      "minecraft:podzol": 2
+      "minecraft:coarse_dirt": 1
+      "minecraft:moss_block": 1
+    layers: 1
+  
+  sub:
+    materials:
+      "minecraft:dirt": 1
+    layers: 3
+
+# Suelo forestal con hojas caídas
+forest-floor:
+  materials:
+    "minecraft:oak_leaves[persistent=true]": 2
+    "minecraft:birch_leaves[persistent=true]": 1
+    "minecraft:grass_block": 3
+    "minecraft:podzol": 1
+  layers: 1
+  coverage: 0.4
+
+patches:
+  - materials:
+      "minecraft:grass": 5
+      "minecraft:fern": 4
+      "minecraft:large_fern": 2
+      "minecraft:sweet_berry_bush": 1
+      "minecraft:brown_mushroom": 1
+    density: 0.8
+    radius: 3-5
+  
+  - materials:
+      "minecraft:fallen_oak_log[axis=x]": 1
+      "minecraft:fallen_birch_log[axis=z]": 1
+    type: FALLEN_LOG
+    rarity: 0.03
