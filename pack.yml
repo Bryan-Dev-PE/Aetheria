@@ -5,7 +5,7 @@
 id: AETHERIA
 version: 0.2.0
 authors:
-  - "Ryan-Dev-PE"
+  - "Bryan-Dev-PE"
 description: "Generador de mundos dimensionales con biomas customizados y estructuras del config Aetheria"
 
 depends:
