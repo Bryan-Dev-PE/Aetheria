@@ -1,0 +1,121 @@
+# ============================================================
+# AETHERIA — features/convergence/dimensional.yml
+# Features compartidos entre dimensiones para las fracturas.
+# ============================================================
+
+# --- Partículas de fractura ---
+fracture_glow:
+  type: PARTICLE
+  particle: minecraft:end_rod
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 5, z / 10) > 0.5 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128
+
+fracture_spark:
+  type: PARTICLE
+  particle: minecraft:firework
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 4, z / 8) > 0.6 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 128
+
+fracture_rift:
+  type: PARTICLE
+  particle: minecraft:reverse_portal
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 12, y / 6, z / 12) > 0.4 ? 1 : 0
+  density: 0.25
+  min-y: 0
+  max-y: 128
+
+# --- Vegetación de fractura ---
+fracture_moss:
+  type: FLORA
+  blocks:
+    - minecraft:moss_carpet: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.3 ? 1 : 0
+  density: 0.4
+  y-offset: 1
+
+fracture_lichen:
+  type: FLORA
+  blocks:
+    - minecraft:glow_lichen: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 4, y / 3, z / 4) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 0
+
+fracture_crystal:
+  type: FLORA
+  blocks:
+    - minecraft:amethyst_cluster: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 0
+
+# --- Ores de fractura ---
+fracture_gold:
+  type: ORE
+  blocks:
+    - minecraft:gold_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, y / 4, z / 6) > 0.6 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 128
+  replace:
+    - minecraft:stone
+    - minecraft:netherrack
+    - minecraft:end_stone
+
+fracture_diamond:
+  type: ORE
+  blocks:
+    - minecraft:diamond_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.7 ? 1 : 0
+  density: 0.1
+  min-y: 0
+  max-y: 64
+  replace:
+    - minecraft:stone
+    - minecraft:netherrack
+    - minecraft:end_stone
+
+fracture_obsidian:
+  type: ORE
+  blocks:
+    - minecraft:obsidian: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, y / 4, z / 7) > 0.6 ? 1 : 0
+  density: 0.15
+  min-y: 0
+  max-y: 128
+  replace:
+    - minecraft:stone
+    - minecraft:netherrack
+    - minecraft:end_stone

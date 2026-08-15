@@ -1,0 +1,92 @@
+# ============================================================
+# AETHERIA — features/end/ores.yml
+# Minerales del End.
+# ============================================================
+
+end_ores:
+  type: ORE
+  blocks:
+    - minecraft:end_stone: 8
+    - minecraft:obsidian: 1
+    - minecraft:crying_obsidian: 0.5
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 6, z / 10) > 0.55 ? 1 : 0
+  density: 0.25
+  min-y: 0
+  max-y: 128
+  replace:
+    - minecraft:end_stone
+
+purpur_deposit:
+  type: ORE
+  blocks:
+    - minecraft:purpur_block: 1
+    - minecraft:purpur_pillar: 0.5
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 5, z / 8) > 0.6 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 128
+  replace:
+    - minecraft:end_stone
+
+obsidian_deposit:
+  type: ORE
+  blocks:
+    - minecraft:obsidian: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, y / 4, z / 6) > 0.65 ? 1 : 0
+  density: 0.15
+  min-y: 0
+  max-y: 128
+  replace:
+    - minecraft:end_stone
+
+amethyst_deposit:
+  type: ORE
+  blocks:
+    - minecraft:amethyst_block: 1
+    - minecraft:budding_amethyst: 0.3
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, y / 4, z / 7) > 0.6 ? 1 : 0
+  density: 0.18
+  min-y: 0
+  max-y: 128
+  replace:
+    - minecraft:end_stone
+
+quartz_deposit:
+  type: ORE
+  blocks:
+    - minecraft:quartz_block: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 5, z / 8) > 0.6 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 128
+  replace:
+    - minecraft:end_stone
+
+calcite_deposit:
+  type: ORE
+  blocks:
+    - minecraft:calcite: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 9, y / 5, z / 9) > 0.55 ? 1 : 0
+  density: 0.22
+  min-y: 0
+  max-y: 128
+  replace:
+    - minecraft:end_stone

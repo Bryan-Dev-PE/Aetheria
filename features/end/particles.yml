@@ -1,0 +1,70 @@
+# ============================================================
+# AETHERIA — features/end/particles.yml
+# Partículas ambientales del End.
+# ============================================================
+
+star_particles:
+  type: PARTICLE
+  particle: minecraft:end_rod
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 20, y / 10, z / 20) > 0.6 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 128
+
+nebula_particles:
+  type: PARTICLE
+  particle: minecraft:dragon_breath
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 15, y / 8, z / 15) > 0.4 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128
+
+aurora_particles:
+  type: PARTICLE
+  particle: minecraft:happy_villager
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 18, y / 9, z / 18) > 0.5 ? 1 : 0
+  density: 0.25
+  min-y: 0
+  max-y: 128
+
+web_particles:
+  type: PARTICLE
+  particle: minecraft:witch
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 5, z / 10) > 0.4 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128
+
+void_particles:
+  type: PARTICLE
+  particle: minecraft:portal
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 12, y / 6, z / 12) > 0.5 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 128
+
+chorus_spore_particles:
+  type: PARTICLE
+  particle: minecraft:dragon_breath
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 4, z / 8) > 0.4 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128

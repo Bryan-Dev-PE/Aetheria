@@ -1,0 +1,87 @@
+# ============================================================
+# AETHERIA — biomes/nether/roof.yml
+# Variaciones en el techo del Nether (Y > 110).
+# ============================================================
+
+NETHERRA_BASALT_CANOPY:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:basalt_deltas
+  colors: $biomes/colors.yml:NETHERRA_BASALT_CANOPY
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 118;
+        noise = simplex(x / 50, z / 50) * 2.0 + simplex(x / 12, z / 12) * 0.5;
+        base + noise
+    height: 118
+    base: 110
+  palette:
+    - BLOCK:minecraft:basalt: 255
+    - BLOCK:minecraft:smooth_basalt: 180
+    - BLOCK:minecraft:blackstone: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/basalt_canopy.yml
+    flora:
+      - features/nether/ash_particles.yml
+    ores:
+      - ores/nether/nether_gold.yml
+
+NETHERRA_NETHERRACK_SPIRES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:nether_wastes
+  colors: $biomes/colors.yml:NETHERRA_NETHERRACK_SPIRES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 120;
+        noise = simplex(x / 45, z / 45) * 3.0 + simplex(x / 10, z / 10) * 0.8;
+        base + noise
+    height: 120
+    base: 110
+  palette:
+    - BLOCK:minecraft:netherrack: 255
+    - BLOCK:minecraft:magma_block: 150
+    - BLOCK:minecraft:blackstone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/netherrack_spire.yml
+    flora:
+      - features/nether/fire.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+
+NETHERRA_OBSIDIAN_PILLARS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:basalt_deltas
+  colors: $biomes/colors.yml:NETHERRA_OBSIDIAN_PILLARS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 122;
+        noise = simplex(x / 40, z / 40) * 4.0 + simplex(x / 8, z / 8) * 1.2;
+        base + noise
+    height: 122
+    base: 110
+  palette:
+    - BLOCK:minecraft:obsidian: 255
+    - BLOCK:minecraft:crying_obsidian: 180
+    - BLOCK:minecraft:blackstone: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/obsidian_pillar.yml
+      - structures/nether/obsidian_spike.yml
+    flora:
+      - features/nether/void_particles.yml
+    ores:
+      - ores/nether/ancient_debris.yml

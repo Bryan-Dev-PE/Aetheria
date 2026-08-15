@@ -1,0 +1,20 @@
+@"
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Archivos temporales
+*.tmp
+*.bak
+*.log
+
+# Variables/credenciales
+.env
+.env.*
+!.env.example
+"@ | Set-Content .gitignore

@@ -1,0 +1,1276 @@
+# ============================================================
+# AETHERIA — biomes/colors.yml
+# Definición de colores para TODOS los biomas del paquete.
+# Los colores afectan: grass, foliage, water, water-fog, fog, sky
+# ============================================================
+
+# ==========================================
+# OVERWORLD — TIERRAS TEMPLADAS
+# ==========================================
+AETHERIA_MEADOWS:
+  grass: 0x7ea65d
+  foliage: 0x77ab2f
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_PLAINS:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_FOREST:
+  grass: 0x56ab2f
+  foliage: 0x3a6e2e
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_BIRCH_GROVE:
+  grass: 0x88bb67
+  foliage: 0x6ba941
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_DARK_FOREST:
+  grass: 0x507a32
+  foliage: 0x2d4a1e
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0x8a9a6a
+  sky: 0x5a7a3a
+
+AETHERIA_TAIGA:
+  grass: 0x86b783
+  foliage: 0x3b6e3b
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_OLD_GROWTH_PINE:
+  grass: 0x86b87d
+  foliage: 0x4a7c3a
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_OLD_GROWTH_SPRUCE:
+  grass: 0x86b87d
+  foliage: 0x4a7c3a
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_WINDSWEPT_HILLS:
+  grass: 0x8ab689
+  foliage: 0x6da36e
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_WINDSWEPT_GRAVELLY:
+  grass: 0x8ab689
+  foliage: 0x6da36e
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+# ==========================================
+# OVERWORLD — TIERRAS CÁLIDAS
+# ==========================================
+AETHERIA_SAVANNA:
+  grass: 0xbdb25f
+  foliage: 0xaea42a
+  water: 0x2c8b9c
+  water-fog: 0x2c8b9c
+  fog: 0xd6eaff
+  sky: 0x75aaff
+
+AETHERIA_SAVANNA_PLATEAU:
+  grass: 0xbdb25f
+  foliage: 0xaea42a
+  water: 0x2c8b9c
+  water-fog: 0x2c8b9c
+  fog: 0xd6eaff
+  sky: 0x75aaff
+
+AETHERIA_WINDSWEPT_SAVANNA:
+  grass: 0xbdb25f
+  foliage: 0xaea42a
+  water: 0x2c8b9c
+  water-fog: 0x2c8b9c
+  fog: 0xd6eaff
+  sky: 0x75aaff
+
+AETHERIA_BADLANDS:
+  grass: 0x90814d
+  foliage: 0x9e814d
+  water: 0x4e3f30
+  water-fog: 0x4e3f30
+  fog: 0xffdcb8
+  sky: 0x6eb1ff
+
+AETHERIA_ERODED_BADLANDS:
+  grass: 0x90814d
+  foliage: 0x9e814d
+  water: 0x4e3f30
+  water-fog: 0x4e3f30
+  fog: 0xffdcb8
+  sky: 0x6eb1ff
+
+AETHERIA_WOODED_BADLANDS:
+  grass: 0x90814d
+  foliage: 0x9e814d
+  water: 0x4e3f30
+  water-fog: 0x4e3f30
+  fog: 0xffdcb8
+  sky: 0x6eb1ff
+
+AETHERIA_DESERT:
+  grass: 0xbfb755
+  foliage: 0xaea42a
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xffe4b5
+  sky: 0x6eb1ff
+
+AETHERIA_JUNGLE:
+  grass: 0x59c93c
+  foliage: 0x3a8c3a
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_SPARSE_JUNGLE:
+  grass: 0x64c73f
+  foliage: 0x3a8c3a
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_BAMBOO_JUNGLE:
+  grass: 0x59c93c
+  foliage: 0x3a8c3a
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+# ==========================================
+# OVERWORLD — TIERRAS FRÍAS
+# ==========================================
+AETHERIA_TUNDRA:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_ICE_SPIKES:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xddeeff
+  sky: 0x80bfff
+
+AETHERIA_SNOWY_PLAINS:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xddeeff
+  sky: 0x80bfff
+
+AETHERIA_SNOWY_TAIGA:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xddeeff
+  sky: 0x80bfff
+
+AETHERIA_SNOWY_BEACH:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xddeeff
+  sky: 0x80bfff
+
+AETHERIA_GROVE:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xddeeff
+  sky: 0x80bfff
+
+AETHERIA_SNOWY_SLOPES:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xddeeff
+  sky: 0x80bfff
+
+AETHERIA_FROZEN_PEAKS:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xf0f8ff
+  sky: 0x87ceeb
+
+AETHERIA_JAGGED_PEAKS:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xf0f8ff
+  sky: 0x87ceeb
+
+AETHERIA_STONY_PEAKS:
+  grass: 0x9abe9e
+  foliage: 0x82ac7a
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+# ==========================================
+# OVERWORLD — ESPECIALES
+# ==========================================
+AETHERIA_MUSHROOM_FIELDS:
+  grass: 0x55c93f
+  foliage: 0x2bbb0f
+  water: 0x8a8997
+  water-fog: 0x8a8997
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_SUNFLOWER_PLAINS:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_CHERRY_GROVE:
+  grass: 0xb6db61
+  foliage: 0xe3a6b0
+  water: 0x5e7fbe
+  water-fog: 0x5e7fbe
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_FOLIAGE_FORTRESS:
+  grass: 0x6b8e23
+  foliage: 0x556b2f
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0x8fbc8f
+  sky: 0x6b8e23
+
+AETHERIA_GLOOMY_GORGE:
+  grass: 0x556b2f
+  foliage: 0x4a5d23
+  water: 0x2f4f4f
+  water-fog: 0x2f4f4f
+  fog: 0x556b2f
+  sky: 0x556b2f
+
+AETHERIA_SNOWY_SPIRES:
+  grass: 0xf5f5f5
+  foliage: 0xe8e8e8
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xf0f8ff
+  sky: 0xe6e6fa
+
+AETHERIA_FLOATING_ISLES:
+  grass: 0x87ceeb
+  foliage: 0x6a5acd
+  water: 0x4169e1
+  water-fog: 0x4169e1
+  fog: 0x87ceeb
+  sky: 0x87ceeb
+
+# ==========================================
+# OVERWORLD — ACUÁTICOS
+# ==========================================
+AETHERIA_OCEAN:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x1e3a5f
+  water-fog: 0x1e3a5f
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_DEEP_OCEAN:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x0f1f3a
+  water-fog: 0x0f1f3a
+  fog: 0xa0c0e0
+  sky: 0x6080a0
+
+AETHERIA_WARM_OCEAN:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x2e8b8b
+  water-fog: 0x2e8b8b
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_LUKEWARM_OCEAN:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_DEEP_LUKEWARM_OCEAN:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x2c6e9c
+  water-fog: 0x2c6e9c
+  fog: 0xa0c0e0
+  sky: 0x6080a0
+
+AETHERIA_COLD_OCEAN:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x3d57d6
+  water-fog: 0x3d57d6
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_DEEP_COLD_OCEAN:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x2c3f9c
+  water-fog: 0x2c3f9c
+  fog: 0xa0c0e0
+  sky: 0x6080a0
+
+AETHERIA_FROZEN_OCEAN:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x2570b8
+  water-fog: 0x2570b8
+  fog: 0xddeeff
+  sky: 0x80bfff
+
+AETHERIA_DEEP_FROZEN_OCEAN:
+  grass: 0x80b497
+  foliage: 0x60a17b
+  water: 0x1a4f85
+  water-fog: 0x1a4f85
+  fog: 0xddeeff
+  sky: 0x6080a0
+
+AETHERIA_CORAL_REEF:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x2e8b8b
+  water-fog: 0x2e8b8b
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_KELP_FOREST:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x1e6b6b
+  water-fog: 0x1e6b6b
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+# ==========================================
+# OVERWORLD — COSTAS Y RÍOS
+# ==========================================
+AETHERIA_BEACH:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_STONY_SHORE:
+  grass: 0x8ab689
+  foliage: 0x6da36e
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+AETHERIA_RIVER:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xc0d8ff
+  sky: 0x78a7ff
+
+# ==========================================
+# OVERWORLD — CUEVAS
+# ==========================================
+AETHERIA_LUSH_CAVES:
+  grass: 0x4a7c59
+  foliage: 0x3d6b4a
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0x2a3a2a
+  sky: 0x000000
+
+AETHERIA_DRIPSTONE_CAVES:
+  grass: 0x8b7d6b
+  foliage: 0x7a6c5a
+  water: 0x4e3f30
+  water-fog: 0x4e3f30
+  fog: 0x3a3020
+  sky: 0x000000
+
+AETHERIA_DEEP_DARK:
+  grass: 0x2a2a3a
+  foliage: 0x1a1a2a
+  water: 0x1a1a2a
+  water-fog: 0x1a1a2a
+  fog: 0x0a0a15
+  sky: 0x000000
+
+AETHERIA_FROZEN_CAVES:
+  grass: 0xc0d6e4
+  foliage: 0xa8c4d8
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0xd0e0f0
+  sky: 0x000000
+
+AETHERIA_CRYSTAL_CAVERNS:
+  grass: 0xe6e6fa
+  foliage: 0xd8d8f0
+  water: 0x9966cc
+  water-fog: 0x9966cc
+  fog: 0x2a1a3a
+  sky: 0x000000
+
+AETHERIA_MOSSY_CAVERNS:
+  grass: 0x4a7c59
+  foliage: 0x3d6b4a
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0x2a3a2a
+  sky: 0x000000
+
+AETHERIA_MAGMA_CAVERNS:
+  grass: 0x8b4513
+  foliage: 0x7a3a0f
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x2a0a00
+  sky: 0x000000
+
+# ==========================================
+# OVERWORLD — CONVERGENCIAS DIMENSIONALES
+# ==========================================
+AETHERIA_SCORCHED_PLAINS:
+  grass: 0x8b4513
+  foliage: 0x8b4513
+  water: 0x5c3a1e
+  water-fog: 0x5c3a1e
+  fog: 0x8b7355
+  sky: 0xd4a574
+
+AETHERIA_VOID_TAINTED:
+  grass: 0x4b0082
+  foliage: 0x3a0066
+  water: 0x9370db
+  water-fog: 0x9370db
+  fog: 0x2a0a3a
+  sky: 0x4b0082
+
+AETHERIA_NETHERFRACTURE_HILLS:
+  grass: 0x8b0000
+  foliage: 0x6b0000
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x3a0a0a
+  sky: 0x8b0000
+
+AETHERIA_END_TAINTED_MEADOWS:
+  grass: 0x9370db
+  foliage: 0x7b68ee
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x2a0a3a
+  sky: 0x9370db
+
+# ==========================================
+# NETHER — VANILLA REWORKED (Tartarus)
+# ==========================================
+NETHERRA_FLAMING_HELLSCAPES:
+  grass: 0xdea43a
+  foliage: 0xdea43a
+  water: 0xff0000
+  water-fog: 0xff0000
+  fog: 0x330000
+  sky: 0x000000
+
+NETHERRA_SOUL_VALLEY:
+  grass: 0x5e4429
+  foliage: 0x5e4429
+  water: 0x4e3f30
+  water-fog: 0x4e3f30
+  fog: 0x1a1a2a
+  sky: 0x000000
+
+NETHERRA_CRIMSON_FOREST:
+  grass: 0xf24a24
+  foliage: 0xf24a24
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x330000
+  sky: 0x000000
+
+NETHERRA_WARPED_FOREST:
+  grass: 0x4d73bd
+  foliage: 0x4d73bd
+  water: 0x00ffff
+  water-fog: 0x00ffff
+  fog: 0x001a1a
+  sky: 0x000000
+
+NETHERRA_BASALTIC_DELTAS:
+  grass: 0x4a3e3d
+  foliage: 0x4a3e3d
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+# ==========================================
+# NETHER — CUSTOM (Tartarus)
+# ==========================================
+NETHERRA_BLOODY_REMNANTS:
+  grass: 0xf21200
+  foliage: 0xf21200
+  water: 0xff0000
+  water-fog: 0xff0000
+  fog: 0x330000
+  sky: 0x000000
+
+NETHERRA_CORRUPTED_WASTES:
+  grass: 0xf22451
+  foliage: 0xf22451
+  water: 0xff1493
+  water-fog: 0xff1493
+  fog: 0x2a0015
+  sky: 0x000000
+
+NETHERRA_CRYSTALLINE_VELDTS:
+  grass: 0xde4ede
+  foliage: 0xde4ede
+  water: 0xff00ff
+  water-fog: 0xff00ff
+  fog: 0x1a001a
+  sky: 0x000000
+
+NETHERRA_LIFELESS_SPIRES:
+  grass: 0x291f1d
+  foliage: 0x291f1d
+  water: 0x4e3f30
+  water-fog: 0x4e3f30
+  fog: 0x0a0a0a
+  sky: 0x000000
+
+NETHERRA_SERRATED_MOUNTAINS:
+  grass: 0x121111
+  foliage: 0x121111
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x050505
+  sky: 0x000000
+
+NETHERRA_TORRID_CRAGS:
+  grass: 0xd1b06f
+  foliage: 0xd1b06f
+  water: 0xff8c00
+  water-fog: 0xff8c00
+  fog: 0x2a1a00
+  sky: 0x000000
+
+NETHERRA_BLOODLESS_UNDERGROWTH:
+  grass: 0xd15f56
+  foliage: 0xd15f56
+  water: 0xff6347
+  water-fog: 0xff6347
+  fog: 0x2a0a0a
+  sky: 0x000000
+
+NETHERRA_THE_BOUNDARY:
+  grass: 0xc9b9a7
+  foliage: 0xc9b9a7
+  water: 0xffffff
+  water-fog: 0xffffff
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+# ==========================================
+# NETHER — ESPECIALES
+# ==========================================
+NETHERRA_LAVA_SEA:
+  grass: 0x8b0000
+  foliage: 0x8b0000
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x330000
+  sky: 0x000000
+
+NETHERRA_LUSH_NETHER_CAVERNS:
+  grass: 0x228b22
+  foliage: 0x228b22
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0x1a2f1a
+  sky: 0x000000
+
+NETHERRA_QUARTZ_CAVERNS:
+  grass: 0xf5f5f5
+  foliage: 0xf5f5f5
+  water: 0xffffff
+  water-fog: 0xffffff
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+NETHERRA_MAGMA_CHAMBERS:
+  grass: 0x8b0000
+  foliage: 0x8b0000
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x2a0a00
+  sky: 0x000000
+
+NETHERRA_BONE_CAVERNS:
+  grass: 0xf5f5dc
+  foliage: 0xf5f5dc
+  water: 0x4e3f30
+  water-fog: 0x4e3f30
+  fog: 0x2a2a1a
+  sky: 0x000000
+
+NETHERRA_GLOWSTONE_CAVERNS:
+  grass: 0xffd700
+  foliage: 0xffd700
+  water: 0xffff00
+  water-fog: 0xffff00
+  fog: 0x2a2a00
+  sky: 0x000000
+
+NETHERRA_BASALT_CANOPY:
+  grass: 0x4a3e3d
+  foliage: 0x4a3e3d
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+NETHERRA_NETHERRACK_SPIRES:
+  grass: 0x8b0000
+  foliage: 0x8b0000
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x330000
+  sky: 0x000000
+
+NETHERRA_OBSIDIAN_PILLARS:
+  grass: 0x2a0a2a
+  foliage: 0x2a0a2a
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x0a0a0a
+  sky: 0x000000
+
+NETHERRA_CRIMSON_WARPED_EDGE:
+  grass: 0xa04030
+  foliage: 0xa04030
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x2a0a0a
+  sky: 0x000000
+
+NETHERRA_SOUL_CRIMSON_EDGE:
+  grass: 0x8b4513
+  foliage: 0x8b4513
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x1a0a0a
+  sky: 0x000000
+
+# ==========================================
+# NETHER — CONVERGENCIAS DIMENSIONALES
+# ==========================================
+NETHERRA_OVERGROWN_CAVERNS:
+  grass: 0x228b22
+  foliage: 0x228b22
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0x1a2f1a
+  sky: 0x000000
+
+NETHERRA_END_TAINTED:
+  grass: 0x9370db
+  foliage: 0x9370db
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a0a2a
+  sky: 0x000000
+
+NETHERRA_OVERWORLD_REMNANTS:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0x2a3a2a
+  sky: 0x000000
+
+NETHERRA_AETHER_POCKETS:
+  grass: 0x87ceeb
+  foliage: 0x6a5acd
+  water: 0x4169e1
+  water-fog: 0x4169e1
+  fog: 0x1a2a3a
+  sky: 0x000000
+
+# ==========================================
+# END — CENTRAL
+# ==========================================
+ENDRA_DRAGON_ISLAND:
+  grass: 0x4d004d
+  foliage: 0x4d004d
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a001a
+  sky: 0x000000
+
+ENDRA_DRAGON_ISLAND_EDGE:
+  grass: 0x3a003a
+  foliage: 0x3a003a
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x150015
+  sky: 0x000000
+
+ENDRA_DRAGON_PIT:
+  grass: 0x050505
+  foliage: 0x050505
+  water: 0x000000
+  water-fog: 0x000000
+  fog: 0x000000
+  sky: 0x000000
+
+# ==========================================
+# END — ANILLO 1: DESOLACIÓN
+# ==========================================
+ENDRA_END_HIGHLANDS:
+  grass: 0xe8e8cf
+  foliage: 0xe8e8cf
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+ENDRA_END_HIGHLANDS_DESOLATE:
+  grass: 0xc0c0a8
+  foliage: 0xc0c0a8
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+ENDRA_SHATTERED_END:
+  grass: 0x180b24
+  foliage: 0x180b24
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x0a0510
+  sky: 0x000000
+
+ENDRA_SHATTERED_END_DESOLATE:
+  grass: 0x12081a
+  foliage: 0x12081a
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x0a0510
+  sky: 0x000000
+
+ENDRA_DARK_END:
+  grass: 0x1f1f14
+  foliage: 0x1f1f14
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x0a0a08
+  sky: 0x000000
+
+ENDRA_DARK_END_DESOLATE:
+  grass: 0x151510
+  foliage: 0x151510
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x0a0a08
+  sky: 0x000000
+
+ENDRA_HANGING_ISLES:
+  grass: 0xa6a697
+  foliage: 0xa6a697
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+ENDRA_CHORAL_DEADLANDS:
+  grass: 0x808080
+  foliage: 0x808080
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+ENDRA_CHORAL_DEADLANDS_DESOLATE:
+  grass: 0x606060
+  foliage: 0x606060
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+# ==========================================
+# END — ANILLO 2: TRANSICIÓN
+# ==========================================
+ENDRA_AMETHYST_END:
+  grass: 0x9966cc
+  foliage: 0x9966cc
+  water: 0x9370db
+  water-fog: 0x9370db
+  fog: 0x1a0a2a
+  sky: 0x000000
+
+ENDRA_AMETHYST_END_DESOLATE:
+  grass: 0x7755aa
+  foliage: 0x7755aa
+  water: 0x9370db
+  water-fog: 0x9370db
+  fog: 0x1a0a2a
+  sky: 0x000000
+
+ENDRA_TAINTED_END:
+  grass: 0x7d08c8
+  foliage: 0x7d08c8
+  water: 0x9932cc
+  water-fog: 0x9932cc
+  fog: 0x1a001a
+  sky: 0x000000
+
+ENDRA_TAINTED_END_DESOLATE:
+  grass: 0x5a0696
+  foliage: 0x5a0696
+  water: 0x9932cc
+  water-fog: 0x9932cc
+  fog: 0x1a001a
+  sky: 0x000000
+
+ENDRA_STYGIAN_BARRENS:
+  grass: 0x252130
+  foliage: 0x252130
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x0a0a15
+  sky: 0x000000
+
+ENDRA_STYGIAN_BARRENS_DESOLATE:
+  grass: 0x1a1824
+  foliage: 0x1a1824
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x0a0a15
+  sky: 0x000000
+
+ENDRA_CRAGGY_END:
+  grass: 0x929c97
+  foliage: 0x929c97
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+ENDRA_CRAGGY_END_DESOLATE:
+  grass: 0x6e7672
+  foliage: 0x6e7672
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a1a1a
+  sky: 0x000000
+
+ENDRA_SHATTERED_FOREST:
+  grass: 0x2f1645
+  foliage: 0x2f1645
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x0a0510
+  sky: 0x000000
+
+ENDRA_SHATTERED_FOREST_DESOLATE:
+  grass: 0x1f0f30
+  foliage: 0x1f0f30
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x0a0510
+  sky: 0x000000
+
+# ==========================================
+# END — ANILLO 3: VIDA
+# ==========================================
+ENDRA_CHORUVE_WOODS:
+  grass: 0x7f549c
+  foliage: 0x7f549c
+  water: 0x9370db
+  water-fog: 0x9370db
+  fog: 0x1a0a2a
+  sky: 0x000000
+
+ENDRA_CHORUVE_WOODS_DESOLATE:
+  grass: 0x5a3a70
+  foliage: 0x5a3a70
+  water: 0x9370db
+  water-fog: 0x9370db
+  fog: 0x1a0a2a
+  sky: 0x000000
+
+ENDRA_MAUVE_JUNGLE:
+  grass: 0xa92feb
+  foliage: 0xa92feb
+  water: 0x9932cc
+  water-fog: 0x9932cc
+  fog: 0x1a001a
+  sky: 0x000000
+
+ENDRA_MAUVE_JUNGLE_DESOLATE:
+  grass: 0x7a22aa
+  foliage: 0x7a22aa
+  water: 0x9932cc
+  water-fog: 0x9932cc
+  fog: 0x1a001a
+  sky: 0x000000
+
+ENDRA_TWISTED_GROVE:
+  grass: 0x00aba6
+  foliage: 0x00aba6
+  water: 0x20b2aa
+  water-fog: 0x20b2aa
+  fog: 0x001a1a
+  sky: 0x000000
+
+ENDRA_TWISTED_GROVE_DESOLATE:
+  grass: 0x008080
+  foliage: 0x008080
+  water: 0x20b2aa
+  water-fog: 0x20b2aa
+  fog: 0x001a1a
+  sky: 0x000000
+
+ENDRA_END_WILDS:
+  grass: 0xFFFF00
+  foliage: 0xFFFF00
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a1a00
+  sky: 0x000000
+
+ENDRA_END_WILDS_DESOLATE:
+  grass: 0xcccc00
+  foliage: 0xcccc00
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a1a00
+  sky: 0x000000
+
+ENDRA_CRIM_THICKET:
+  grass: 0x9a596c
+  foliage: 0x9a596c
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a0a10
+  sky: 0x000000
+
+ENDRA_CRIM_THICKET_DESOLATE:
+  grass: 0x704050
+  foliage: 0x704050
+  water: 0x4b0082
+  water-fog: 0x4b0082
+  fog: 0x1a0a10
+  sky: 0x000000
+
+ENDRA_VERMILION_WILDS:
+  grass: 0xb33c35
+  foliage: 0xb33c35
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x2a0a0a
+  sky: 0x000000
+
+ENDRA_VERMILION_WILDS_DESOLATE:
+  grass: 0x8a2e28
+  foliage: 0x8a2e28
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x2a0a0a
+  sky: 0x000000
+
+# ==========================================
+# END — ANILLO 4: PARAÍSO
+# ==========================================
+ENDRA_IVORY_EMPYREAN:
+  grass: 0xffffff
+  foliage: 0xffffff
+  water: 0xe0e0e0
+  water-fog: 0xe0e0e0
+  fog: 0x2a2a2a
+  sky: 0x000000
+
+ENDRA_IVORY_EMPYREAN_DESOLATE:
+  grass: 0xd0d0d0
+  foliage: 0xd0d0d0
+  water: 0xe0e0e0
+  water-fog: 0xe0e0e0
+  fog: 0x2a2a2a
+  sky: 0x000000
+
+ENDRA_ROSETTE_POOLS:
+  grass: 0xd3658e
+  foliage: 0xd3658e
+  water: 0xff69b4
+  water-fog: 0xff69b4
+  fog: 0x2a0a15
+  sky: 0x000000
+
+ENDRA_ROSETTE_POOLS_DESOLATE:
+  grass: 0xa84e6e
+  foliage: 0xa84e6e
+  water: 0xff69b4
+  water-fog: 0xff69b4
+  fog: 0x2a0a15
+  sky: 0x000000
+
+ENDRA_MARBLEDLANDSCAPES:
+  grass: 0xf0f0f0
+  foliage: 0xf0f0f0
+  water: 0xdcdcdc
+  water-fog: 0xdcdcdc
+  fog: 0x2a2a2a
+  sky: 0x000000
+
+# ==========================================
+# END — AETHER POCKETS
+# ==========================================
+ENDRA_AETHER_AZURE_MEADOWS:
+  grass: 0x3c79cf
+  foliage: 0x3c79cf
+  water: 0x4169e1
+  water-fog: 0x4169e1
+  fog: 0x1a2a4a
+  sky: 0x000000
+
+ENDRA_AETHER_CLARET_GROVE:
+  grass: 0xc24f92
+  foliage: 0xc24f92
+  water: 0xff69b4
+  water-fog: 0xff69b4
+  fog: 0x2a0a1a
+  sky: 0x000000
+
+ENDRA_AETHER_WISPY_ISLES:
+  grass: 0x709fe0
+  foliage: 0x709fe0
+  water: 0x87ceeb
+  water-fog: 0x87ceeb
+  fog: 0x1a2a3a
+  sky: 0x000000
+
+ENDRA_AETHER_BRAMBLE_WILDS:
+  grass: 0x8b4513
+  foliage: 0x8b4513
+  water: 0xcd853f
+  water-fog: 0xcd853f
+  fog: 0x2a1a0a
+  sky: 0x000000
+
+ENDRA_AETHER_GOLDEN_FIELDS:
+  grass: 0xffd700
+  foliage: 0xffd700
+  water: 0xffa500
+  water-fog: 0xffa500
+  fog: 0x2a2a00
+  sky: 0x000000
+
+ENDRA_AETHER_FROSTBITE_WOODS:
+  grass: 0x00ced1
+  foliage: 0x00ced1
+  water: 0x20b2aa
+  water-fog: 0x20b2aa
+  fog: 0x001a1a
+  sky: 0x000000
+
+ENDRA_AETHER_HONEY_HEIGHTS:
+  grass: 0xffa500
+  foliage: 0xffa500
+  water: 0xffd700
+  water-fog: 0xffd700
+  fog: 0x2a1a00
+  sky: 0x000000
+
+ENDRA_AETHER_ORCHARD_WOODLANDS:
+  grass: 0xffb6c1
+  foliage: 0xffb6c1
+  water: 0xffc0cb
+  water-fog: 0xffc0cb
+  fog: 0x2a1a1a
+  sky: 0x000000
+
+ENDRA_AETHER_FRIGID_BLUFFS:
+  grass: 0xb0e0e6
+  foliage: 0xb0e0e6
+  water: 0x87ceeb
+  water-fog: 0x87ceeb
+  fog: 0x1a2a2a
+  sky: 0x000000
+
+ENDRA_AETHER_PRISMATIC_RIDGES:
+  grass: 0xff00ff
+  foliage: 0xff00ff
+  water: 0x00ffff
+  water-fog: 0x00ffff
+  fog: 0x1a001a
+  sky: 0x000000
+
+# ==========================================
+# END — VACÍO
+# ==========================================
+ENDRA_VOID:
+  grass: 0x171717
+  foliage: 0x171717
+  water: 0x000000
+  water-fog: 0x000000
+  fog: 0x000000
+  sky: 0x000000
+
+ENDRA_STARFIELD:
+  grass: 0x171717
+  foliage: 0x171717
+  water: 0x000000
+  water-fog: 0x000000
+  fog: 0x050510
+  sky: 0x000000
+
+ENDRA_ASTEROID_FIELD:
+  grass: 0x3c2e40
+  foliage: 0x3c2e40
+  water: 0x000000
+  water-fog: 0x000000
+  fog: 0x0a0510
+  sky: 0x000000
+
+ENDRA_NEBULA:
+  grass: 0x855980
+  foliage: 0x855980
+  water: 0x000000
+  water-fog: 0x000000
+  fog: 0x1a0a1a
+  sky: 0x000000
+
+ENDRA_AURORA:
+  grass: 0xff78c4
+  foliage: 0xff78c4
+  water: 0x000000
+  water-fog: 0x000000
+  fog: 0x1a0a15
+  sky: 0x000000
+
+ENDRA_WEBBED_VOID:
+  grass: 0x2a2a2a
+  foliage: 0x2a2a2a
+  water: 0x000000
+  water-fog: 0x000000
+  fog: 0x0a0a0a
+  sky: 0x000000
+
+ENDRA_VOID_SEA:
+  grass: 0x000000
+  foliage: 0x000000
+  water: 0x000000
+  water-fog: 0x000000
+  fog: 0x000000
+  sky: 0x000000
+
+ENDRA_VOID_SEA_BORDER:
+  grass: 0x0a0a0a
+  foliage: 0x0a0a0a
+  water: 0x000000
+  water-fog: 0x000000
+  fog: 0x050505
+  sky: 0x000000
+
+# ==========================================
+# END — CONVERGENCIAS DIMENSIONALES
+# ==========================================
+ENDRA_NETHERFRACTURE_ISLES:
+  grass: 0xff4500
+  foliage: 0xff4500
+  water: 0xff0000
+  water-fog: 0xff0000
+  fog: 0x2a0a00
+  sky: 0x000000
+
+ENDRA_OVERWORLD_REMNANTS:
+  grass: 0x32cd32
+  foliage: 0x32cd32
+  water: 0x3f76e4
+  water-fog: 0x3f76e4
+  fog: 0x1a2a1a
+  sky: 0x000000
+
+ENDRA_NETHER_TAINTED_HIGHLANDS:
+  grass: 0x8b0000
+  foliage: 0x8b0000
+  water: 0xff4500
+  water-fog: 0xff4500
+  fog: 0x2a0a0a
+  sky: 0x000000
+
+# ==========================================
+# END — ESTRUCTURAS
+# ==========================================
+ENDRA_END_GATEWAY:
+  grass: 0x171717
+  foliage: 0x171717
+  water: 0x000000
+  water-fog: 0x000000
+  fog: 0x000000
+  sky: 0x000000

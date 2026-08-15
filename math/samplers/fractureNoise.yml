@@ -1,0 +1,117 @@
+# ============================================================
+# AETHERIA — math/samplers/fractureNoise.yml
+# Ruido especializado para fracturas dimensionales.
+# Combina múltiples técnicas para crear bordes irregulares.
+# ============================================================
+
+samplers:
+  # --- Ruido base de fractura (2D) ---
+  fractureBase:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 150, z / 150, 99999) * 0.4 +
+      simplex(x / 75, z / 75, 99999 + 1) * 0.3 +
+      simplex(x / 37, z / 37, 99999 + 2) * 0.2 +
+      simplex(x / 18, z / 18, 99999 + 3) * 0.1
+
+  # --- Ruido base de fractura (3D) ---
+  fractureBase3D:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 150, y / 60, z / 150, 99999) * 0.4 +
+      simplex(x / 75, y / 30, z / 75, 99999 + 1) * 0.3 +
+      simplex(x / 37, y / 15, z / 37, 99999 + 2) * 0.2 +
+      simplex(x / 18, y / 7, z / 18, 99999 + 3) * 0.1
+
+  # --- Ruido de borde de fractura (más detalle) ---
+  fractureEdge:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 30, z / 30, 99999 + 10) * 0.5 +
+      simplex(x / 15, z / 15, 99999 + 11) * 0.3 +
+      simplex(x / 7, z / 7, 99999 + 12) * 0.2
+
+  fractureEdge3D:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 30, y / 12, z / 30, 99999 + 10) * 0.5 +
+      simplex(x / 15, y / 6, z / 15, 99999 + 11) * 0.3 +
+      simplex(x / 7, y / 3, z / 7, 99999 + 12) * 0.2
+
+  # --- Ruido combinado de fractura con distorsión ---
+  fractureWarped:
+    type: EXPRESSION
+    expression: |
+      # Domain warping para bordes más irregulares
+      warpX = simplex(x / 50, z / 50, 99999 + 20) * 15;
+      warpZ = simplex(x / 50 + 100, z / 50 + 100, 99999 + 21) * 15;
+
+      simplex((x + warpX) / 150, (z + warpZ) / 150, 99999) * 0.4 +
+      simplex((x + warpX) / 75, (z + warpZ) / 75, 99999 + 1) * 0.3 +
+      simplex((x + warpX) / 37, (z + warpZ) / 37, 99999 + 2) * 0.2 +
+      simplex((x + warpX) / 18, (z + warpZ) / 18, 99999 + 3) * 0.1
+
+  fractureWarped3D:
+    type: EXPRESSION
+    expression: |
+      warpX = simplex(x / 50, y / 20, z / 50, 99999 + 20) * 15;
+      warpY = simplex(x / 50 + 100, y / 20 + 100, z / 50, 99999 + 21) * 10;
+      warpZ = simplex(x / 50, y / 20, z / 50 + 100, 99999 + 22) * 15;
+
+      simplex((x + warpX) / 150, (y + warpY) / 60, (z + warpZ) / 150, 99999) * 0.4 +
+      simplex((x + warpX) / 75, (y + warpY) / 30, (z + warpZ) / 75, 99999 + 1) * 0.3 +
+      simplex((x + warpX) / 37, (y + warpY) / 15, (z + warpZ) / 37, 99999 + 2) * 0.2 +
+      simplex((x + warpX) / 18, (y + warpY) / 7, (z + warpZ) / 18, 99999 + 3) * 0.1
+
+  # --- Máscara de fractura (0-1) ---
+  fractureMask:
+    type: EXPRESSION
+    expression: |
+      noise = fractureBase(x, z);
+      threshold = 1.0 - 0.08;  # 8% rareza por defecto
+      blendWidth = 0.02;
+
+      if(noise < threshold - blendWidth, 0,
+      if(noise > threshold + blendWidth, 1,
+      (noise - (threshold - blendWidth)) / (2 * blendWidth)))
+
+  fractureMask3D:
+    type: EXPRESSION
+    expression: |
+      noise = fractureBase3D(x, y, z);
+      threshold = 1.0 - 0.08;
+      blendWidth = 0.02;
+
+      if(noise < threshold - blendWidth, 0,
+      if(noise > threshold + blendWidth, 1,
+      (noise - (threshold - blendWidth)) / (2 * blendWidth)))
+
+  # --- Tipo de fractura (determina qué dimensión invade) ---
+  fractureType:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 80, z / 80, 99999 + 30) * 0.5 +
+      simplex(x / 40, z / 40, 99999 + 31) * 0.3 +
+      simplex(x / 20, z / 20, 99999 + 32) * 0.2
+
+  fractureType3D:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 80, y / 30, z / 80, 99999 + 30) * 0.5 +
+      simplex(x / 40, y / 15, z / 40, 99999 + 31) * 0.3 +
+      simplex(x / 20, y / 7, z / 20, 99999 + 32) * 0.2
+
+  # --- Intensidad de fractura (0-1) ---
+  fractureIntensity:
+    type: EXPRESSION
+    expression: |
+      noise = fractureBase(x, z);
+      threshold = 1.0 - 0.08;
+      if(noise < threshold, 0, (noise - threshold) / 0.08)
+
+  fractureIntensity3D:
+    type: EXPRESSION
+    expression: |
+      noise = fractureBase3D(x, y, z);
+      threshold = 1.0 - 0.08;
+      if(noise < threshold, 0, (noise - threshold) / 0.08)

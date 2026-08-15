@@ -1,0 +1,74 @@
+# ============================================================
+# AETHERIA — math/functions/dimensionalBlend.yml
+# Funciones de mezcla dimensional para las fracturas.
+# Útil para: transiciones suaves entre biomas de diferentes dimensiones.
+# ============================================================
+
+functions:
+  dimensionalBlend:
+    type: EXPRESSION
+    expression: |
+      # Mezcla dos valores basada en ruido de fractura
+      # a: valor del bioma original
+      # b: valor del bioma invasor (otra dimensión)
+      # x, z: coordenadas
+      # rarity: rareza de la fractura (0-1)
+      # blendWidth: ancho de transición
+      # seed: semilla de ruido
+      dimensionalBlend(a, b, x, z, rarity, blendWidth, seed) =
+        fractureNoise = simplex(x / 150, z / 150, seed);
+        threshold = 1.0 - rarity;
+
+        if(fractureNoise < threshold - blendWidth, a,
+        if(fractureNoise > threshold + blendWidth, b,
+
+        # Zona de transición
+        t = (fractureNoise - (threshold - blendWidth)) / (2 * blendWidth);
+        tSmooth = t * t * (3 - 2 * t);
+        a + (b - a) * tSmooth))
+
+  dimensionalBlend3D:
+    type: EXPRESSION
+    expression: |
+      # Versión 3D para cuevas y terreno vertical
+      dimensionalBlend3D(a, b, x, y, z, rarity, blendWidth, seed) =
+        fractureNoise = simplex(x / 150, y / 60, z / 150, seed);
+        threshold = 1.0 - rarity;
+
+        if(fractureNoise < threshold - blendWidth, a,
+        if(fractureNoise > threshold + blendWidth, b,
+
+        t = (fractureNoise - (threshold - blendWidth)) / (2 * blendWidth);
+        tSmooth = t * t * (3 - 2 * t);
+        a + (b - a) * tSmooth))
+
+  fractureIntensity:
+    type: EXPRESSION
+    expression: |
+      # Calcula la intensidad de la fractura en un punto (0-1)
+      fractureIntensity(x, z, rarity, seed) =
+        fractureNoise = simplex(x / 150, z / 150, seed);
+        threshold = 1.0 - rarity;
+        if(fractureNoise < threshold, 0,
+        (fractureNoise - threshold) / rarity)
+
+  fractureIntensity3D:
+    type: EXPRESSION
+    expression: |
+      fractureIntensity3D(x, y, z, rarity, seed) =
+        fractureNoise = simplex(x / 150, y / 60, z / 150, seed);
+        threshold = 1.0 - rarity;
+        if(fractureNoise < threshold, 0,
+        (fractureNoise - threshold) / rarity)
+
+  ringBlend:
+    type: EXPRESSION
+    expression: |
+      # Mezcla basada en anillos concéntricos (para el End)
+      # dist: distancia desde el centro
+      # ringStart, ringEnd: inicio y fin del anillo
+      # blendWidth: ancho de transición
+      ringBlend(value, dist, ringStart, ringEnd, blendWidth) =
+        innerMask = maskSmooth(dist, ringStart, blendWidth, "above");
+        outerMask = maskSmooth(dist, ringEnd, blendWidth, "below");
+        value * innerMask * outerMask

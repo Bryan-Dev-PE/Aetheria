@@ -1,0 +1,129 @@
+# ============================================================
+# AETHERIA — features/nether/ores.yml
+# Minerales del Nether.
+# ============================================================
+
+nether_gold:
+  type: ORE
+  blocks:
+    - minecraft:nether_gold_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 6, z / 8) > 0.55 ? 1 : 0
+  density: 0.3
+  min-y: 10
+  max-y: 117
+  replace:
+    - minecraft:netherrack
+    - minecraft:blackstone
+    - minecraft:basalt
+
+quartz:
+  type: ORE
+  blocks:
+    - minecraft:nether_quartz_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, y / 5, z / 7) > 0.55 ? 1 : 0
+  density: 0.35
+  min-y: 10
+  max-y: 117
+  replace:
+    - minecraft:netherrack
+    - minecraft:blackstone
+    - minecraft:basalt
+
+ancient_debris:
+  type: ORE
+  blocks:
+    - minecraft:ancient_debris: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.75 ? 1 : 0
+  density: 0.08
+  min-y: 8
+  max-y: 119
+  replace:
+    - minecraft:netherrack
+    - minecraft:blackstone
+    - minecraft:basalt
+
+magma_deposit:
+  type: ORE
+  blocks:
+    - minecraft:magma_block: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 6, z / 10) > 0.5 ? 1 : 0
+  density: 0.25
+  min-y: 10
+  max-y: 117
+  replace:
+    - minecraft:netherrack
+    - minecraft:blackstone
+
+blackstone_deposit:
+  type: ORE
+  blocks:
+    - minecraft:blackstone: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 9, y / 5, z / 9) > 0.5 ? 1 : 0
+  density: 0.3
+  min-y: 10
+  max-y: 117
+  replace:
+    - minecraft:netherrack
+    - minecraft:basalt
+
+basalt_deposit:
+  type: ORE
+  blocks:
+    - minecraft:basalt: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 5, z / 8) > 0.5 ? 1 : 0
+  density: 0.3
+  min-y: 10
+  max-y: 117
+  replace:
+    - minecraft:netherrack
+    - minecraft:blackstone
+
+soul_sand_deposit:
+  type: ORE
+  blocks:
+    - minecraft:soul_sand: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 6, z / 10) > 0.45 ? 1 : 0
+  density: 0.3
+  min-y: 10
+  max-y: 117
+  replace:
+    - minecraft:netherrack
+    - minecraft:blackstone
+    - minecraft:basalt
+
+gravel_deposit:
+  type: ORE
+  blocks:
+    - minecraft:gravel: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 12, y / 7, z / 12) > 0.5 ? 1 : 0
+  density: 0.25
+  min-y: 10
+  max-y: 117
+  replace:
+    - minecraft:netherrack
+    - minecraft:blackstone
+    - minecraft:basalt

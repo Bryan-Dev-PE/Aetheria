@@ -1,0 +1,61 @@
+# ============================================================
+# AETHERIA — math/functions/maskSmooth.yml
+# Funciones de máscara con bordes suaves.
+# Útil para: transiciones entre biomas, zonas de fractura, costas.
+# ============================================================
+
+functions:
+  maskSmooth:
+    type: EXPRESSION
+    expression: |
+      # value: valor de entrada
+      # threshold: umbral de corte
+      # width: ancho de transición suave
+      # mode: "above" (máscara arriba) o "below" (máscara abajo)
+      maskSmooth(value, threshold, width, mode) =
+        if(mode == "above",
+          if(value < threshold - width/2, 0,
+          if(value > threshold + width/2, 1,
+          (value - (threshold - width/2)) / width)),
+
+          if(mode == "below",
+            if(value > threshold + width/2, 0,
+            if(value < threshold - width/2, 1,
+            1 - (value - (threshold - width/2)) / width)),
+            0))
+
+  maskSmoothDouble:
+    type: EXPRESSION
+    expression: |
+      # Máscara con dos umbrales (zona entre min y max)
+      maskSmoothDouble(value, min, max, width) =
+        lowerMask = maskSmooth(value, min, width, "above");
+        upperMask = maskSmooth(value, max, width, "below");
+        lowerMask * upperMask
+
+  maskRadial:
+    type: EXPRESSION
+    expression: |
+      # Máscara radial desde un punto (cx, cz)
+      # radius: radio máximo
+      # fadeWidth: ancho de desvanecimiento
+      maskRadial(x, z, cx, cz, radius, fadeWidth) =
+        dist = sqrt((x - cx)^2 + (z - cz)^2);
+        if(dist > radius, 0,
+        if(dist < radius - fadeWidth, 1,
+        1 - (dist - (radius - fadeWidth)) / fadeWidth))
+
+  maskRadialSmooth:
+    type: EXPRESSION
+    expression: |
+        dist = sqrt((x - cx)^2 + (z - cz)^2);
+        t = dist / radius;
+        if(t > 1, 0, 1 - t * t * (3 - 2 * t))
+
+  maskNoise:
+    type: EXPRESSION
+    expression: |
+      # Máscara basada en ruido para bordes irregulares
+      maskNoise(x, z, threshold, width, seed) =
+        noise = simplex(x / 30, z / 30, seed);
+        maskSmooth(noise, threshold, width, "above")

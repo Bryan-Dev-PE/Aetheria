@@ -1,0 +1,113 @@
+# ============================================================
+# AETHERIA — biomes/overworld/coasts_rivers.yml
+# Costas, playas, orillas rocosas y ríos.
+# ============================================================
+
+AETHERIA_BEACH:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:beach
+  colors: $biomes/colors.yml:AETHERIA_BEACH
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 62;
+        noise = simplex(x / 60, z / 60) * 1.0 + simplex(x / 15, z / 15) * 0.2;
+        base + noise
+    height: 62
+    base: 55
+  palette:
+    - BLOCK:minecraft:sand: 255
+    - BLOCK:minecraft:gravel: 80
+    - BLOCK:minecraft:sandstone: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/dead_bush_large.yml
+    flora:
+      - features/overworld/dead_bush.yml
+      - features/overworld/sugar_cane.yml
+    ores:
+      - ores/overworld/coal.yml
+
+AETHERIA_STONY_SHORE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:stony_shore
+  colors: $biomes/colors.yml:AETHERIA_STONY_SHORE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 63;
+        noise = simplex(x / 50, z / 50) * 1.5 + simplex(x / 12, z / 12) * 0.3;
+        base + noise
+    height: 63
+    base: 55
+  palette:
+    - BLOCK:minecraft:stone: 255
+    - BLOCK:minecraft:gravel: 150
+    - BLOCK:minecraft:cobblestone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_SNOWY_BEACH:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:snowy_beach
+  colors: $biomes/colors.yml:AETHERIA_SNOWY_BEACH
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 62;
+        noise = simplex(x / 60, z / 60) * 1.0 + simplex(x / 15, z / 15) * 0.2;
+        base + noise
+    height: 62
+    base: 55
+  palette:
+    - BLOCK:minecraft:snow_block: 255
+    - BLOCK:minecraft:sand: 200
+    - BLOCK:minecraft:gravel: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/snow.yml
+    ores:
+      - ores/overworld/coal.yml
+
+AETHERIA_RIVER:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:river
+  colors: $biomes/colors.yml:AETHERIA_RIVER
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 58;
+        noise = simplex(x / 80, z / 80) * 0.5 + simplex(x / 20, z / 20) * 0.1;
+        base + noise
+    height: 58
+    base: 50
+  palette:
+    - BLOCK:minecraft:sand: 255
+    - BLOCK:minecraft:gravel: 100
+    - BLOCK:minecraft:clay: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/single_oak.yml
+    flora:
+      - features/overworld/seagrass.yml
+      - features/overworld/sugar_cane.yml
+      - features/overworld/lily_pad.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml

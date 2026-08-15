@@ -1,0 +1,343 @@
+# ============================================================
+# AETHERIA — End Biome Distribution
+# Basado en: ReimagEND (Aureus, RogueShade / PolyhedralDev)
+# Sistema: Rings of Life + Aether Pockets + Void Biomes
+# ============================================================
+
+biomes:
+  type: PIPELINE
+  source:
+    type: SAMPLER
+    sampler:
+      type: EXPRESSION
+      expression: |
+        # Distancia desde el centro (0,0) — Isla del Dragón
+        dist = sqrt(x * x + z * z);
+
+        # Ruido de bioma para variación dentro de anillos
+        biomeNoise = simplex(x / (200 * ${meta.yml:scale.end-biome}), z / (200 * ${meta.yml:scale.end-biome}), ${meta.yml:noise-seeds.end-biome});
+
+        # Ruido de islas (determina dónde hay tierra vs vacío)
+        islandNoise = cellular(x / (180 * ${meta.yml:scale.end-island}), z / (180 * ${meta.yml:scale.end-island}), ${meta.yml:noise-seeds.end-island});
+
+        # Ruido de Aether Pockets
+        aetherNoise = simplex(x / (350 * ${meta.yml:scale.end-aether-pocket}), z / (350 * ${meta.yml:scale.end-aether-pocket}), ${meta.yml:noise-seeds.end-aether-pocket});
+
+        # Ruido de fracturas
+        fractureNoise = simplex(x / (150 * ${meta.yml:scale.fracture}), z / (150 * ${meta.yml:scale.fracture}), ${meta.yml:noise-seeds.fracture});
+
+        dist * 0.001 + biomeNoise * 0.3 + islandNoise * 0.4 + aetherNoise * 0.2 + fractureNoise * 0.1
+
+  stages:
+    # ==========================================================
+    # ETAPA 1: Isla del Dragón (centro del End)
+    # ==========================================================
+    - type: REPLACE
+      from: ALL
+      to:
+        - ENDRA_DRAGON_ISLAND: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          dist = sqrt(x * x + z * z);
+
+          # Isla del Dragón: radio ~200 bloques
+          if(dist < 200, 1, -1)
+
+    # ==========================================================
+    # ETAPA 2: Borde de la Isla del Dragón
+    # ==========================================================
+    - type: REPLACE
+      from: ALL
+      to:
+        - ENDRA_DRAGON_ISLAND_EDGE: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          dist = sqrt(x * x + z * z);
+
+          # Borde entre 200 y 280 bloques
+          if(dist >= 200 && dist < 280, 1, -1)
+
+    # ==========================================================
+    # ETAPA 3: Vacío alrededor de la Isla del Dragón
+    # ==========================================================
+    - type: REPLACE
+      from: ALL
+      to:
+        - ENDRA_VOID: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          dist = sqrt(x * x + z * z);
+
+          # Vacío entre 280 y 1000 bloques (Outer End gap)
+          if(dist >= 280 && dist < 1000, 1, -1)
+
+    # ==========================================================
+    # ETAPA 4: ANILLOS DE VIDA (Rings of Life)
+    # Cada anillo tiene más vegetación al alejarse del centro
+    # Basado en ReimagEND
+    # ==========================================================
+    - type: REPLACE
+      from: ALL
+      to:
+        # --- ANILLO 1: Desolación (1000-1500 bloques) ---
+        # Biomas muertos, poca vegetación, terreno roto
+        - ENDRA_END_HIGHLANDS: 3
+        - ENDRA_SHATTERED_END: 2
+        - ENDRA_DARK_END: 2.5
+        - ENDRA_HANGING_ISLES: 1.5
+        - ENDRA_CHORAL_DEADLANDS: 2
+
+        # --- ANILLO 2: Transición (1500-2200 bloques) ---
+        # Aparece vegetación básica, colores más vivos
+        - ENDRA_AMETHYST_END: 2
+        - ENDRA_TAINTED_END: 2
+        - ENDRA_STYGIAN_BARRENS: 2
+        - ENDRA_CRAGGY_END: 1.5
+        - ENDRA_SHATTERED_FOREST: 1.5
+
+        # --- ANILLO 3: Vida (2200-3200 bloques) ---
+        # Bosques densos, junglas, vegetación exuberante
+        - ENDRA_CHORUVE_WOODS: 2.5
+        - ENDRA_MAUVE_JUNGLE: 2
+        - ENDRA_TWISTED_GROVE: 2
+        - ENDRA_END_WILDS: 1.5
+        - ENDRA_CRIM_THICKET: 1.5
+
+        # --- ANILLO 4: Paraíso (3200+ bloques) ---
+        # Llanuras hermosas, colores brillantes, abundancia
+        - ENDRA_IVORY_EMPYREAN: 2
+        - ENDRA_ROSETTE_POOLS: 2
+        - ENDRA_VERMILION_WILDS: 2
+        - ENDRA_MARBLEDLANDSCAPES: 1.5
+
+        # --- FRACTURAS DIMENSIONALES ---
+        - ENDRA_NETHERFRACTURE_ISLES: 0.4
+        - ENDRA_OVERWORLD_REMNANTS: 0.3
+      noise:
+        type: EXPRESSION
+        expression: |
+          dist = sqrt(x * x + z * z);
+          biomeNoise = simplex(x / (200 * ${meta.yml:scale.end-biome}), z / (200 * ${meta.yml:scale.end-biome}), ${meta.yml:noise-seeds.end-biome});
+          islandNoise = cellular(x / (180 * ${meta.yml:scale.end-island}), z / (180 * ${meta.yml:scale.end-island}), ${meta.yml:noise-seeds.end-island});
+
+          # Solo en el Outer End (dist > 1000)
+          if(dist < 1000, -1,
+            # Determinar anillo
+            ring = if(dist < 1500, 0,           # Ring 1: Desolación
+                  if(dist < 2200, 1,           # Ring 2: Transición
+                  if(dist < 3200, 2,           # Ring 3: Vida
+                  3)));                         # Ring 4: Paraíso
+
+            # Variación dentro del anillo
+            ringVariation = biomeNoise;
+
+            # Solo donde hay islas (islandNoise > threshold)
+            if(islandNoise > 0.2,
+              ring * 100 + ringVariation * 10,
+              -1)
+          )
+
+    # ==========================================================
+    # ETAPA 5: AETHER POCKETS
+    # Islas flotantes tipo Overworld dispersas en el vacío
+    # Basado en ReimagEND
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - ENDRA_VOID
+      to:
+        - ENDRA_AETHER_AZURE_MEADOWS: 3
+        - ENDRA_AETHER_CLARET_GROVE: 2.5
+        - ENDRA_AETHER_WISPY_ISLES: 2
+        - ENDRA_AETHER_BRAMBLE_WILDS: 1.5
+        - ENDRA_AETHER_GOLDEN_FIELDS: 2
+        - ENDRA_AETHER_FROSTBITE_WOODS: 1.5
+        - ENDRA_AETHER_HONEY_HEIGHTS: 1
+        - ENDRA_AETHER_ORCHARD_WOODLANDS: 1
+        - ENDRA_AETHER_FRIGID_BLUFFS: 0.8
+        - ENDRA_AETHER_PRISMATIC_RIDGES: 0.6
+      noise:
+        type: EXPRESSION
+        expression: |
+          dist = sqrt(x * x + z * z);
+
+          # Solo en el Outer End
+          if(dist < 1000, -1,
+            aetherNoise = simplex(x / (350 * ${meta.yml:scale.end-aether-pocket}), z / (350 * ${meta.yml:scale.end-aether-pocket}), ${meta.yml:noise-seeds.end-aether-pocket});
+            aetherType = simplex(x / (200 * ${meta.yml:scale.end-aether-pocket}), z / (200 * ${meta.yml:scale.end-aether-pocket}), ${meta.yml:noise-seeds.end-aether-pocket} + 100);
+
+            # Rareza de Aether Pockets
+            aetherThreshold = 1.0 - ${meta.yml:end-aether-pocket-rarity};
+
+            if(aetherNoise > aetherThreshold,
+              if(aetherType < -0.6, 0,       # Azure Meadows
+              if(aetherType < -0.3, 1,       # Claret Grove
+              if(aetherType < 0.0, 2,        # Wispy Isles
+              if(aetherType < 0.2, 3,        # Bramble Wilds
+              if(aetherType < 0.35, 4,       # Golden Fields
+              if(aetherType < 0.45, 5,       # Frostbite Woods
+              if(aetherType < 0.55, 6,       # Honey Heights
+              if(aetherType < 0.65, 7,       # Orchard Woodlands
+              if(aetherType < 0.8, 8,        # Frigid Bluffs
+              9)))))))))),                    # Prismatic Ridges
+              -1)
+          )
+
+    # ==========================================================
+    # ETAPA 6: Biomas de Vacío (Void Biomes)
+    # Áreas entre islas con características especiales
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - ENDRA_VOID
+      to:
+        - ENDRA_STARFIELD: 2
+        - ENDRA_ASTEROID_FIELD: 1.5
+        - ENDRA_NEBULA: 1
+        - ENDRA_AURORA: 1.5
+        - ENDRA_WEBBED_VOID: 1
+        - ENDRA_VOID_SEA: 0.8
+        - ENDRA_VOID_SEA_BORDER: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          dist = sqrt(x * x + z * z);
+
+          if(dist < 1000, -1,
+            voidNoise = simplex(x / (250 * ${meta.yml:scale.end-biome}), z / (250 * ${meta.yml:scale.end-biome}), ${meta.yml:noise-seeds.end-biome} + 200);
+            voidType = simplex(x / (150 * ${meta.yml:scale.end-biome}), z / (150 * ${meta.yml:scale.end-biome}), ${meta.yml:noise-seeds.end-biome} + 300);
+
+            # Solo en áreas de vacío puro (no islas, no aether)
+            islandCheck = cellular(x / (180 * ${meta.yml:scale.end-island}), z / (180 * ${meta.yml:scale.end-island}), ${meta.yml:noise-seeds.end-island});
+            aetherCheck = simplex(x / (350 * ${meta.yml:scale.end-aether-pocket}), z / (350 * ${meta.yml:scale.end-aether-pocket}), ${meta.yml:noise-seeds.end-aether-pocket});
+            aetherThreshold = 1.0 - ${meta.yml:end-aether-pocket-rarity};
+
+            if(islandCheck <= 0.2 && aetherCheck <= aetherThreshold,
+              if(voidType < -0.5, 0,       # Starfield
+              if(voidType < -0.2, 1,       # Asteroid Field
+              if(voidType < 0.1, 2,        # Nebula
+              if(voidType < 0.3, 3,        # Aurora
+              if(voidType < 0.5, 4,        # Webbed Void
+              if(voidType < 0.7, 5,        # Void Sea
+              6))))),                       # Void Sea Border
+              -1)
+          )
+
+    # ==========================================================
+    # ETAPA 7: Fracturas dimensionales del End
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - ENDRA_END_HIGHLANDS
+        - ENDRA_SHATTERED_END
+        - ENDRA_DARK_END
+        - ENDRA_AMETHYST_END
+        - ENDRA_CHORUVE_WOODS
+        - ENDRA_IVORY_EMPYREAN
+      to:
+        - ENDRA_NETHERFRACTURE_ISLES: 3
+        - ENDRA_OVERWORLD_REMNANTS: 2
+        - ENDRA_NETHER_TAINTED_HIGHLANDS: 1.5
+      noise:
+        type: EXPRESSION
+        expression: |
+          fractureNoise = simplex(x / (150 * ${meta.yml:scale.fracture}), z / (150 * ${meta.yml:scale.fracture}), ${meta.yml:noise-seeds.fracture});
+          fractureType = simplex(x / (80 * ${meta.yml:scale.fracture}), z / (80 * ${meta.yml:scale.fracture}), ${meta.yml:noise-seeds.fracture} + 100);
+
+          if(fractureNoise > (1.0 - ${meta.yml:fractures.global-rarity}),
+            if(fractureType < -0.3, 0,     # Netherfracture Isles
+            if(fractureType < 0.3, 1,      # Overworld Remnants
+            2)),                            # Nether Tainted Highlands
+            -1)
+
+    # ==========================================================
+    # ETAPA 8: Dragon Pit (centro de la Isla del Dragón)
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - ENDRA_DRAGON_ISLAND
+      to:
+        - ENDRA_DRAGON_PIT: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          dist = sqrt(x * x + z * z);
+
+          # Pit en el centro, radio configurable
+          pitRadius = ${customization.yml:end-dragon-pit-radius};
+
+          if(dist < pitRadius, 1, -1)
+
+    # ==========================================================
+    # ETAPA 9: End Gateways (posicionamiento manual)
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - ENDRA_VOID
+      to:
+        - ENDRA_END_GATEWAY: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          # Gateways en posiciones fijas alrededor de la isla del dragón
+          dist = sqrt(x * x + z * z);
+          angle = atan2(z, x);
+
+          # 20 gateways equidistantes en un círculo a ~1000 bloques
+          gatewayRadius = 1000;
+          gatewayAngle = angle * 20 / (2 * PI);
+          angleDiff = abs(gatewayAngle - round(gatewayAngle));
+
+          distDiff = abs(dist - gatewayRadius);
+
+          if(distDiff < 5 && angleDiff < 0.05, 1, -1)
+
+    # ==========================================================
+    # ETAPA 10: Variantes desoladas (Desolate Variations)
+    # Algunos biomas tienen variantes más muertas
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - ENDRA_END_HIGHLANDS
+        - ENDRA_SHATTERED_END
+        - ENDRA_DARK_END
+        - ENDRA_AMETHYST_END
+        - ENDRA_TAINTED_END
+        - ENDRA_STYGIAN_BARRENS
+        - ENDRA_CRAGGY_END
+        - ENDRA_CHORUVE_WOODS
+        - ENDRA_CHORAL_DEADLANDS
+        - ENDRA_IVORY_EMPYREAN
+        - ENDRA_ROSETTE_POOLS
+        - ENDRA_MAUVE_JUNGLE
+        - ENDRA_TWISTED_GROVE
+        - ENDRA_END_WILDS
+        - ENDRA_CRIM_THICKET
+        - ENDRA_VERMILION_WILDS
+      to:
+        - ENDRA_END_HIGHLANDS_DESOLATE: 1
+        - ENDRA_SHATTERED_END_DESOLATE: 1
+        - ENDRA_DARK_END_DESOLATE: 1
+        - ENDRA_AMETHYST_END_DESOLATE: 1
+        - ENDRA_TAINTED_END_DESOLATE: 1
+        - ENDRA_STYGIAN_BARRENS_DESOLATE: 1
+        - ENDRA_CRAGGY_END_DESOLATE: 1
+        - ENDRA_CHORUVE_WOODS_DESOLATE: 1
+        - ENDRA_CHORAL_DEADLANDS_DESOLATE: 1
+        - ENDRA_IVORY_EMPYREAN_DESOLATE: 1
+        - ENDRA_ROSETTE_POOLS_DESOLATE: 1
+        - ENDRA_MAUVE_JUNGLE_DESOLATE: 1
+        - ENDRA_TWISTED_GROVE_DESOLATE: 1
+        - ENDRA_END_WILDS_DESOLATE: 1
+        - ENDRA_CRIM_THICKET_DESOLATE: 1
+        - ENDRA_VERMILION_WILDS_DESOLATE: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          # 30% de los biomas del End son variantes desoladas
+          desolateChance = simplex(x / (100 * ${meta.yml:scale.end-biome}), z / (100 * ${meta.yml:scale.end-biome}), ${meta.yml:noise-seeds.end-biome} + 400);
+
+          if(desolateChance > 0.7, 1, -1)

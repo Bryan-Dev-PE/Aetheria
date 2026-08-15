@@ -1,0 +1,96 @@
+# ============================================================
+# AETHERIA — biomes/end/convergence.yml
+# Biomas híbridos donde otras dimensiones se filtran en el End.
+# ============================================================
+
+ENDRA_NETHERFRACTURE_ISLES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_NETHERFRACTURE_ISLES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 68;
+        noise = simplex(x / 50, z / 50) * 3.0 + simplex(x / 12, z / 12) * 0.8;
+        base + noise
+    height: 68
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:netherrack: 180
+    - BLOCK:minecraft:magma_block: 120
+    - BLOCK:minecraft:blackstone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/netherfracture_pillar.yml
+    flora:
+      - features/end/fire.yml
+      - features/end/crimson_roots.yml
+    ores:
+      - ores/end/end_ores.yml
+      - ores/nether/nether_gold.yml
+    postprocessors:
+      - features/end/lava_drip.yml
+
+ENDRA_OVERWORLD_REMNANTS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_OVERWORLD_REMNANTS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 55, z / 55) * 2.0 + simplex(x / 14, z / 14) * 0.5;
+        base + noise
+    height: 66
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:grass_block: 180
+    - BLOCK:minecraft:dirt: 120
+    - BLOCK:minecraft:oak_log: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/overworld_oak.yml
+    flora:
+      - features/end/grass.yml
+      - features/end/oak_leaves.yml
+    ores:
+      - ores/end/end_ores.yml
+      - ores/overworld/coal.yml
+
+ENDRA_NETHER_TAINTED_HIGHLANDS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_NETHER_TAINTED_HIGHLANDS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 70;
+        noise = simplex(x / 45, z / 45) * 4.0 + simplex(x / 10, z / 10) * 1.0;
+        base + noise
+    height: 70
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:blackstone: 180
+    - BLOCK:minecraft:obsidian: 120
+    - BLOCK:minecraft:netherrack: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/nether_tainted_pillar.yml
+    flora:
+      - features/end/fire.yml
+      - features/end/ash_particles.yml
+    ores:
+      - ores/end/end_ores.yml
+      - ores/nether/ancient_debris.yml

@@ -1,0 +1,317 @@
+# ============================================================
+# AETHERIA — biomes/end/ring3.yml
+# Anillo 3: Vida (2200-3200 bloques)
+# Bosques densos, junglas, vegetación exuberante.
+# ============================================================
+
+ENDRA_CHORUVE_WOODS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_CHORUVE_WOODS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 68;
+        noise = simplex(x / 55, z / 55) * 2.5 + simplex(x / 14, z / 14) * 0.6;
+        base + noise
+    height: 68
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:chorus_plant: 180
+    - BLOCK:minecraft:purpur_block: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/chorus_tree.yml
+      - structures/end/chorus_tree_large.yml
+      - structures/end/chorus_grove.yml
+    flora:
+      - features/end/chorus_plant_dense.yml
+      - features/end/chorus_flower.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_CHORUVE_WOODS_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_CHORUVE_WOODS_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 65;
+        noise = simplex(x / 55, z / 55) * 2.0 + simplex(x / 14, z / 14) * 0.5;
+        base + noise
+    height: 65
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:chorus_plant: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_MAUVE_JUNGLE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_MAUVE_JUNGLE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 50, z / 50) * 3.0 + simplex(x / 12, z / 12) * 0.8;
+        base + noise
+    height: 66
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:purpur_block: 150
+    - BLOCK:minecraft:magenta_wool: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/mauve_tree.yml
+      - structures/end/mauve_tree_large.yml
+    flora:
+      - features/end/mauve_vine.yml
+      - features/end/chorus_plant.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_MAUVE_JUNGLE_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_MAUVE_JUNGLE_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 63;
+        noise = simplex(x / 50, z / 50) * 2.5 + simplex(x / 12, z / 12) * 0.6;
+        base + noise
+    height: 63
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:purpur_block: 180
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_TWISTED_GROVE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_TWISTED_GROVE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 67;
+        noise = simplex(x / 55, z / 55) * 2.5 + simplex(x / 14, z / 14) * 0.6;
+        base + noise
+    height: 67
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:cyan_wool: 120
+    - BLOCK:minecraft:light_blue_wool: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/twisted_tree.yml
+    flora:
+      - features/end/twisted_vine.yml
+      - features/end/chorus_plant.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_TWISTED_GROVE_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_TWISTED_GROVE_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 55, z / 55) * 2.0 + simplex(x / 14, z / 14) * 0.5;
+        base + noise
+    height: 64
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:cyan_wool: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_END_WILDS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_END_WILDS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 65;
+        noise = simplex(x / 60, z / 60) * 2.0 + simplex(x / 15, z / 15) * 0.5;
+        base + noise
+    height: 65
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:yellow_wool: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/wild_tree.yml
+    flora:
+      - features/end/wild_grass.yml
+      - features/end/chorus_plant.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_END_WILDS_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_END_WILDS_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 62;
+        noise = simplex(x / 60, z / 60) * 1.5 + simplex(x / 15, z / 15) * 0.3;
+        base + noise
+    height: 62
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:yellow_wool: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_CRIM_THICKET:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_CRIM_THICKET
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 50, z / 50) * 2.5 + simplex(x / 12, z / 12) * 0.6;
+        base + noise
+    height: 66
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:red_wool: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/crim_tree.yml
+    flora:
+      - features/end/crim_vine.yml
+      - features/end/chorus_plant.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_CRIM_THICKET_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_CRIM_THICKET_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 63;
+        noise = simplex(x / 50, z / 50) * 2.0 + simplex(x / 12, z / 12) * 0.5;
+        base + noise
+    height: 63
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:red_wool: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_VERMILION_WILDS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_VERMILION_WILDS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 67;
+        noise = simplex(x / 55, z / 55) * 2.0 + simplex(x / 14, z / 14) * 0.5;
+        base + noise
+    height: 67
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:orange_wool: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/vermilion_tree.yml
+    flora:
+      - features/end/vermilion_grass.yml
+      - features/end/chorus_plant.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_VERMILION_WILDS_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_VERMILION_WILDS_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 55, z / 55) * 1.5 + simplex(x / 14, z / 14) * 0.4;
+        base + noise
+    height: 64
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:orange_wool: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml

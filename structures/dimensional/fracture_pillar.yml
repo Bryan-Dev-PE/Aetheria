@@ -1,0 +1,33 @@
+id: FRACTURE_PILLAR
+type: STRUCTURE
+scripts:
+  - |
+    // Pilares que conectan visualmente dimensiones
+    // Aparecen en zonas de fractura
+    
+    num height = rand(15, 40);
+    num radius = rand(2, 4);
+    
+    // Base
+    for(y = 0; y < 5; y++) {
+      disc(0, y, 0, radius + 2 - y/2, minecraft:obsidian);
+    }
+    
+    // Columna principal
+    for(y = 5; y < height; y++) {
+      disc(0, y, 0, radius, minecraft:crying_obsidian);
+      // Núcleo brillante
+      if(rand() > 0.3) {
+        set(0, y, 0, minecraft:glowstone);
+      }
+    }
+    
+    // Corona (cambia según dimensión)
+    for(y = height; y < height + 3; y++) {
+      disc(0, y, 0, radius - (y-height), minecraft:obsidian);
+    }
+    
+    // Partículas de fractura
+    if(rand() > 0.5) {
+      set(0, height+3, 0, minecraft:end_rod);
+    }

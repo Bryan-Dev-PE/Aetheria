@@ -1,0 +1,325 @@
+# ============================================================
+# AETHERIA — Overworld Biome Distribution
+# Basado en: Origen (Rearth) + TerraOverworldConfig (PolyhedralDev)
+# Sistema: Cellular noise para biomas uniformes + continental value
+# ============================================================
+
+biomes:
+  type: PIPELINE
+  source:
+    type: SAMPLER
+    sampler:
+      type: EXPRESSION
+      expression: |
+        # Valor continental en el centro de cada celda cellular
+        # Determina si una celda es tierra u océano
+        continental = cellular(x / (300 * ${meta.yml:scale.overworld-continental}), z / (300 * ${meta.yml:scale.overworld-continental}), ${meta.yml:noise-seeds.overworld-continental});
+
+        # Ruido de bioma para variación dentro de celdas
+        biomeNoise = simplex(x / (80 * ${meta.yml:scale.overworld-biome}), z / (80 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome});
+
+        # Ruido de temperatura
+        temperature = simplex(x / (600 * ${meta.yml:scale.overworld-biome}), z / (600 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 100);
+
+        # Ruido de humedad
+        humidity = simplex(x / (500 * ${meta.yml:scale.overworld-biome}), z / (500 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 200);
+
+        # Ruido de erosión
+        erosion = simplex(x / (200 * ${meta.yml:scale.overworld-biome}), z / (200 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 300);
+
+        # Ruido de weirdness (valores extremos)
+        weirdness = simplex(x / (400 * ${meta.yml:scale.overworld-biome}), z / (400 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 400);
+
+        # Combinar para distribución final
+        continental * 0.5 + biomeNoise * 0.3 + temperature * 0.1 + humidity * 0.1
+
+  stages:
+    # ==========================================================
+    # ETAPA 1: División continental (Tierra vs Océano)
+    # ==========================================================
+    - type: REPLACE
+      from: ALL
+      to:
+        # Valores altos = tierra, valores bajos = océano
+        - AETHERIA_CONTINENTAL_LAND: 1
+        - AETHERIA_CONTINENTAL_OCEAN: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          continental = cellular(x / (300 * ${meta.yml:scale.overworld-continental}), z / (300 * ${meta.yml:scale.overworld-continental}), ${meta.yml:noise-seeds.overworld-continental});
+          if(continental > 0.0, 1, 0)
+
+    # ==========================================================
+    # ETAPA 2: Distribución de biomas de tierra
+    # ==========================================================
+    - type: REPLACE
+      from: AETHERIA_CONTINENTAL_LAND
+      to:
+        # --- TIERRAS TEMPLADAS (temperature ~0, humidity variable) ---
+        - AETHERIA_MEADOWS: 3
+        - AETHERIA_PLAINS: 2
+        - AETHERIA_FOREST: 3
+        - AETHERIA_BIRCH_GROVE: 2
+        - AETHERIA_DARK_FOREST: 1.5
+        - AETHERIA_TAIGA: 2
+        - AETHERIA_OLD_GROWTH_PINE: 1
+        - AETHERIA_OLD_GROWTH_SPRUCE: 1
+        - AETHERIA_WINDSWEPT_HILLS: 1.5
+        - AETHERIA_WINDSWEPT_GRAVELLY: 0.8
+
+        # --- TIERRAS CÁLIDAS (temperature > 0.3) ---
+        - AETHERIA_SAVANNA: 2
+        - AETHERIA_SAVANNA_PLATEAU: 1
+        - AETHERIA_WINDSWEPT_SAVANNA: 0.8
+        - AETHERIA_BADLANDS: 1.5
+        - AETHERIA_ERODED_BADLANDS: 0.6
+        - AETHERIA_WOODED_BADLANDS: 0.8
+        - AETHERIA_DESERT: 2
+        - AETHERIA_JUNGLE: 1.5
+        - AETHERIA_SPARSE_JUNGLE: 1
+        - AETHERIA_BAMBOO_JUNGLE: 0.7
+
+        # --- TIERRAS FRÍAS (temperature < -0.3) ---
+        - AETHERIA_TUNDRA: 2
+        - AETHERIA_ICE_SPIKES: 0.6
+        - AETHERIA_SNOWY_PLAINS: 1.5
+        - AETHERIA_SNOWY_TAIGA: 1.5
+        - AETHERIA_SNOWY_BEACH: 1
+        - AETHERIA_GROVE: 1
+        - AETHERIA_SNOWY_SLOPES: 1
+        - AETHERIA_FROZEN_PEAKS: 0.8
+        - AETHERIA_JAGGED_PEAKS: 0.7
+        - AETHERIA_STONY_PEAKS: 1
+
+        # --- TIERRAS ÚNICAS ---
+        - AETHERIA_MUSHROOM_FIELDS: 0.3
+        - AETHERIA_SUNFLOWER_PLAINS: 0.5
+        - AETHERIA_CHERRY_GROVE: 0.8
+        - AETHERIA_FOLIAGE_FORTRESS: 0.6
+        - AETHERIA_GLOOMY_GORGE: 0.5
+        - AETHERIA_SNOWY_SPIRES: 0.4
+        - AETHERIA_FLOATING_ISLES: 0.3
+
+        # --- FRACTURAS DIMENSIONALES ---
+        - AETHERIA_SCORCHED_PLAINS: 0.4
+        - AETHERIA_VOID_TAINTED: 0.3
+        - AETHERIA_NETHERFRACTURE_HILLS: 0.2
+        - AETHERIA_END_TAINTED_MEADOWS: 0.2
+      noise:
+        type: EXPRESSION
+        expression: |
+          temperature = simplex(x / (600 * ${meta.yml:scale.overworld-biome}), z / (600 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 100);
+          humidity = simplex(x / (500 * ${meta.yml:scale.overworld-biome}), z / (500 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 200);
+          erosion = simplex(x / (200 * ${meta.yml:scale.overworld-biome}), z / (200 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 300);
+          weirdness = simplex(x / (400 * ${meta.yml:scale.overworld-biome}), z / (400 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 400);
+          fracture = simplex(x / (150 * ${meta.yml:scale.fracture}), z / (150 * ${meta.yml:scale.fracture}), ${meta.yml:noise-seeds.fracture});
+
+          # Mapeo de temperatura a índice
+          tempIndex = if(temperature < -0.5, 0,           # Frío extremo
+                    if(temperature < -0.2, 1,           # Frío
+                    if(temperature < 0.2, 2,            # Templado
+                    if(temperature < 0.5, 3,            # Cálido
+                    4))));                               # Cálido extremo
+
+          # Mapeo de humedad a índice
+          humidIndex = if(humidity < -0.4, 0,            # Árido
+                     if(humidity < 0.0, 1,              # Seco
+                     if(humidity < 0.3, 2,              # Moderado
+                     if(humidity < 0.6, 3,              # Húmedo
+                     4))));                              # Muy húmedo
+
+          # Erosión afecta la altitud del terreno
+          erosionLevel = if(erosion < -0.5, 0,           # Muy erosionado (valles)
+                        if(erosion < 0.0, 1,            # Erosionado
+                        if(erosion < 0.5, 2,            # Normal
+                        3)));                            # Poco erosionado (montañas)
+
+          # Weirdness para biomas extremos
+          isWeird = weirdness > 0.6 ? 1 : 0;
+
+          # Fracturas dimensionales
+          isFracture = fracture > (1.0 - ${meta.yml:fractures.global-rarity}) ? 1 : 0;
+
+          # Valor final combinado
+          tempIndex * 100 + humidIndex * 10 + erosionLevel + isWeird * 1000 + isFracture * 10000
+
+    # ==========================================================
+    # ETAPA 3: Distribución de biomas oceánicos
+    # ==========================================================
+    - type: REPLACE
+      from: AETHERIA_CONTINENTAL_OCEAN
+      to:
+        # --- OCÉANOS TEMPLADOS ---
+        - AETHERIA_OCEAN: 3
+        - AETHERIA_DEEP_OCEAN: 2
+
+        # --- OCÉANOS CÁLIDOS ---
+        - AETHERIA_WARM_OCEAN: 2
+        - AETHERIA_LUKEWARM_OCEAN: 2
+        - AETHERIA_DEEP_LUKEWARM_OCEAN: 1
+
+        # --- OCÉANOS FRÍOS ---
+        - AETHERIA_COLD_OCEAN: 2
+        - AETHERIA_DEEP_COLD_OCEAN: 1.5
+        - AETHERIA_FROZEN_OCEAN: 1.5
+        - AETHERIA_DEEP_FROZEN_OCEAN: 1
+
+        # --- OCÉANOS ESPECIALES ---
+        - AETHERIA_CORAL_REEF: 0.8
+        - AETHERIA_KELP_FOREST: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          temperature = simplex(x / (600 * ${meta.yml:scale.overworld-ocean}), z / (600 * ${meta.yml:scale.overworld-ocean}), ${meta.yml:noise-seeds.overworld-ocean} + 100);
+          depth = simplex(x / (400 * ${meta.yml:scale.overworld-ocean}), z / (400 * ${meta.yml:scale.overworld-ocean}), ${meta.yml:noise-seeds.overworld-ocean} + 500);
+
+          tempIndex = if(temperature < -0.3, 0,           # Frío
+                    if(temperature < 0.3, 1,             # Templado
+                    2));                                  # Cálido
+
+          depthIndex = if(depth > 0.3, 1, 0);             # Profundo vs superficial
+
+          tempIndex * 10 + depthIndex
+
+    # ==========================================================
+    # ETAPA 4: Costas (transición tierra-océano)
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - AETHERIA_MEADOWS
+        - AETHERIA_PLAINS
+        - AETHERIA_FOREST
+        - AETHERIA_SAVANNA
+        - AETHERIA_DESERT
+        - AETHERIA_TUNDRA
+        - AETHERIA_SNOWY_PLAINS
+      to:
+        - AETHERIA_BEACH: 2
+        - AETHERIA_STONY_SHORE: 1.5
+        - AETHERIA_SNOWY_BEACH: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          # Detectar borde con océano usando distancia a celda océano
+          dist = cellularEdge(x / (300 * ${meta.yml:scale.overworld-continental}), z / (300 * ${meta.yml:scale.overworld-continental}), ${meta.yml:noise-seeds.overworld-continental});
+
+          # Tipo de costa
+          coastType = simplex(x / (100 * ${meta.yml:scale.overworld-biome}), z / (100 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 600);
+
+          if(dist < 0.15 && dist > 0.05, 
+            if(coastType < -0.3, 0,    # NONE (sin costa, acantilado)
+            if(coastType < 0.3, 1,     # NARROW
+            2)),                        # WIDE
+            -1)
+
+    # ==========================================================
+    # ETAPA 5: Ríos
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - AETHERIA_MEADOWS
+        - AETHERIA_PLAINS
+        - AETHERIA_FOREST
+        - AETHERIA_BIRCH_GROVE
+        - AETHERIA_DARK_FOREST
+        - AETHERIA_TAIGA
+        - AETHERIA_SAVANNA
+        - AETHERIA_JUNGLE
+        - AETHERIA_TUNDRA
+        - AETHERIA_SNOWY_TAIGA
+        - AETHERIA_GROVE
+        - AETHERIA_WINDSWEPT_HILLS
+      to:
+        - AETHERIA_RIVER: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          riverNoise = ridged(x / (120 * ${meta.yml:scale.overworld-river}), z / (120 * ${meta.yml:scale.overworld-river}), ${meta.yml:noise-seeds.overworld-river});
+
+          # Ríos más anchos en llanuras, más estrechos en montañas
+          terrainRoughness = simplex(x / (50 * ${meta.yml:scale.overworld-biome}), z / (50 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 700);
+
+          riverThreshold = if(terrainRoughness > 0.3, 0.85, 0.92);
+
+          if(riverNoise > riverThreshold, 1, -1)
+
+    # ==========================================================
+    # ETAPA 6: Islas flotantes (Aeropelago)
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - AETHERIA_MEADOWS
+        - AETHERIA_FOREST
+        - AETHERIA_PLAINS
+      to:
+        - AETHERIA_FLOATING_ISLES: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          islandNoise = cellular(x / (500 * ${meta.yml:scale.overworld-biome}), z / (500 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 800);
+
+          # Solo en tierras altas o áreas específicas
+          heightMarker = simplex(x / (200 * ${meta.yml:scale.overworld-biome}), z / (200 * ${meta.yml:scale.overworld-biome}), ${meta.yml:noise-seeds.overworld-biome} + 900);
+
+          if(islandNoise > 0.85 && heightMarker > 0.4, 1, -1)
+
+    # ==========================================================
+    # ETAPA 7: Fracturas dimensionales del Overworld
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - AETHERIA_MEADOWS
+        - AETHERIA_PLAINS
+        - AETHERIA_SAVANNA
+        - AETHERIA_DESERT
+      to:
+        - AETHERIA_SCORCHED_PLAINS: 3
+        - AETHERIA_NETHERFRACTURE_HILLS: 2
+        - AETHERIA_END_TAINTED_MEADOWS: 1.5
+      noise:
+        type: EXPRESSION
+        expression: |
+          fractureNoise = simplex(x / (150 * ${meta.yml:scale.fracture}), z / (150 * ${meta.yml:scale.fracture}), ${meta.yml:noise-seeds.fracture});
+          fractureType = simplex(x / (80 * ${meta.yml:scale.fracture}), z / (80 * ${meta.yml:scale.fracture}), ${meta.yml:noise-seeds.fracture} + 100);
+
+          if(fractureNoise > (1.0 - ${meta.yml:fractures.global-rarity}),
+            if(fractureType < -0.3, 0,     # Nether (scorched)
+            if(fractureType < 0.3, 1,      # Nether hills
+            2)),                            # End tainted
+            -1)
+
+    # ==========================================================
+    # ETAPA 8: Cuevas personalizadas
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - AETHERIA_CONTINENTAL_LAND
+      to:
+        - AETHERIA_LUSH_CAVES: 2
+        - AETHERIA_DRIPSTONE_CAVES: 2
+        - AETHERIA_DEEP_DARK: 1
+        - AETHERIA_FROZEN_CAVES: 1.5
+        - AETHERIA_CRYSTAL_CAVERNS: 1
+        - AETHERIA_MOSSY_CAVERNS: 1.5
+        - AETHERIA_MAGMA_CAVERNS: 0.8
+      noise:
+        type: EXPRESSION
+        expression: |
+          # Solo aplica bajo Y=0
+          if(y > 0, -1,
+            caveNoise = cellular(x / (100 * ${meta.yml:scale.overworld-cave}), z / (100 * ${meta.yml:scale.overworld-cave}), ${meta.yml:noise-seeds.overworld-cave});
+            depthNoise = simplex(x / (50 * ${meta.yml:scale.overworld-cave}), z / (50 * ${meta.yml:scale.overworld-cave}), y / (30 * ${meta.yml:scale.overworld-cave}), ${meta.yml:noise-seeds.overworld-cave} + 100);
+
+            tempAtDepth = simplex(x / (300 * ${meta.yml:scale.overworld-cave}), z / (300 * ${meta.yml:scale.overworld-cave}), ${meta.yml:noise-seeds.overworld-cave} + 200);
+
+            if(caveNoise > 0.3,
+              if(depthNoise > 0.5, 
+                if(tempAtDepth < -0.3, 3,    # Frozen caves
+                if(tempAtDepth > 0.3, 5,     # Magma caverns
+                2)),                           # Deep dark
+              if(depthNoise > 0.0,
+                if(tempAtDepth > 0.2, 4,     # Crystal caverns
+                0)),                           # Lush caves
+              1),                              # Dripstone
+              -1)
+          )

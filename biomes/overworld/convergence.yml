@@ -1,0 +1,141 @@
+# ============================================================
+# AETHERIA — biomes/overworld/convergence.yml
+# Biomas híbridos donde otras dimensiones se filtran en el Overworld.
+# ============================================================
+
+AETHERIA_SCORCHED_PLAINS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:savanna
+  colors: $biomes/colors.yml:AETHERIA_SCORCHED_PLAINS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 70, z / 70) * 2.0 + simplex(x / 18, z / 18) * 0.5;
+        base + noise
+    height: 64
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:coarse_dirt: 120
+    - BLOCK:minecraft:magma_block: 80
+    - BLOCK:minecraft:blackstone: 60
+    - BLOCK:minecraft:netherrack: 40
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/dead_oak.yml
+      - structures/overworld/charred_bush.yml
+    flora:
+      - features/overworld/dead_bush.yml
+      - features/overworld/nether_wart.yml
+      - features/overworld/crimson_roots.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/gold.yml
+    postprocessors:
+      - features/overworld/ash_particles.yml
+
+AETHERIA_VOID_TAINTED:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:dark_forest
+  colors: $biomes/colors.yml:AETHERIA_VOID_TAINTED
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 65;
+        noise = simplex(x / 60, z / 60) * 2.5 + simplex(x / 15, z / 15) * 0.6;
+        base + noise
+    height: 65
+    base: 60
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:grass_block: 150
+    - BLOCK:minecraft:coarse_dirt: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/chorus_tree_small.yml
+      - structures/overworld/dead_oak.yml
+    flora:
+      - features/overworld/chorus_flower.yml
+      - features/overworld/dead_bush.yml
+      - features/overworld/ender_lily.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+    postprocessors:
+      - features/overworld/void_particles.yml
+
+AETHERIA_NETHERFRACTURE_HILLS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:windswept_hills
+  colors: $biomes/colors.yml:AETHERIA_NETHERFRACTURE_HILLS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 78;
+        noise = simplex(x / 45, z / 45) * 6.0 + simplex(x / 12, z / 12) * 1.5;
+        base + noise
+    height: 78
+    base: 60
+  palette:
+    - BLOCK:minecraft:netherrack: 255
+    - BLOCK:minecraft:blackstone: 150
+    - BLOCK:minecraft:magma_block: 100
+    - BLOCK:minecraft:stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/basalt_pillar.yml
+    flora:
+      - features/overworld/crimson_roots.yml
+      - features/overworld/warped_roots.yml
+      - features/overworld/nether_sprouts.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/gold.yml
+    postprocessors:
+      - features/overworld/lava_drip.yml
+
+AETHERIA_END_TAINTED_MEADOWS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:meadow
+  colors: $biomes/colors.yml:AETHERIA_END_TAINTED_MEADOWS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 60, z / 60) * 1.5 + simplex(x / 15, z / 15) * 0.3;
+        base + noise
+    height: 64
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:end_stone: 150
+    - BLOCK:minecraft:purpur_block: 80
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/chorus_tree_small.yml
+      - structures/overworld/single_oak.yml
+    flora:
+      - features/overworld/chorus_flower.yml
+      - features/overworld/tall_grass.yml
+      - features/overworld/azure_bluet.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+    postprocessors:
+      - features/overworld/void_particles.yml

@@ -1,0 +1,295 @@
+# ============================================================
+# AETHERIA — biomes/overworld/aquatic.yml
+# Todos los biomas acuáticos del Overworld.
+# ============================================================
+
+AETHERIA_OCEAN:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:ocean
+  colors: $biomes/colors.yml:AETHERIA_OCEAN
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 45;
+        noise = simplex(x / 100, z / 100) * 2.0 + simplex(x / 25, z / 25) * 0.5;
+        base + noise
+    height: 45
+    base: 30
+  palette:
+    - BLOCK:minecraft:sand: 255
+    - BLOCK:minecraft:gravel: 100
+    - BLOCK:minecraft:clay: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/seagrass.yml
+      - features/overworld/kelp.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_DEEP_OCEAN:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:deep_ocean
+  colors: $biomes/colors.yml:AETHERIA_DEEP_OCEAN
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 30;
+        noise = simplex(x / 120, z / 120) * 2.5 + simplex(x / 30, z / 30) * 0.6;
+        base + noise
+    height: 30
+    base: 15
+  palette:
+    - BLOCK:minecraft:gravel: 255
+    - BLOCK:minecraft:sand: 100
+    - BLOCK:minecraft:clay: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/seagrass.yml
+      - features/overworld/kelp.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/diamond.yml
+
+AETHERIA_WARM_OCEAN:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:warm_ocean
+  colors: $biomes/colors.yml:AETHERIA_WARM_OCEAN
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 42;
+        noise = simplex(x / 80, z / 80) * 1.5 + simplex(x / 20, z / 20) * 0.3;
+        base + noise
+    height: 42
+    base: 30
+  palette:
+    - BLOCK:minecraft:sand: 255
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/seagrass.yml
+      - features/overworld/coral.yml
+      - features/overworld/coral_fan.yml
+      - features/overworld/sea_pickle.yml
+    ores:
+      - ores/overworld/coal.yml
+
+AETHERIA_LUKEWARM_OCEAN:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:lukewarm_ocean
+  colors: $biomes/colors.yml:AETHERIA_LUKEWARM_OCEAN
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 44;
+        noise = simplex(x / 90, z / 90) * 1.8 + simplex(x / 22, z / 22) * 0.4;
+        base + noise
+    height: 44
+    base: 30
+  palette:
+    - BLOCK:minecraft:sand: 255
+    - BLOCK:minecraft:gravel: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/seagrass.yml
+      - features/overworld/kelp.yml
+      - features/overworld/coral.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_DEEP_LUKEWARM_OCEAN:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:deep_lukewarm_ocean
+  colors: $biomes/colors.yml:AETHERIA_DEEP_LUKEWARM_OCEAN
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 32;
+        noise = simplex(x / 110, z / 110) * 2.0 + simplex(x / 28, z / 28) * 0.5;
+        base + noise
+    height: 32
+    base: 15
+  palette:
+    - BLOCK:minecraft:gravel: 255
+    - BLOCK:minecraft:sand: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/seagrass.yml
+      - features/overworld/kelp.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_COLD_OCEAN:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:cold_ocean
+  colors: $biomes/colors.yml:AETHERIA_COLD_OCEAN
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 46;
+        noise = simplex(x / 100, z / 100) * 2.0 + simplex(x / 25, z / 25) * 0.5;
+        base + noise
+    height: 46
+    base: 30
+  palette:
+    - BLOCK:minecraft:gravel: 255
+    - BLOCK:minecraft:sand: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/seagrass.yml
+      - features/overworld/kelp.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_DEEP_COLD_OCEAN:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:deep_cold_ocean
+  colors: $biomes/colors.yml:AETHERIA_DEEP_COLD_OCEAN
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 31;
+        noise = simplex(x / 120, z / 120) * 2.5 + simplex(x / 30, z / 30) * 0.6;
+        base + noise
+    height: 31
+    base: 15
+  palette:
+    - BLOCK:minecraft:gravel: 255
+    - BLOCK:minecraft:sand: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/seagrass.yml
+      - features/overworld/kelp.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/diamond.yml
+
+AETHERIA_FROZEN_OCEAN:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:frozen_ocean
+  colors: $biomes/colors.yml:AETHERIA_FROZEN_OCEAN
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 46;
+        noise = simplex(x / 100, z / 100) * 2.0 + simplex(x / 25, z / 25) * 0.5;
+        base + noise
+    height: 46
+    base: 30
+  palette:
+    - BLOCK:minecraft:ice: 255
+    - BLOCK:minecraft:packed_ice: 150
+    - BLOCK:minecraft:gravel: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/seagrass.yml
+    ores:
+      - ores/overworld/coal.yml
+
+AETHERIA_DEEP_FROZEN_OCEAN:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:deep_frozen_ocean
+  colors: $biomes/colors.yml:AETHERIA_DEEP_FROZEN_OCEAN
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 31;
+        noise = simplex(x / 120, z / 120) * 2.5 + simplex(x / 30, z / 30) * 0.6;
+        base + noise
+    height: 31
+    base: 15
+  palette:
+    - BLOCK:minecraft:ice: 255
+    - BLOCK:minecraft:packed_ice: 180
+    - BLOCK:minecraft:gravel: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/seagrass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/diamond.yml
+
+AETHERIA_CORAL_REEF:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:warm_ocean
+  colors: $biomes/colors.yml:AETHERIA_CORAL_REEF
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 40;
+        noise = simplex(x / 60, z / 60) * 1.5 + simplex(x / 15, z / 15) * 0.3;
+        base + noise
+    height: 40
+    base: 30
+  palette:
+    - BLOCK:minecraft:sand: 255
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/coral_reef.yml
+      - features/overworld/coral_fan.yml
+      - features/overworld/sea_pickle.yml
+      - features/overworld/seagrass.yml
+    ores:
+      - ores/overworld/coal.yml
+
+AETHERIA_KELP_FOREST:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:cold_ocean
+  colors: $biomes/colors.yml:AETHERIA_KELP_FOREST
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 44;
+        noise = simplex(x / 70, z / 70) * 1.8 + simplex(x / 18, z / 18) * 0.4;
+        base + noise
+    height: 44
+    base: 30
+  palette:
+    - BLOCK:minecraft:sand: 255
+    - BLOCK:minecraft:gravel: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/kelp_dense.yml
+      - features/overworld/seagrass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml

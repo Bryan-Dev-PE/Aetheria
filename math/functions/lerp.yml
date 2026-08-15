@@ -1,0 +1,48 @@
+# ============================================================
+# AETHERIA — math/functions/lerp.yml
+# Interpolación lineal y no lineal.
+# Útil para: mezclas de biomas, transiciones de altitud, paletas.
+# ============================================================
+
+functions:
+  lerp:
+    type: EXPRESSION
+    expression: |
+      # a: valor inicial
+      # b: valor final
+      # t: factor de interpolación (0-1)
+      lerp(a, b, t) = a + (b - a) * t
+
+  lerpSmooth:
+    type: EXPRESSION
+    expression: |
+      # Interpolación suave con smoothstep
+      lerpSmooth(a, b, t) = a + (b - a) * (t * t * (3 - 2 * t))
+
+  lerpSmoother:
+    type: EXPRESSION
+    expression: |
+      # Interpolación más suave con smootherstep
+      lerpSmoother(a, b, t) = a + (b - a) * (t * t * t * (t * (t * 6 - 15) + 10))
+
+  lerpCosine:
+    type: EXPRESSION
+    expression: |
+      # Interpolación cosenoidal
+      lerpCosine(a, b, t) = a + (b - a) * (0.5 - 0.5 * cos(t * PI))
+
+  lerpExponential:
+    type: EXPRESSION
+    expression: |
+      # Interpolación exponencial (aceleración/desaceleración)
+      # power: >1 = acelera al final, <1 = acelera al inicio
+      lerpExponential(a, b, t, power) = a + (b - a) * pow(t, power)
+
+  lerpSigmoid:
+    type: EXPRESSION
+    expression: |
+      # Interpolación sigmoide (S-curve)
+      # steepness: controla qué tan pronunciada es la curva
+      lerpSigmoid(a, b, t, steepness) = 
+        sigmoid = 1 / (1 + exp(-steepness * (t - 0.5) * 2));
+        a + (b - a) * sigmoid

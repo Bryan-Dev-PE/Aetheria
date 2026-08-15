@@ -1,0 +1,275 @@
+# ============================================================
+# AETHERIA — features/overworld/ores.yml
+# Minerales del Overworld.
+# ============================================================
+
+coal:
+  type: ORE
+  blocks:
+    - minecraft:coal_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 12, y / 8, z / 12) > 0.55 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128
+  replace:
+    - minecraft:stone
+    - minecraft:deepslate
+
+iron:
+  type: ORE
+  blocks:
+    - minecraft:iron_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 8, z / 10) > 0.6 ? 1 : 0
+  density: 0.25
+  min-y: 0
+  max-y: 64
+  replace:
+    - minecraft:stone
+    - minecraft:deepslate
+
+copper:
+  type: ORE
+  blocks:
+    - minecraft:copper_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 9, y / 7, z / 9) > 0.6 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 96
+  replace:
+    - minecraft:stone
+    - minecraft:deepslate
+
+gold:
+  type: ORE
+  blocks:
+    - minecraft:gold_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 6, z / 8) > 0.65 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 32
+  replace:
+    - minecraft:stone
+    - minecraft:deepslate
+
+redstone:
+  type: ORE
+  blocks:
+    - minecraft:redstone_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, y / 5, z / 7) > 0.65 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 16
+  replace:
+    - minecraft:stone
+    - minecraft:deepslate
+
+diamond:
+  type: ORE
+  blocks:
+    - minecraft:diamond_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, y / 4, z / 6) > 0.7 ? 1 : 0
+  density: 0.15
+  min-y: 0
+  max-y: 16
+  replace:
+    - minecraft:stone
+    - minecraft:deepslate
+
+emerald:
+  type: ORE
+  blocks:
+    - minecraft:emerald_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 4, z / 5) > 0.75 ? 1 : 0
+  density: 0.1
+  min-y: 0
+  max-y: 32
+  replace:
+    - minecraft:stone
+    - minecraft:deepslate
+
+lapis:
+  type: ORE
+  blocks:
+    - minecraft:lapis_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, y / 5, z / 7) > 0.65 ? 1 : 0
+  density: 0.18
+  min-y: 0
+  max-y: 32
+  replace:
+    - minecraft:stone
+    - minecraft:deepslate
+
+# --- Deepslate variants ---
+deepslate_coal:
+  type: ORE
+  blocks:
+    - minecraft:deepslate_coal_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 6, z / 10) > 0.55 ? 1 : 0
+  density: 0.35
+  min-y: -64
+  max-y: 0
+  replace:
+    - minecraft:deepslate
+    - minecraft:stone
+
+deepslate_iron:
+  type: ORE
+  blocks:
+    - minecraft:deepslate_iron_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 9, y / 6, z / 9) > 0.6 ? 1 : 0
+  density: 0.3
+  min-y: -64
+  max-y: 0
+  replace:
+    - minecraft:deepslate
+    - minecraft:stone
+
+deepslate_redstone:
+  type: ORE
+  blocks:
+    - minecraft:deepslate_redstone_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, y / 4, z / 6) > 0.65 ? 1 : 0
+  density: 0.25
+  min-y: -64
+  max-y: 0
+  replace:
+    - minecraft:deepslate
+    - minecraft:stone
+
+deepslate_diamond:
+  type: ORE
+  blocks:
+    - minecraft:deepslate_diamond_ore: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.7 ? 1 : 0
+  density: 0.2
+  min-y: -64
+  max-y: 0
+  replace:
+    - minecraft:deepslate
+    - minecraft:stone
+
+# --- Gravel and clay deposits ---
+gravel_deposit:
+  type: ORE
+  blocks:
+    - minecraft:gravel: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 15, y / 8, z / 15) > 0.5 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128
+  replace:
+    - minecraft:stone
+    - minecraft:deepslate
+
+clay_deposit:
+  type: ORE
+  blocks:
+    - minecraft:clay: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 12, y / 6, z / 12) > 0.6 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 64
+  replace:
+    - minecraft:stone
+    - minecraft:deepslate
+    - minecraft:gravel
+    - minecraft:sand
+
+granite_deposit:
+  type: ORE
+  blocks:
+    - minecraft:granite: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 6, z / 10) > 0.5 ? 1 : 0
+  density: 0.4
+  min-y: 0
+  max-y: 80
+  replace:
+    - minecraft:stone
+
+diorite_deposit:
+  type: ORE
+  blocks:
+    - minecraft:diorite: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 6, z / 10) > 0.5 ? 1 : 0
+  density: 0.4
+  min-y: 0
+  max-y: 80
+  replace:
+    - minecraft:stone
+
+andesite_deposit:
+  type: ORE
+  blocks:
+    - minecraft:andesite: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 6, z / 10) > 0.5 ? 1 : 0
+  density: 0.4
+  min-y: 0
+  max-y: 80
+  replace:
+    - minecraft:stone
+
+tuff_deposit:
+  type: ORE
+  blocks:
+    - minecraft:tuff: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 5, z / 8) > 0.55 ? 1 : 0
+  density: 0.35
+  min-y: -64
+  max-y: 0
+  replace:
+    - minecraft:deepslate
+    - minecraft:stone

@@ -1,0 +1,225 @@
+# ============================================================
+# AETHERIA — biomes/overworld/cave.yml
+# Todos los biomas de cueva del Overworld.
+# Basado en: Hydraxia (JaddotWuzHere)
+# ============================================================
+
+AETHERIA_LUSH_CAVES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:lush_caves
+  colors: $biomes/colors.yml:AETHERIA_LUSH_CAVES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 20;
+        noise = simplex(x / 40, y / 20, z / 40) * 3.0 + simplex(x / 10, y / 5, z / 10) * 0.8;
+        base + noise
+    height: 20
+    base: -10
+  palette:
+    - BLOCK:minecraft:moss_block: 255
+    - BLOCK:minecraft:mossy_cobblestone: 150
+    - BLOCK:minecraft:stone: 80
+    - BLOCK:minecraft:dirt: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/azalea_tree.yml
+    flora:
+      - features/overworld/moss_carpet.yml
+      - features/overworld/spore_blossom.yml
+      - features/overworld/glow_berry_vines.yml
+      - features/overworld/small_dripleaf.yml
+      - features/overworld/big_dripleaf.yml
+      - features/overworld/cave_vines.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/copper.yml
+
+AETHERIA_DRIPSTONE_CAVES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:dripstone_caves
+  colors: $biomes/colors.yml:AETHERIA_DRIPSTONE_CAVES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 18;
+        noise = simplex(x / 50, y / 25, z / 50) * 3.5 + simplex(x / 12, y / 6, z / 12) * 1.0;
+        base + noise
+    height: 18
+    base: -10
+  palette:
+    - BLOCK:minecraft:dripstone_block: 255
+    - BLOCK:minecraft:stone: 150
+    - BLOCK:minecraft:calcite: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/dripstone_cluster.yml
+      - structures/overworld/dripstone_pillar.yml
+    flora:
+      - features/overworld/pointed_dripstone.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/copper.yml
+
+AETHERIA_DEEP_DARK:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:deep_dark
+  colors: $biomes/colors.yml:AETHERIA_DEEP_DARK
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 5;
+        noise = simplex(x / 60, y / 30, z / 60) * 2.0 + simplex(x / 15, y / 8, z / 15) * 0.5;
+        base + noise
+    height: 5
+    base: -20
+  palette:
+    - BLOCK:minecraft:sculk: 255
+    - BLOCK:minecraft:sculk_catalyst: 80
+    - BLOCK:minecraft:sculk_shrieker: 40
+    - BLOCK:minecraft:sculk_sensor: 30
+    - BLOCK:minecraft:deepslate: 150
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/ancient_city.yml
+    flora:
+      - features/overworld/sculk_vein.yml
+    ores:
+      - ores/overworld/deepslate_coal.yml
+      - ores/overworld/deepslate_iron.yml
+      - ores/overworld/deepslate_redstone.yml
+      - ores/overworld/deepslate_diamond.yml
+
+AETHERIA_FROZEN_CAVES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:lush_caves
+  colors: $biomes/colors.yml:AETHERIA_FROZEN_CAVES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 22;
+        noise = simplex(x / 45, y / 22, z / 45) * 3.0 + simplex(x / 11, y / 5, z / 11) * 0.7;
+        base + noise
+    height: 22
+    base: -10
+  palette:
+    - BLOCK:minecraft:packed_ice: 255
+    - BLOCK:minecraft:ice: 180
+    - BLOCK:minecraft:blue_ice: 100
+    - BLOCK:minecraft:snow_block: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/ice_stalactite.yml
+      - structures/overworld/ice_stalagmite.yml
+    flora:
+      - features/overworld/snow.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_CRYSTAL_CAVERNS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:lush_caves
+  colors: $biomes/colors.yml:AETHERIA_CRYSTAL_CAVERNS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 15;
+        noise = simplex(x / 50, y / 25, z / 50) * 2.5 + simplex(x / 12, y / 6, z / 12) * 0.6;
+        base + noise
+    height: 15
+    base: -10
+  palette:
+    - BLOCK:minecraft:amethyst_block: 255
+    - BLOCK:minecraft:budding_amethyst: 120
+    - BLOCK:minecraft:calcite: 150
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/amethyst_geode.yml
+      - structures/overworld/amethyst_cluster.yml
+    flora:
+      - features/overworld/amethyst_bud.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/diamond.yml
+
+AETHERIA_MOSSY_CAVERNS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:lush_caves
+  colors: $biomes/colors.yml:AETHERIA_MOSSY_CAVERNS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 20;
+        noise = simplex(x / 40, y / 20, z / 40) * 3.0 + simplex(x / 10, y / 5, z / 10) * 0.8;
+        base + noise
+    height: 20
+    base: -10
+  palette:
+    - BLOCK:minecraft:moss_block: 255
+    - BLOCK:minecraft:mossy_cobblestone: 180
+    - BLOCK:minecraft:mossy_stone_bricks: 120
+    - BLOCK:minecraft:stone: 80
+    - BLOCK:minecraft:dirt: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/azalea_tree.yml
+    flora:
+      - features/overworld/moss_carpet.yml
+      - features/overworld/glow_lichen.yml
+      - features/overworld/cave_vines.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_MAGMA_CAVERNS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:dripstone_caves
+  colors: $biomes/colors.yml:AETHERIA_MAGMA_CAVERNS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 10;
+        noise = simplex(x / 50, y / 25, z / 50) * 3.5 + simplex(x / 12, y / 6, z / 12) * 1.0;
+        base + noise
+    height: 10
+    base: -15
+  palette:
+    - BLOCK:minecraft:magma_block: 255
+    - BLOCK:minecraft:blackstone: 180
+    - BLOCK:minecraft:netherrack: 120
+    - BLOCK:minecraft:stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/magma_column.yml
+    flora:
+      - features/overworld/lava_drip.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/gold.yml
+      - ores/overworld/redstone.yml

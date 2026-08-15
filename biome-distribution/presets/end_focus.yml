@@ -1,0 +1,249 @@
+# ============================================================
+# AETHERIA — Preset: END_FOCUS
+# Enfocado en End. Overworld y Nether presentes pero reducidos.
+# Ideal para servidores con énfasis en el vacío, islas flotantes
+# y exploración del Outer End.
+# Basado en: ReimagEND (Aureus, RogueShade / PolyhedralDev)
+# ============================================================
+
+id: END_FOCUS
+description: "End expandido con Overworld y Nether reducidos."
+author: "AETHERIA Team"
+version: "1.0.0"
+
+# --- Configuración de dimensiones ---
+dimensions:
+  overworld:
+    enabled: true
+    stage: $biome-distribution/stages/overworld_distribution.yml:biomes
+    weight: 0.6  # Reducido
+
+  nether:
+    enabled: true
+    stage: $biome-distribution/stages/nether_distribution.yml:biomes
+    weight: 0.7  # Reducido
+
+  the_end:
+    enabled: true
+    stage: $biome-distribution/stages/end_distribution.yml:biomes
+    weight: 1.5  # Más peso
+
+# --- Configuración de fracturas ---
+fractures:
+  enabled: true
+  global-rarity: 0.15  # Muchas fracturas para conectar con End
+  blend-intensity: 0.7
+
+  overworld:
+    nether-fracture: false
+    end-fracture: true
+  nether:
+    overworld-fracture: false
+    end-fracture: true
+  end:
+    overworld-fracture: true
+    nether-fracture: true
+
+# --- Configuración de estructuras ---
+structures:
+  overworld:
+    vanilla: true
+    custom: false
+    fracture-structures: false
+  nether:
+    vanilla: true
+    custom: false
+    fracture-structures: false
+  end:
+    vanilla: true
+    custom: true
+    fracture-structures: true
+
+# --- Configuración de ores ---
+ores:
+  overworld:
+    vanilla: true
+    custom: false
+  nether:
+    vanilla: true
+    custom: false
+  end:
+    vanilla: true
+    custom: true
+
+# --- Configuración de vegetación ---
+flora:
+  overworld:
+    vanilla: true
+    custom: false
+    density: 0.7
+  nether:
+    vanilla: true
+    custom: false
+    density: 0.8
+  end:
+    vanilla: true
+    custom: true
+    density: 1.3  # Más vegetación del End
+
+# --- Configuración de cuevas ---
+caves:
+  overworld:
+    enabled: true
+    vanilla-caves: true
+    custom-cave-biomes: false
+    density: 0.8
+  nether:
+    enabled: true
+    vanilla-caves: true
+    custom-cave-biomes: false
+    density: 0.8
+  end:
+    enabled: false
+
+# --- Configuración de ríos ---
+rivers:
+  overworld:
+    enabled: true
+    width: 6
+    depth: 3
+  nether:
+    enabled: false
+  end:
+    enabled: false
+
+# --- Configuración de islas flotantes ---
+floating-islands:
+  overworld:
+    enabled: true
+    rarity: 0.08
+    min-height: 40
+    max-height: 120
+  nether:
+    enabled: false
+  end:
+    enabled: true
+
+# --- Configuración de Aether Pockets (End) ---
+aether-pockets:
+  enabled: true
+  rarity: 0.40  # MUCHOS Aether Pockets
+  biomes:
+    - ENDRA_AETHER_AZURE_MEADOWS
+    - ENDRA_AETHER_CLARET_GROVE
+    - ENDRA_AETHER_WISPY_ISLES
+    - ENDRA_AETHER_BRAMBLE_WILDS
+    - ENDRA_AETHER_GOLDEN_FIELDS
+    - ENDRA_AETHER_FROSTBITE_WOODS
+    - ENDRA_AETHER_HONEY_HEIGHTS
+    - ENDRA_AETHER_ORCHARD_WOODLANDS
+    - ENDRA_AETHER_FRIGID_BLUFFS
+    - ENDRA_AETHER_PRISMATIC_RIDGES
+
+# --- Configuración de Rings of Life (End) ---
+rings-of-life:
+  enabled: true
+  # Anillos más amplios para más variedad
+  ring-1-start: 800
+  ring-1-end: 1400
+  ring-2-start: 1400
+  ring-2-end: 2000
+  ring-3-start: 2000
+  ring-3-end: 3000
+  ring-4-start: 3000
+  ring-4-end: 50000
+
+# --- Configuración de Dragon Pit ---
+dragon-pit:
+  enabled: true
+  radius: 50  # Más grande
+  depth: 25
+
+# --- Biomas desactivados ---
+disabled-biomes:
+  # Overworld: simplificar
+  - AETHERIA_FLOATING_ISLES
+  - AETHERIA_FOLIAGE_FORTRESS
+  - AETHERIA_GLOOMY_GORGE
+  - AETHERIA_SNOWY_SPIRES
+  - AETHERIA_CRYSTAL_CAVERNS
+  - AETHERIA_MOSSY_CAVERNS
+  - AETHERIA_MAGMA_CAVERNS
+
+  # Nether: simplificar
+  - NETHERRA_THE_BOUNDARY
+  - NETHERRA_CRYSTALLINE_VELDTS
+  - NETHERRA_OVERGROWN_CAVERNS
+  - NETHERRA_END_TAINTED
+  - NETHERRA_OVERWORLD_REMNANTS
+  - NETHERRA_AETHER_POCKETS
+
+# --- Biomas con rareza modificada ---
+biome-rarity:
+  # Overworld: menos comunes
+  AETHERIA_MEADOWS: 0.7
+  AETHERIA_FOREST: 0.7
+  AETHERIA_PLAINS: 0.7
+  AETHERIA_BIRCH_GROVE: 0.7
+  AETHERIA_TAIGA: 0.7
+  AETHERIA_SAVANNA: 0.7
+  AETHERIA_DESERT: 0.7
+  AETHERIA_JUNGLE: 0.6
+  AETHERIA_TUNDRA: 0.7
+  AETHERIA_OCEAN: 0.7
+  AETHERIA_DEEP_OCEAN: 0.7
+  AETHERIA_LUSH_CAVES: 0.6
+  AETHERIA_DRIPSTONE_CAVES: 0.6
+  AETHERIA_SCORCHED_PLAINS: 0.6
+  AETHERIA_VOID_TAINTED: 1.2  # Más común (conexión con End)
+
+  # Nether: menos comunes
+  NETHERRA_FLAMING_HELLSCAPES: 0.8
+  NETHERRA_SOUL_VALLEY: 0.8
+  NETHERRA_CRIMSON_FOREST: 0.8
+  NETHERRA_WARPED_FOREST: 0.8
+  NETHERRA_BASALTIC_DELTAS: 0.7
+  NETHERRA_BLOODY_REMNANTS: 0.7
+  NETHERRA_CORRUPTED_WASTES: 0.7
+  NETHERRA_LIFELESS_SPIRES: 0.7
+  NETHERRA_SERRATED_MOUNTAINS: 0.6
+  NETHERRA_TORRID_CRAGS: 0.7
+  NETHERRA_BLOODLESS_UNDERGROWTH: 0.7
+
+  # End: más comunes
+  ENDRA_END_HIGHLANDS: 1.5
+  ENDRA_SHATTERED_END: 1.5
+  ENDRA_DARK_END: 1.5
+  ENDRA_HANGING_ISLES: 1.3
+  ENDRA_CHORAL_DEADLANDS: 1.3
+  ENDRA_AMETHYST_END: 1.4
+  ENDRA_TAINTED_END: 1.4
+  ENDRA_STYGIAN_BARRENS: 1.3
+  ENDRA_CRAGGY_END: 1.3
+  ENDRA_SHATTERED_FOREST: 1.2
+  ENDRA_CHORUVE_WOODS: 1.5
+  ENDRA_MAUVE_JUNGLE: 1.4
+  ENDRA_TWISTED_GROVE: 1.4
+  ENDRA_END_WILDS: 1.3
+  ENDRA_CRIM_THICKET: 1.3
+  ENDRA_IVORY_EMPYREAN: 1.5
+  ENDRA_ROSETTE_POOLS: 1.5
+  ENDRA_VERMILION_WILDS: 1.4
+  ENDRA_AETHER_AZURE_MEADOWS: 1.5
+  ENDRA_AETHER_CLARET_GROVE: 1.5
+  ENDRA_AETHER_WISPY_ISLES: 1.4
+  ENDRA_AETHER_BRAMBLE_WILDS: 1.3
+  ENDRA_AETHER_GOLDEN_FIELDS: 1.3
+  ENDRA_AETHER_FROSTBITE_WOODS: 1.2
+  ENDRA_AETHER_HONEY_HEIGHTS: 1.2
+  ENDRA_AETHER_ORCHARD_WOODLANDS: 1.2
+  ENDRA_AETHER_FRIGID_BLUFFS: 1.1
+  ENDRA_AETHER_PRISMATIC_RIDGES: 1.0
+  ENDRA_NETHERFRACTURE_ISLES: 1.2
+  ENDRA_OVERWORLD_REMNANTS: 1.1
+  ENDRA_STARFIELD: 1.3
+  ENDRA_ASTEROID_FIELD: 1.2
+  ENDRA_NEBULA: 1.2
+  ENDRA_AURORA: 1.3
+  ENDRA_WEBBED_VOID: 1.1
+  ENDRA_VOID_SEA: 1.0

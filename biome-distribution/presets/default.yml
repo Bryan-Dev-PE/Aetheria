@@ -1,0 +1,178 @@
+# ============================================================
+# AETHERIA — Preset: DEFAULT
+# Distribución balanceada y completa de Overworld, Nether y End.
+# Este es el preset recomendado para la mayoría de los servidores.
+# ============================================================
+
+id: DEFAULT
+description: "Distribución balanceada de Overworld, Nether y End con fracturas dimensionales."
+author: "AETHERIA Team"
+version: "1.0.0"
+
+# --- Configuración de dimensiones ---
+dimensions:
+  # Overworld: distribución completa
+  overworld:
+    enabled: true
+    stage: $biome-distribution/stages/overworld_distribution.yml:biomes
+    weight: 1.0
+
+  # Nether: distribución completa
+  nether:
+    enabled: true
+    stage: $biome-distribution/stages/nether_distribution.yml:biomes
+    weight: 1.0
+
+  # End: distribución completa
+  the_end:
+    enabled: true
+    stage: $biome-distribution/stages/end_distribution.yml:biomes
+    weight: 1.0
+
+# --- Configuración de fracturas ---
+fractures:
+  enabled: true
+  global-rarity: 0.08
+  blend-intensity: 0.6
+
+  # Fracturas activas en cada dimensión
+  overworld:
+    nether-fracture: true
+    end-fracture: true
+  nether:
+    overworld-fracture: true
+    end-fracture: true
+  end:
+    overworld-fracture: true
+    nether-fracture: true
+
+# --- Configuración de estructuras ---
+structures:
+  overworld:
+    vanilla: true
+    custom: true
+    fracture-structures: true
+  nether:
+    vanilla: true
+    custom: true
+    fracture-structures: true
+  end:
+    vanilla: true
+    custom: true
+    fracture-structures: true
+
+# --- Configuración de ores ---
+ores:
+  overworld:
+    vanilla: true
+    custom: true
+  nether:
+    vanilla: true
+    custom: true
+  end:
+    vanilla: true
+    custom: true
+
+# --- Configuración de vegetación ---
+flora:
+  overworld:
+    vanilla: true
+    custom: true
+    density: 1.0
+  nether:
+    vanilla: true
+    custom: true
+    density: 1.0
+  end:
+    vanilla: true
+    custom: true
+    density: 1.0
+
+# --- Configuración de cuevas ---
+caves:
+  overworld:
+    enabled: true
+    vanilla-caves: true
+    custom-cave-biomes: true
+    density: 1.2
+  nether:
+    enabled: true
+    vanilla-caves: true
+    custom-cave-biomes: true
+    density: 1.0
+  end:
+    enabled: false  # El End no tiene cuevas tradicionales
+
+# --- Configuración de ríos ---
+rivers:
+  overworld:
+    enabled: true
+    width: 8
+    depth: 4
+  nether:
+    enabled: false  # El Nether no tiene ríos de agua
+  end:
+    enabled: false
+
+# --- Configuración de islas flotantes ---
+floating-islands:
+  overworld:
+    enabled: true
+    rarity: 0.12
+    min-height: 40
+    max-height: 120
+  nether:
+    enabled: false
+  end:
+    enabled: true  # Todo el End son islas flotantes
+
+# --- Configuración de Aether Pockets (End) ---
+aether-pockets:
+  enabled: true
+  rarity: 0.25
+  biomes:
+    - ENDRA_AETHER_AZURE_MEADOWS
+    - ENDRA_AETHER_CLARET_GROVE
+    - ENDRA_AETHER_WISPY_ISLES
+    - ENDRA_AETHER_BRAMBLE_WILDS
+    - ENDRA_AETHER_GOLDEN_FIELDS
+
+# --- Configuración de Rings of Life (End) ---
+rings-of-life:
+  enabled: true
+  ring-1-start: 1000
+  ring-1-end: 1500
+  ring-2-start: 1500
+  ring-2-end: 2200
+  ring-3-start: 2200
+  ring-3-end: 3200
+  ring-4-start: 3200
+  ring-4-end: 50000  # Infinito
+
+# --- Configuración de Dragon Pit ---
+dragon-pit:
+  enabled: true
+  radius: 40
+  depth: 20
+
+# --- Biomas desactivados (ninguno por defecto) ---
+disabled-biomes: []
+
+# --- Biomas con rareza modificada ---
+biome-rarity:
+  # Overworld
+  AETHERIA_MUSHROOM_FIELDS: 0.5
+  AETHERIA_FLOATING_ISLES: 0.8
+  AETHERIA_SCORCHED_PLAINS: 0.6
+  AETHERIA_VOID_TAINTED: 0.5
+
+  # Nether
+  NETHERRA_THE_BOUNDARY: 0.7
+  NETHERRA_CRYSTALLINE_VELDTS: 0.8
+  NETHERRA_OVERGROWN_CAVERNS: 0.5
+
+  # End
+  ENDRA_NETHERFRACTURE_ISLES: 0.5
+  ENDRA_OVERWORLD_REMNANTS: 0.4
+  ENDRA_STARFIELD: 0.7
+  ENDRA_NEBULA: 0.6

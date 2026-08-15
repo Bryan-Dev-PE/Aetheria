@@ -1,0 +1,1102 @@
+# ============================================================
+# AETHERIA — biomes/overworld/land.yml
+# Todos los biomas de tierra del Overworld.
+# Categorías: Templadas, Cálidas, Frías, Especiales
+# ============================================================
+
+# ==========================================
+# TIERRAS TEMPLADAS
+# ==========================================
+
+AETHERIA_MEADOWS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:meadow
+  colors: $biomes/colors.yml:AETHERIA_MEADOWS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 60, z / 60) * 1.5 + simplex(x / 15, z / 15) * 0.3;
+        base + noise
+    height: 64
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/oak_bush.yml
+      - structures/overworld/birch_bush.yml
+      - structures/overworld/single_oak.yml
+    flora:
+      - features/overworld/tall_grass.yml
+      - features/overworld/azure_bluet.yml
+      - features/overworld/oxeye_daisy.yml
+      - features/overworld/cornflower.yml
+      - features/overworld/poppy.yml
+      - features/overworld/dandelion.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/copper.yml
+
+AETHERIA_PLAINS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:plains
+  colors: $biomes/colors.yml:AETHERIA_PLAINS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 80, z / 80) * 1.0 + simplex(x / 20, z / 20) * 0.2;
+        base + noise
+    height: 64
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/single_oak.yml
+      - structures/overworld/single_birch.yml
+    flora:
+      - features/overworld/tall_grass.yml
+      - features/overworld/grass.yml
+      - features/overworld/dandelion.yml
+      - features/overworld/poppy.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/copper.yml
+
+AETHERIA_FOREST:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:forest
+  colors: $biomes/colors.yml:AETHERIA_FOREST
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 65;
+        noise = simplex(x / 50, z / 50) * 2.0 + simplex(x / 12, z / 12) * 0.5;
+        base + noise
+    height: 65
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/oak_tree.yml
+      - structures/overworld/oak_tree_large.yml
+      - structures/overworld/birch_tree.yml
+    flora:
+      - features/overworld/tall_grass.yml
+      - features/overworld/grass.yml
+      - features/overworld/lilac.yml
+      - features/overworld/rose_bush.yml
+      - features/overworld/peony.yml
+      - features/overworld/lily_of_the_valley.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/copper.yml
+
+AETHERIA_BIRCH_GROVE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:birch_forest
+  colors: $biomes/colors.yml:AETHERIA_BIRCH_GROVE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 55, z / 55) * 1.8 + simplex(x / 14, z / 14) * 0.4;
+        base + noise
+    height: 66
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/birch_tree.yml
+      - structures/overworld/birch_tree_tall.yml
+    flora:
+      - features/overworld/tall_grass.yml
+      - features/overworld/grass.yml
+      - features/overworld/lily_of_the_valley.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_DARK_FOREST:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:dark_forest
+  colors: $biomes/colors.yml:AETHERIA_DARK_FOREST
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 45, z / 45) * 2.5 + simplex(x / 10, z / 10) * 0.6;
+        base + noise
+    height: 66
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/dark_oak_tree.yml
+      - structures/overworld/dark_oak_tree_large.yml
+      - structures/overworld/birch_tree.yml
+    flora:
+      - features/overworld/grass.yml
+      - features/overworld/fern.yml
+      - features/overworld/dead_bush.yml
+      - features/overworld/mushroom_red.yml
+      - features/overworld/mushroom_brown.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/redstone.yml
+
+AETHERIA_TAIGA:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:taiga
+  colors: $biomes/colors.yml:AETHERIA_TAIGA
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 67;
+        noise = simplex(x / 60, z / 60) * 2.0 + simplex(x / 15, z / 15) * 0.4;
+        base + noise
+    height: 67
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/spruce_tree.yml
+      - structures/overworld/spruce_tree_large.yml
+    flora:
+      - features/overworld/fern.yml
+      - features/overworld/grass.yml
+      - features/overworld/sweet_berry_bush.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_OLD_GROWTH_PINE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:old_growth_pine_taiga
+  colors: $biomes/colors.yml:AETHERIA_OLD_GROWTH_PINE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 68;
+        noise = simplex(x / 70, z / 70) * 3.0 + simplex(x / 18, z / 18) * 0.8;
+        base + noise
+    height: 68
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:podzol: 80
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/spruce_tree_giant.yml
+      - structures/overworld/spruce_tree.yml
+    flora:
+      - features/overworld/fern.yml
+      - features/overworld/grass.yml
+      - features/overworld/dead_bush.yml
+      - features/overworld/mushroom_red.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_OLD_GROWTH_SPRUCE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:old_growth_spruce_taiga
+  colors: $biomes/colors.yml:AETHERIA_OLD_GROWTH_SPRUCE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 68;
+        noise = simplex(x / 70, z / 70) * 3.0 + simplex(x / 18, z / 18) * 0.8;
+        base + noise
+    height: 68
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:podzol: 80
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/spruce_tree_giant.yml
+      - structures/overworld/spruce_tree.yml
+    flora:
+      - features/overworld/fern.yml
+      - features/overworld/grass.yml
+      - features/overworld/dead_bush.yml
+      - features/overworld/mushroom_brown.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_WINDSWEPT_HILLS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:windswept_hills
+  colors: $biomes/colors.yml:AETHERIA_WINDSWEPT_HILLS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 80;
+        noise = simplex(x / 40, z / 40) * 8.0 + simplex(x / 12, z / 12) * 2.0;
+        base + noise
+    height: 80
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:stone: 120
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/oak_tree.yml
+      - structures/overworld/spruce_tree.yml
+    flora:
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/emerald.yml
+
+AETHERIA_WINDSWEPT_GRAVELLY:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:windswept_gravelly_hills
+  colors: $biomes/colors.yml:AETHERIA_WINDSWEPT_GRAVELLY
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 82;
+        noise = simplex(x / 35, z / 35) * 9.0 + simplex(x / 10, z / 10) * 2.5;
+        base + noise
+    height: 82
+    base: 60
+  palette:
+    - BLOCK:minecraft:gravel: 255
+    - BLOCK:minecraft:stone: 120
+    - BLOCK:minecraft:dirt: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/spruce_tree.yml
+    flora:
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/emerald.yml
+
+# ==========================================
+# TIERRAS CÁLIDAS
+# ==========================================
+
+AETHERIA_SAVANNA:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:savanna
+  colors: $biomes/colors.yml:AETHERIA_SAVANNA
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 70, z / 70) * 1.5 + simplex(x / 18, z / 18) * 0.3;
+        base + noise
+    height: 66
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/acacia_tree.yml
+    flora:
+      - features/overworld/tall_grass.yml
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_SAVANNA_PLATEAU:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:savanna_plateau
+  colors: $biomes/colors.yml:AETHERIA_SAVANNA_PLATEAU
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 85;
+        noise = simplex(x / 80, z / 80) * 2.0 + simplex(x / 20, z / 20) * 0.5;
+        base + noise
+    height: 85
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/acacia_tree.yml
+      - structures/overworld/oak_tree.yml
+    flora:
+      - features/overworld/tall_grass.yml
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_WINDSWEPT_SAVANNA:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:windswept_savanna
+  colors: $biomes/colors.yml:AETHERIA_WINDSWEPT_SAVANNA
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 78;
+        noise = simplex(x / 45, z / 45) * 6.0 + simplex(x / 12, z / 12) * 1.5;
+        base + noise
+    height: 78
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:stone: 100
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/acacia_tree.yml
+    flora:
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_BADLANDS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:badlands
+  colors: $biomes/colors.yml:AETHERIA_BADLANDS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 72;
+        noise = simplex(x / 60, z / 60) * 3.0 + simplex(x / 15, z / 15) * 0.8;
+        base + noise
+    height: 72
+    base: 60
+  palette:
+    - BLOCK:minecraft:red_sand: 255
+    - BLOCK:minecraft:terracotta: 120
+    - BLOCK:minecraft:orange_terracotta: 80
+    - BLOCK:minecraft:yellow_terracotta: 60
+    - BLOCK:minecraft:white_terracotta: 40
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/dead_bush_large.yml
+    flora:
+      - features/overworld/dead_bush.yml
+      - features/overworld/cactus.yml
+    ores:
+      - ores/overworld/gold.yml
+      - ores/overworld/coal.yml
+
+AETHERIA_ERODED_BADLANDS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:eroded_badlands
+  colors: $biomes/colors.yml:AETHERIA_ERODED_BADLANDS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 75;
+        noise = simplex(x / 50, z / 50) * 5.0 + simplex(x / 12, z / 12) * 1.5;
+        base + noise
+    height: 75
+    base: 60
+  palette:
+    - BLOCK:minecraft:red_sand: 255
+    - BLOCK:minecraft:terracotta: 120
+    - BLOCK:minecraft:orange_terracotta: 80
+    - BLOCK:minecraft:yellow_terracotta: 60
+    - BLOCK:minecraft:white_terracotta: 40
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/dead_bush.yml
+      - features/overworld/cactus.yml
+    ores:
+      - ores/overworld/gold.yml
+      - ores/overworld/coal.yml
+
+AETHERIA_WOODED_BADLANDS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:wooded_badlands
+  colors: $biomes/colors.yml:AETHERIA_WOODED_BADLANDS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 74;
+        noise = simplex(x / 65, z / 65) * 3.0 + simplex(x / 16, z / 16) * 0.8;
+        base + noise
+    height: 74
+    base: 60
+  palette:
+    - BLOCK:minecraft:red_sand: 255
+    - BLOCK:minecraft:terracotta: 120
+    - BLOCK:minecraft:coarse_dirt: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/oak_tree.yml
+      - structures/overworld/oak_bush.yml
+    flora:
+      - features/overworld/dead_bush.yml
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/gold.yml
+      - ores/overworld/coal.yml
+
+AETHERIA_DESERT:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:desert
+  colors: $biomes/colors.yml:AETHERIA_DESERT
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 80, z / 80) * 1.0 + simplex(x / 20, z / 20) * 0.2;
+        base + noise
+    height: 64
+    base: 60
+  palette:
+    - BLOCK:minecraft:sand: 255
+    - BLOCK:minecraft:sandstone: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/desert_well.yml
+    flora:
+      - features/overworld/dead_bush.yml
+      - features/overworld/cactus.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/gold.yml
+
+AETHERIA_JUNGLE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:jungle
+  colors: $biomes/colors.yml:AETHERIA_JUNGLE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 50, z / 50) * 2.0 + simplex(x / 12, z / 12) * 0.5;
+        base + noise
+    height: 66
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/jungle_tree.yml
+      - structures/overworld/jungle_tree_large.yml
+      - structures/overworld/jungle_bush.yml
+    flora:
+      - features/overworld/fern.yml
+      - features/overworld/grass.yml
+      - features/overworld/bamboo.yml
+      - features/overworld/melon.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/gold.yml
+
+AETHERIA_SPARSE_JUNGLE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:sparse_jungle
+  colors: $biomes/colors.yml:AETHERIA_SPARSE_JUNGLE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 65;
+        noise = simplex(x / 60, z / 60) * 1.5 + simplex(x / 15, z / 15) * 0.3;
+        base + noise
+    height: 65
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/jungle_tree.yml
+      - structures/overworld/oak_tree.yml
+    flora:
+      - features/overworld/fern.yml
+      - features/overworld/grass.yml
+      - features/overworld/bamboo.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_BAMBOO_JUNGLE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:bamboo_jungle
+  colors: $biomes/colors.yml:AETHERIA_BAMBOO_JUNGLE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 50, z / 50) * 2.0 + simplex(x / 12, z / 12) * 0.5;
+        base + noise
+    height: 66
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/jungle_tree.yml
+      - structures/overworld/jungle_bush.yml
+    flora:
+      - features/overworld/bamboo_dense.yml
+      - features/overworld/fern.yml
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+# ==========================================
+# TIERRAS FRÍAS
+# ==========================================
+
+AETHERIA_TUNDRA:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:snowy_plains
+  colors: $biomes/colors.yml:AETHERIA_TUNDRA
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 80, z / 80) * 1.0 + simplex(x / 20, z / 20) * 0.2;
+        base + noise
+    height: 64
+    base: 60
+  palette:
+    - BLOCK:minecraft:snow_block: 255
+    - BLOCK:minecraft:grass_block[snowy=true]: 200
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/spruce_tree.yml
+    flora:
+      - features/overworld/snow.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_ICE_SPIKES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:ice_spikes
+  colors: $biomes/colors.yml:AETHERIA_ICE_SPIKES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 60, z / 60) * 2.0 + simplex(x / 15, z / 15) * 0.5;
+        base + noise
+    height: 66
+    base: 60
+  palette:
+    - BLOCK:minecraft:snow_block: 255
+    - BLOCK:minecraft:packed_ice: 150
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/ice_spike.yml
+      - structures/overworld/ice_spike_large.yml
+    flora:
+      - features/overworld/snow.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_SNOWY_PLAINS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:snowy_plains
+  colors: $biomes/colors.yml:AETHERIA_SNOWY_PLAINS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 80, z / 80) * 1.0 + simplex(x / 20, z / 20) * 0.2;
+        base + noise
+    height: 64
+    base: 60
+  palette:
+    - BLOCK:minecraft:snow_block: 255
+    - BLOCK:minecraft:grass_block[snowy=true]: 200
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/spruce_tree.yml
+    flora:
+      - features/overworld/snow.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_SNOWY_TAIGA:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:snowy_taiga
+  colors: $biomes/colors.yml:AETHERIA_SNOWY_TAIGA
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 67;
+        noise = simplex(x / 60, z / 60) * 2.0 + simplex(x / 15, z / 15) * 0.4;
+        base + noise
+    height: 67
+    base: 60
+  palette:
+    - BLOCK:minecraft:snow_block: 255
+    - BLOCK:minecraft:grass_block[snowy=true]: 200
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/spruce_tree.yml
+      - structures/overworld/spruce_tree_large.yml
+    flora:
+      - features/overworld/snow.yml
+      - features/overworld/sweet_berry_bush.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_GROVE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:grove
+  colors: $biomes/colors.yml:AETHERIA_GROVE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 75;
+        noise = simplex(x / 55, z / 55) * 3.0 + simplex(x / 14, z / 14) * 0.8;
+        base + noise
+    height: 75
+    base: 60
+  palette:
+    - BLOCK:minecraft:snow_block: 255
+    - BLOCK:minecraft:grass_block[snowy=true]: 200
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/spruce_tree.yml
+    flora:
+      - features/overworld/snow.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_SNOWY_SLOPES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:snowy_slopes
+  colors: $biomes/colors.yml:AETHERIA_SNOWY_SLOPES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 90;
+        noise = simplex(x / 50, z / 50) * 6.0 + simplex(x / 12, z / 12) * 1.5;
+        base + noise
+    height: 90
+    base: 60
+  palette:
+    - BLOCK:minecraft:snow_block: 255
+    - BLOCK:minecraft:powder_snow: 150
+    - BLOCK:minecraft:stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/snow.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_FROZEN_PEAKS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:frozen_peaks
+  colors: $biomes/colors.yml:AETHERIA_FROZEN_PEAKS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 110;
+        noise = simplex(x / 45, z / 45) * 10.0 + simplex(x / 10, z / 10) * 3.0;
+        base + noise
+    height: 110
+    base: 60
+  palette:
+    - BLOCK:minecraft:snow_block: 255
+    - BLOCK:minecraft:packed_ice: 180
+    - BLOCK:minecraft:stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/snow.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_JAGGED_PEAKS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:jagged_peaks
+  colors: $biomes/colors.yml:AETHERIA_JAGGED_PEAKS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 115;
+        noise = simplex(x / 40, z / 40) * 12.0 + simplex(x / 8, z / 8) * 4.0;
+        base + noise
+    height: 115
+    base: 60
+  palette:
+    - BLOCK:minecraft:stone: 255
+    - BLOCK:minecraft:snow_block: 200
+    - BLOCK:minecraft:packed_ice: 150
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/snow.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/emerald.yml
+
+AETHERIA_STONY_PEAKS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:stony_peaks
+  colors: $biomes/colors.yml:AETHERIA_STONY_PEAKS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 105;
+        noise = simplex(x / 45, z / 45) * 10.0 + simplex(x / 10, z / 10) * 3.0;
+        base + noise
+    height: 105
+    base: 60
+  palette:
+    - BLOCK:minecraft:stone: 255
+    - BLOCK:minecraft:calcite: 150
+    - BLOCK:minecraft:granite: 100
+    - BLOCK:minecraft:diorite: 80
+    - BLOCK:minecraft:andesite: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/emerald.yml
+
+# ==========================================
+# ESPECIALES
+# ==========================================
+
+AETHERIA_MUSHROOM_FIELDS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:mushroom_fields
+  colors: $biomes/colors.yml:AETHERIA_MUSHROOM_FIELDS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 70, z / 70) * 1.5 + simplex(x / 18, z / 18) * 0.3;
+        base + noise
+    height: 66
+    base: 60
+  palette:
+    - BLOCK:minecraft:mycelium: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/huge_mushroom_red.yml
+      - structures/overworld/huge_mushroom_brown.yml
+    flora:
+      - features/overworld/mushroom_red.yml
+      - features/overworld/mushroom_brown.yml
+    ores:
+      - ores/overworld/coal.yml
+
+AETHERIA_SUNFLOWER_PLAINS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:sunflower_plains
+  colors: $biomes/colors.yml:AETHERIA_SUNFLOWER_PLAINS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 80, z / 80) * 1.0 + simplex(x / 20, z / 20) * 0.2;
+        base + noise
+    height: 64
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/single_oak.yml
+    flora:
+      - features/overworld/sunflower.yml
+      - features/overworld/tall_grass.yml
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_CHERRY_GROVE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:cherry_grove
+  colors: $biomes/colors.yml:AETHERIA_CHERRY_GROVE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 76;
+        noise = simplex(x / 60, z / 60) * 3.0 + simplex(x / 15, z / 15) * 0.8;
+        base + noise
+    height: 76
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/cherry_tree.yml
+      - structures/overworld/cherry_tree_large.yml
+    flora:
+      - features/overworld/pink_petals.yml
+      - features/overworld/grass.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_FOLIAGE_FORTRESS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:forest
+  colors: $biomes/colors.yml:AETHERIA_FOLIAGE_FORTRESS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 85;
+        noise = simplex(x / 50, z / 50) * 4.0 + simplex(x / 12, z / 12) * 1.0;
+        base + noise
+    height: 85
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:moss_block: 120
+    - BLOCK:minecraft:stone: 100
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/oak_tree_massive.yml
+      - structures/overworld/spruce_tree_giant.yml
+      - structures/overworld/stone_pillar.yml
+    flora:
+      - features/overworld/moss_carpet.yml
+      - features/overworld/fern.yml
+      - features/overworld/grass.yml
+      - features/overworld/glow_lichen.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/emerald.yml
+
+AETHERIA_GLOOMY_GORGE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:dark_forest
+  colors: $biomes/colors.yml:AETHERIA_GLOOMY_GORGE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 55;
+        noise = simplex(x / 40, z / 40) * 6.0 + simplex(x / 10, z / 10) * 2.0;
+        base + noise
+    height: 55
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:moss_block: 150
+    - BLOCK:minecraft:stone: 120
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/dark_oak_tree.yml
+      - structures/overworld/dark_oak_tree_large.yml
+    flora:
+      - features/overworld/moss_carpet.yml
+      - features/overworld/fern.yml
+      - features/overworld/dead_bush.yml
+      - features/overworld/glow_lichen.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+      - ores/overworld/redstone.yml
+
+AETHERIA_SNOWY_SPIRES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:ice_spikes
+  colors: $biomes/colors.yml:AETHERIA_SNOWY_SPIRES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 90;
+        noise = simplex(x / 45, z / 45) * 8.0 + simplex(x / 10, z / 10) * 2.5;
+        base + noise
+    height: 90
+    base: 60
+  palette:
+    - BLOCK:minecraft:snow_block: 255
+    - BLOCK:minecraft:packed_ice: 200
+    - BLOCK:minecraft:blue_ice: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/ice_spire_tall.yml
+      - structures/overworld/ice_spire_cluster.yml
+    flora:
+      - features/overworld/snow.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml
+
+AETHERIA_FLOATING_ISLES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:forest
+  colors: $biomes/colors.yml:AETHERIA_FLOATING_ISLES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 120;
+        noise = simplex(x / 60, z / 60) * 3.0 + simplex(x / 15, z / 15) * 0.8;
+        base + noise
+    height: 120
+    base: 60
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/overworld/oak_tree.yml
+      - structures/overworld/birch_tree.yml
+    flora:
+      - features/overworld/tall_grass.yml
+      - features/overworld/grass.yml
+      - features/overworld/azure_bluet.yml
+      - features/overworld/oxeye_daisy.yml
+    ores:
+      - ores/overworld/coal.yml
+      - ores/overworld/iron.yml

@@ -1,0 +1,29 @@
+# ============================================================
+# AETHERIA — math/functions/terrace.yml
+# Función de terrazas para terreno escalonado.
+# Útil para: mesetas, badlands, deltas de basalto.
+# ============================================================
+
+functions:
+  terrace:
+    type: EXPRESSION
+    expression: |
+      # value: valor de entrada (0-1)
+      # steps: número de escalones
+      # smoothness: suavidad de transición (0 = escalones duros, 1 = suave)
+      terrace(value, steps, smoothness) =
+        stepSize = 1.0 / steps;
+        stepIndex = floor(value / stepSize);
+        stepFraction = (value - stepIndex * stepSize) / stepSize;
+
+        # Suavizado con smoothstep
+        smoothFrac = smoothness > 0 ? 
+          stepFraction * stepFraction * (3 - 2 * stepFraction) : 
+          stepFraction;
+
+        # Aplicar suavizado solo en la parte superior del escalón
+        adjustedFrac = smoothness > 0 ?
+          if(smoothFrac < 1 - smoothness, 0, (smoothFrac - (1 - smoothness)) / smoothness) :
+          stepFraction;
+
+        (stepIndex + adjustedFrac) * stepSize

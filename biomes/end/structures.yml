@@ -1,0 +1,25 @@
+# ============================================================
+# AETHERIA — biomes/end/structures.yml
+# Biomas de estructuras específicas del End.
+# ============================================================
+
+ENDRA_END_GATEWAY:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:the_end
+  colors: $biomes/colors.yml:ENDRA_END_GATEWAY
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 0;
+        noise = 0;
+        base + noise
+    height: 0
+    base: 0
+  palette:
+    - BLOCK:minecraft:bedrock: 255
+    - BLOCK:minecraft:end_gateway: 0
+  features:
+    trees:
+      - structures/end/end_gateway.yml

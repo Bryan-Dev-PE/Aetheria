@@ -1,0 +1,62 @@
+# ============================================================
+# AETHERIA — biomes/abstract/base.yml
+# Bioma abstracto base. TODOS los biomas heredan de este.
+# Define la estructura mínima común a todos los biomas.
+# ============================================================
+
+id: ABSTRACT_BASE
+type: BIOME
+abstract: true
+
+# --- Configuración de colores (heredado de colors.yml) ---
+colors: $biomes/colors.yml
+
+# --- Configuración de terreno base ---
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: |
+      # Altura base del terreno
+      baseHeight = 64;
+      
+      # Ruido de terreno general
+      terrainNoise = simplex(x / 50, z / 50) * 2;
+      
+      # Ruido de detalle
+      detailNoise = simplex(x / 10, z / 10) * 0.5;
+      
+      baseHeight + terrainNoise + detailNoise
+  
+  height: 64
+  base: 60
+
+# --- Paleta de bloques base ---
+palette:
+  - BLOCK:minecraft:grass_block: 255
+  - BLOCK:minecraft:dirt: 70
+  - BLOCK:minecraft:stone: 0
+
+# --- Configuración de features base ---
+features:
+  preprocessors: []
+  trees: []
+  flora: []
+  ores: []
+  postprocessors: []
+
+# --- Configuración de estructuras base ---
+structures:
+  spawn: []
+
+# --- Configuración de entidades base ---
+entities:
+  spawn: []
+
+# --- Configuración de partículas base ---
+particles:
+  ambient: []
+
+# --- Configuración de sonidos base ---
+sounds:
+  ambient: []
+  music: []

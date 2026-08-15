@@ -1,0 +1,29 @@
+# ==========================================
+# AETHERIA — Configuración de Opciones
+# ==========================================
+
+# Tamaño de biomas (1.0 = default, 2.0 = el doble, 0.5 = mitad)
+biome-size: 1.0
+
+# Rareza de biomas específicos (1.0 = default, mayor = más común)
+rarity:
+  # Overworld
+  AETHERIA_SCORCHED_PLAINS: 0.3
+  AETHERIA_VOID_TAINTED: 0.2
+  AETHERIA_FLOATING_ISLES: 0.5
+  
+  # Nether
+  NETHERRA_FLAMING_HELLSCAPES: 1.0
+  NETHERRA_CRYSTALLINE_VELDTS: 0.6
+  NETHERRA_THE_BOUNDARY: 0.4
+  
+  # End
+  ENDRA_NETHERFRACTURE_ISLES: 0.3
+  ENDRA_OVERWORLD_REMNANTS: 0.2
+
+# Biomas desactivables
+disabled:
+  - none  # Por defecto todos activos
+
+# Fracturas
+fracture-intensity: 0.08    # 0.0 a 1.0

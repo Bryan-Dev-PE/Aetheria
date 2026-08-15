@@ -1,0 +1,158 @@
+# ============================================================
+# AETHERIA — math/samplers/simplex.yml
+# Configuraciones de ruido Simplex para diferentes escalas.
+# ============================================================
+
+samplers:
+  # --- Ruido de bioma (gran escala) ---
+  biomeNoise:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 300, z / 300, 12345)
+
+  biomeNoise2:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 200, z / 200, 67890)
+
+  # --- Ruido de terreno (escala media) ---
+  terrainNoise:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 80, z / 80, 11111) * 0.5 +
+      simplex(x / 40, z / 40, 22222) * 0.25 +
+      simplex(x / 20, z / 20, 33333) * 0.125 +
+      simplex(x / 10, z / 10, 44444) * 0.0625
+
+  terrainNoise3D:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 80, y / 40, z / 80, 11111) * 0.5 +
+      simplex(x / 40, y / 20, z / 40, 22222) * 0.25 +
+      simplex(x / 20, y / 10, z / 20, 33333) * 0.125
+
+  # --- Ruido de detalle (pequeña escala) ---
+  detailNoise:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 15, z / 15, 55555) * 0.5 +
+      simplex(x / 8, z / 8, 66666) * 0.25
+
+  detailNoise3D:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 15, y / 8, z / 15, 55555) * 0.5 +
+      simplex(x / 8, y / 4, z / 8, 66666) * 0.25
+
+  # --- Ruido de temperatura ---
+  temperature:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 600, z / 600, 100) * 0.6 +
+      simplex(x / 300, z / 300, 200) * 0.3 +
+      simplex(x / 150, z / 150, 300) * 0.1
+
+  # --- Ruido de humedad ---
+  humidity:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 500, z / 500, 400) * 0.6 +
+      simplex(x / 250, z / 250, 500) * 0.3 +
+      simplex(x / 125, z / 125, 600) * 0.1
+
+  # --- Ruido de erosión ---
+  erosion:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 200, z / 200, 700) * 0.5 +
+      simplex(x / 100, z / 100, 800) * 0.3 +
+      simplex(x / 50, z / 50, 900) * 0.2
+
+  # --- Ruido de weirdness (valores extremos) ---
+  weirdness:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 400, z / 400, 1000) * 0.6 +
+      simplex(x / 200, z / 200, 1100) * 0.4
+
+  # --- Ruido de ríos (ridged) ---
+  riverNoise:
+    type: EXPRESSION
+    expression: |
+      ridged(x / 120, z / 120, 4, 2.0, 0.5, 12000)
+
+  # --- Ruido de cuevas 3D ---
+  caveNoise:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 100, y / 50, z / 100, 13000) * 0.5 +
+      simplex(x / 50, y / 25, z / 50, 14000) * 0.25 +
+      simplex(x / 25, y / 12, z / 25, 15000) * 0.125
+
+  # --- Ruido de islas flotantes ---
+  islandNoise:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 500, z / 500, 16000) * 0.6 +
+      simplex(x / 250, z / 250, 17000) * 0.4
+
+  # --- Ruido de costas ---
+  coastNoise:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 100, z / 100, 18000) * 0.5 +
+      simplex(x / 50, z / 50, 19000) * 0.3 +
+      simplex(x / 25, z / 25, 20000) * 0.2
+
+  # --- Ruido de fracturas dimensionales ---
+  fractureNoise:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 150, z / 150, 21000) * 0.5 +
+      simplex(x / 75, z / 75, 22000) * 0.3 +
+      simplex(x / 37, z / 37, 23000) * 0.2
+
+  fractureNoise3D:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 150, y / 60, z / 150, 21000) * 0.5 +
+      simplex(x / 75, y / 30, z / 75, 22000) * 0.3 +
+      simplex(x / 37, y / 15, z / 37, 23000) * 0.2
+
+  # --- Ruido de Nether (heat) ---
+  netherHeat:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 400, z / 400, 24000) * 0.6 +
+      simplex(x / 200, z / 200, 25000) * 0.4
+
+  # --- Ruido de Nether (corruption) ---
+  netherCorruption:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 350, z / 350, 26000) * 0.5 +
+      simplex(x / 175, z / 175, 27000) * 0.3 +
+      simplex(x / 87, z / 87, 28000) * 0.2
+
+  # --- Ruido de End (anillos) ---
+  endRingNoise:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 250, z / 250, 29000) * 0.5 +
+      simplex(x / 125, z / 125, 30000) * 0.3 +
+      simplex(x / 62, z / 62, 31000) * 0.2
+
+  # --- Ruido de Aether Pockets ---
+  aetherNoise:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 350, z / 350, 32000) * 0.6 +
+      simplex(x / 175, z / 175, 33000) * 0.4
+
+  # --- Ruido de vacío del End ---
+  voidNoise:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 250, z / 250, 34000) * 0.5 +
+      simplex(x / 125, z / 125, 35000) * 0.3 +
+      simplex(x / 62, z / 62, 36000) * 0.2

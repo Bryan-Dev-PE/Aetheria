@@ -1,0 +1,191 @@
+# ============================================================
+# AETHERIA — features/nether/vegetation.yml
+# Vegetación del Nether: fuego, raíces, hongos, etc.
+# ============================================================
+
+fire:
+  type: FLORA
+  blocks:
+    - minecraft:fire: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+soul_fire:
+  type: FLORA
+  blocks:
+    - minecraft:soul_fire: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+crimson_roots:
+  type: FLORA
+  blocks:
+    - minecraft:crimson_roots: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.3 ? 1 : 0
+  density: 0.5
+  y-offset: 1
+
+warped_roots:
+  type: FLORA
+  blocks:
+    - minecraft:warped_roots: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.3 ? 1 : 0
+  density: 0.5
+  y-offset: 1
+
+nether_sprouts:
+  type: FLORA
+  blocks:
+    - minecraft:nether_sprouts: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 4, z / 4) > 0.3 ? 1 : 0
+  density: 0.6
+  y-offset: 1
+
+nether_wart:
+  type: FLORA
+  blocks:
+    - minecraft:nether_wart: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+dead_bush:
+  type: FLORA
+  blocks:
+    - minecraft:dead_bush: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, z / 8) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+lava_geyser:
+  type: FLORA
+  blocks:
+    - minecraft:lava: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, z / 10) > 0.7 ? 1 : 0
+  density: 0.05
+  y-offset: 1
+
+quartz_crystal:
+  type: FLORA
+  blocks:
+    - minecraft:quartz_pillar: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 0
+
+glowstone_drip:
+  type: FLORA
+  blocks:
+    - minecraft:glowstone: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 4, y / 3, z / 4) > 0.5 ? 1 : 0
+  density: 0.15
+  y-offset: -1
+
+moss_carpet:
+  type: FLORA
+  blocks:
+    - minecraft:moss_carpet: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.3 ? 1 : 0
+  density: 0.4
+  y-offset: 1
+
+glow_lichen:
+  type: FLORA
+  blocks:
+    - minecraft:glow_lichen: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 4, y / 3, z / 4) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 0
+
+spore_blossom:
+  type: FLORA
+  blocks:
+    - minecraft:spore_blossom: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, y / 4, z / 6) > 0.6 ? 1 : 0
+  density: 0.15
+  y-offset: -1
+
+dripping_water:
+  type: FLORA
+  blocks:
+    - minecraft:water: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 4, z / 8) > 0.6 ? 1 : 0
+  density: 0.1
+  y-offset: 0
+
+grass:
+  type: FLORA
+  blocks:
+    - minecraft:grass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.3 ? 1 : 0
+  density: 0.5
+  y-offset: 1
+
+azure_bluet:
+  type: FLORA
+  blocks:
+    - minecraft:azure_bluet: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+lava_bubble:
+  type: FLORA
+  blocks:
+    - minecraft:lava: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.6 ? 1 : 0
+  density: 0.1
+  y-offset: 1

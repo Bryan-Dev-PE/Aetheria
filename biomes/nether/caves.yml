@@ -1,0 +1,151 @@
+# ============================================================
+# AETHERIA — biomes/nether/caves.yml
+# Cuevas personalizadas del Nether.
+# ============================================================
+
+NETHERRA_LUSH_NETHER_CAVERNS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:warped_forest
+  colors: $biomes/colors.yml:NETHERRA_LUSH_NETHER_CAVERNS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 40;
+        noise = simplex(x / 40, y / 20, z / 40) * 3.0 + simplex(x / 10, y / 5, z / 10) * 0.8;
+        base + noise
+    height: 40
+    base: 20
+  palette:
+    - BLOCK:minecraft:moss_block: 255
+    - BLOCK:minecraft:mossy_cobblestone: 180
+    - BLOCK:minecraft:stone: 120
+    - BLOCK:minecraft:netherrack: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/glow_berry_vines.yml
+    flora:
+      - features/nether/glow_lichen.yml
+      - features/nether/moss_carpet.yml
+      - features/nether/spore_blossom.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+
+NETHERRA_QUARTZ_CAVERNS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:nether_wastes
+  colors: $biomes/colors.yml:NETHERRA_QUARTZ_CAVERNS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 38;
+        noise = simplex(x / 45, y / 22, z / 45) * 2.5 + simplex(x / 11, y / 5, z / 11) * 0.6;
+        base + noise
+    height: 38
+    base: 20
+  palette:
+    - BLOCK:minecraft:quartz_block: 255
+    - BLOCK:minecraft:smooth_quartz: 180
+    - BLOCK:minecraft:quartz_pillar: 120
+    - BLOCK:minecraft:netherrack: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/quartz_spire.yml
+    flora:
+      - features/nether/quartz_crystal.yml
+    ores:
+      - ores/nether/quartz.yml
+      - ores/nether/nether_gold.yml
+
+NETHERRA_MAGMA_CHAMBERS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:basalt_deltas
+  colors: $biomes/colors.yml:NETHERRA_MAGMA_CHAMBERS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 35;
+        noise = simplex(x / 50, y / 25, z / 50) * 3.0 + simplex(x / 12, y / 6, z / 12) * 0.8;
+        base + noise
+    height: 35
+    base: 20
+  palette:
+    - BLOCK:minecraft:magma_block: 255
+    - BLOCK:minecraft:netherrack: 180
+    - BLOCK:minecraft:blackstone: 120
+    - BLOCK:minecraft:lava: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/magma_column.yml
+    flora:
+      - features/nether/lava_geyser.yml
+      - features/nether/fire.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+      - ores/nether/ancient_debris.yml
+
+NETHERRA_BONE_CAVERNS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:soul_sand_valley
+  colors: $biomes/colors.yml:NETHERRA_BONE_CAVERNS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 42;
+        noise = simplex(x / 45, y / 22, z / 45) * 2.0 + simplex(x / 11, y / 5, z / 11) * 0.5;
+        base + noise
+    height: 42
+    base: 20
+  palette:
+    - BLOCK:minecraft:bone_block: 255
+    - BLOCK:minecraft:soul_sand: 180
+    - BLOCK:minecraft:soul_soil: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/fossil.yml
+    flora:
+      - features/nether/soul_fire.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+
+NETHERRA_GLOWSTONE_CAVERNS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:nether_wastes
+  colors: $biomes/colors.yml:NETHERRA_GLOWSTONE_CAVERNS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 40;
+        noise = simplex(x / 50, y / 25, z / 50) * 2.0 + simplex(x / 12, y / 6, z / 12) * 0.5;
+        base + noise
+    height: 40
+    base: 20
+  palette:
+    - BLOCK:minecraft:glowstone: 255
+    - BLOCK:minecraft:netherrack: 180
+    - BLOCK:minecraft:blackstone: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/glowstone_cluster.yml
+    flora:
+      - features/nether/glowstone_drip.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml

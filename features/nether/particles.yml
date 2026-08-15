@@ -1,0 +1,81 @@
+# ============================================================
+# AETHERIA — features/nether/particles.yml
+# Partículas ambientales del Nether.
+# ============================================================
+
+ash_particles:
+  type: PARTICLE
+  particle: minecraft:ash
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 15, y / 8, z / 15) > 0.3 ? 1 : 0
+  density: 0.5
+  min-y: 0
+  max-y: 128
+
+void_particles:
+  type: PARTICLE
+  particle: minecraft:portal
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 12, y / 6, z / 12) > 0.4 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128
+
+lava_bubble_particles:
+  type: PARTICLE
+  particle: minecraft:lava
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 4, z / 8) > 0.5 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 40
+
+soul_particles:
+  type: PARTICLE
+  particle: minecraft:soul_fire_flame
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 5, z / 10) > 0.4 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128
+
+warp_spore_particles:
+  type: PARTICLE
+  particle: minecraft:warped_spore
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 4, z / 8) > 0.4 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128
+
+crimson_spore_particles:
+  type: PARTICLE
+  particle: minecraft:crimson_spore
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 4, z / 8) > 0.4 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128
+
+smoke_particles:
+  type: PARTICLE
+  particle: minecraft:large_smoke
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 5, z / 10) > 0.5 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 128

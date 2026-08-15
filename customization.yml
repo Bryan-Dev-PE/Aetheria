@@ -1,0 +1,33 @@
+# ==========================================
+# AETHERIA — Opciones de Personalización
+# ==========================================
+
+# Overworld
+overworld-biome-size: 1.0
+overworld-ocean-size: 1.0
+overworld-river-width: 1.5          # Ríos anchos tipo Origen
+overworld-cave-density: 1.0         # De Hydraxia
+overworld-floating-islands: true    # De Aeropelago
+overworld-floating-island-rarity: 0.15
+
+# Nether (basado en Tartarus)
+nether-biome-size: 1.0
+nether-lava-sea-level: 32
+nether-structures-vanilla: true     # Fortalezas y Bastiones
+nether-ore-vanilla: true            # Oro, Cuarzo, Escombros
+
+# End (basado en ReimagEND)
+end-preset: RINGS_OF_LIFE           # RINGS_OF_LIFE, NORMAL, VANILLA_ISH, BETTEREND, AETHER_WORLD
+end-dragon-pit-radius: 40
+end-aether-pockets: true
+end-aether-pocket-rarity: 0.25
+end-void-biomes: true
+
+# Fracturas Dimensionales (NUEVO)
+fracture-overworld-nether: true     # Zonas de OW con piedra negra/magma
+fracture-overworld-end: true        # Zonas de OW con chorus/end stone
+fracture-nether-overworld: true     # Zonas de Nether con grass/agua
+fracture-nether-end: true           # Zonas de Nether con end stone/chorus
+fracture-end-overworld: true        # Aether Pockets
+fracture-end-nether: true           # Zonas de End con netherrack/lava
+fracture-rarity: 0.08               # 8% del mundo afectado

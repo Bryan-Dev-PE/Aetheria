@@ -1,0 +1,284 @@
+# ============================================================
+# AETHERIA — biomes/end/aether_pockets.yml
+# Islas flotantes tipo Overworld en el vacío del End.
+# Basado en: ReimagEND (Aureus, RogueShade / PolyhedralDev)
+# ============================================================
+
+ENDRA_AETHER_AZURE_MEADOWS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:plains
+  colors: $biomes/colors.yml:ENDRA_AETHER_AZURE_MEADOWS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 100;
+        noise = simplex(x / 60, z / 60) * 2.0 + simplex(x / 15, z / 15) * 0.5;
+        base + noise
+    height: 100
+    base: 80
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:end_stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/aether_oak.yml
+    flora:
+      - features/end/aether_grass.yml
+      - features/end/azure_bluet.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_AETHER_CLARET_GROVE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:forest
+  colors: $biomes/colors.yml:ENDRA_AETHER_CLARET_GROVE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 102;
+        noise = simplex(x / 55, z / 55) * 2.5 + simplex(x / 14, z / 14) * 0.6;
+        base + noise
+    height: 102
+    base: 80
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:end_stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/aether_dark_oak.yml
+    flora:
+      - features/end/aether_grass.yml
+      - features/end/claret_flower.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_AETHER_WISPY_ISLES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:birch_forest
+  colors: $biomes/colors.yml:ENDRA_AETHER_WISPY_ISLES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 98;
+        noise = simplex(x / 50, z / 50) * 1.5 + simplex(x / 12, z / 12) * 0.3;
+        base + noise
+    height: 98
+    base: 80
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:end_stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/aether_birch.yml
+    flora:
+      - features/end/aether_grass.yml
+      - features/end/wispy_flower.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_AETHER_BRAMBLE_WILDS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:dark_forest
+  colors: $biomes/colors.yml:ENDRA_AETHER_BRAMBLE_WILDS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 95;
+        noise = simplex(x / 45, z / 45) * 3.0 + simplex(x / 10, z / 10) * 0.8;
+        base + noise
+    height: 95
+    base: 80
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:end_stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/aether_bramble.yml
+    flora:
+      - features/end/aether_grass.yml
+      - features/end/bramble_bush.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_AETHER_GOLDEN_FIELDS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:plains
+  colors: $biomes/colors.yml:ENDRA_AETHER_GOLDEN_FIELDS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 100;
+        noise = simplex(x / 70, z / 70) * 1.0 + simplex(x / 18, z / 18) * 0.2;
+        base + noise
+    height: 100
+    base: 80
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:end_stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/aether_acacia.yml
+    flora:
+      - features/end/aether_grass.yml
+      - features/end/golden_flower.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_AETHER_FROSTBITE_WOODS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:snowy_taiga
+  colors: $biomes/colors.yml:ENDRA_AETHER_FROSTBITE_WOODS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 103;
+        noise = simplex(x / 55, z / 55) * 2.0 + simplex(x / 14, z / 14) * 0.5;
+        base + noise
+    height: 103
+    base: 80
+  palette:
+    - BLOCK:minecraft:snow_block: 255
+    - BLOCK:minecraft:grass_block[snowy=true]: 200
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:end_stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/aether_spruce.yml
+    flora:
+      - features/end/aether_snow.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_AETHER_HONEY_HEIGHTS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:plains
+  colors: $biomes/colors.yml:ENDRA_AETHER_HONEY_HEIGHTS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 105;
+        noise = simplex(x / 60, z / 60) * 2.0 + simplex(x / 15, z / 15) * 0.5;
+        base + noise
+    height: 105
+    base: 80
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:end_stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/aether_oak.yml
+    flora:
+      - features/end/aether_grass.yml
+      - features/end/honey_flower.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_AETHER_ORCHARD_WOODLANDS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:forest
+  colors: $biomes/colors.yml:ENDRA_AETHER_ORCHARD_WOODLANDS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 101;
+        noise = simplex(x / 55, z / 55) * 2.0 + simplex(x / 14, z / 14) * 0.5;
+        base + noise
+    height: 101
+    base: 80
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:end_stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/aether_cherry.yml
+    flora:
+      - features/end/aether_grass.yml
+      - features/end/orchard_flower.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_AETHER_FRIGID_BLUFFS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:snowy_plains
+  colors: $biomes/colors.yml:ENDRA_AETHER_FRIGID_BLUFFS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 104;
+        noise = simplex(x / 50, z / 50) * 3.0 + simplex(x / 12, z / 12) * 0.8;
+        base + noise
+    height: 104
+    base: 80
+  palette:
+    - BLOCK:minecraft:packed_ice: 255
+    - BLOCK:minecraft:snow_block: 200
+    - BLOCK:minecraft:end_stone: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/aether_ice_spire.yml
+    flora:
+      - features/end/aether_snow.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_AETHER_PRISMATIC_RIDGES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:meadow
+  colors: $biomes/colors.yml:ENDRA_AETHER_PRISMATIC_RIDGES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 108;
+        noise = simplex(x / 45, z / 45) * 4.0 + simplex(x / 10, z / 10) * 1.0;
+        base + noise
+    height: 108
+    base: 80
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:dirt: 70
+    - BLOCK:minecraft:end_stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/aether_prismatic_tree.yml
+    flora:
+      - features/end/aether_grass.yml
+      - features/end/prismatic_flower.yml
+    ores:
+      - ores/end/end_ores.yml

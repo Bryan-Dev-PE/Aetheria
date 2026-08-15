@@ -1,0 +1,74 @@
+# ============================================================
+# AETHERIA — math/samplers/spots.yml
+# Ruido de manchas/puntos para distribución de flora y features.
+# ============================================================
+
+samplers:
+  # --- Manchas de flora (pequeñas) ---
+  floraSpots:
+    type: EXPRESSION
+    expression: |
+      spots(x / 8, z / 8, 100) * 0.5 +
+      spots(x / 4, z / 4, 200) * 0.25
+
+  floraSpots3D:
+    type: EXPRESSION
+    expression: |
+      spots(x / 8, y / 4, z / 8, 100) * 0.5 +
+      spots(x / 4, y / 2, z / 4, 200) * 0.25
+
+  # --- Manchas de árboles (medianas) ---
+  treeSpots:
+    type: EXPRESSION
+    expression: |
+      spots(x / 20, z / 20, 300) * 0.5 +
+      spots(x / 10, z / 10, 400) * 0.25
+
+  # --- Manchas de estructuras (grandes) ---
+  structureSpots:
+    type: EXPRESSION
+    expression: |
+      spots(x / 50, z / 50, 500) * 0.5 +
+      spots(x / 25, z / 25, 600) * 0.25
+
+  # --- Manchas de ores ---
+  oreSpots:
+    type: EXPRESSION
+    expression: |
+      spots(x / 6, y / 4, z / 6, 700) * 0.5 +
+      spots(x / 3, y / 2, z / 3, 800) * 0.25
+
+  # --- Manchas de cuevas ---
+  caveSpots:
+    type: EXPRESSION
+    expression: |
+      spots(x / 30, y / 15, z / 30, 900) * 0.5 +
+      spots(x / 15, y / 7, z / 15, 1000) * 0.25
+
+  # --- Manchas de lava (Nether) ---
+  lavaSpots:
+    type: EXPRESSION
+    expression: |
+      spots(x / 40, z / 40, 1100) * 0.5 +
+      spots(x / 20, z / 20, 1200) * 0.25
+
+  # --- Manchas de magma ---
+  magmaSpots:
+    type: EXPRESSION
+    expression: |
+      spots(x / 15, z / 15, 1300) * 0.5 +
+      spots(x / 7, z / 7, 1400) * 0.25
+
+  # --- Manchas de Aether Pockets ---
+  aetherSpots:
+    type: EXPRESSION
+    expression: |
+      spots(x / 60, z / 60, 1500) * 0.5 +
+      spots(x / 30, z / 30, 1600) * 0.25
+
+  # --- Manchas de fracturas ---
+  fractureSpots:
+    type: EXPRESSION
+    expression: |
+      spots(x / 40, z / 40, 1700) * 0.5 +
+      spots(x / 20, z / 20, 1800) * 0.25

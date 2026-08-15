@@ -1,0 +1,67 @@
+# ============================================================
+# AETHERIA — biomes/nether/edges.yml
+# Biomas de transición entre biomas del Nether.
+# ============================================================
+
+NETHERRA_CRIMSON_WARPED_EDGE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:crimson_forest
+  colors: $biomes/colors.yml:NETHERRA_CRIMSON_WARPED_EDGE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 65;
+        noise = simplex(x / 55, z / 55) * 1.5 + simplex(x / 14, z / 14) * 0.3;
+        base + noise
+    height: 65
+    base: 32
+  palette:
+    - BLOCK:minecraft:crimson_nylium: 255
+    - BLOCK:minecraft:warped_nylium: 150
+    - BLOCK:minecraft:netherrack: 100
+    - BLOCK:minecraft:blackstone: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/crimson_fungus.yml
+      - structures/nether/warped_fungus.yml
+    flora:
+      - features/nether/crimson_roots.yml
+      - features/nether/warped_roots.yml
+      - features/nether/nether_sprouts.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+
+NETHERRA_SOUL_CRIMSON_EDGE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:soul_sand_valley
+  colors: $biomes/colors.yml:NETHERRA_SOUL_CRIMSON_EDGE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 63;
+        noise = simplex(x / 60, z / 60) * 1.5 + simplex(x / 15, z / 15) * 0.3;
+        base + noise
+    height: 63
+    base: 32
+  palette:
+    - BLOCK:minecraft:soul_sand: 255
+    - BLOCK:minecraft:soul_soil: 180
+    - BLOCK:minecraft:crimson_nylium: 100
+    - BLOCK:minecraft:netherrack: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/crimson_fungus.yml
+      - structures/nether/fossil.yml
+    flora:
+      - features/nether/soul_fire.yml
+      - features/nether/crimson_roots.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml

@@ -1,0 +1,103 @@
+# ============================================================
+# AETHERIA — features/overworld/particles.yml
+# Partículas ambientales del Overworld.
+# ============================================================
+
+ash_particles:
+  type: PARTICLE
+  particle: minecraft:ash
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 20, y / 10, z / 20) > 0.3 ? 1 : 0
+  density: 0.4
+  min-y: 0
+  max-y: 128
+
+void_particles:
+  type: PARTICLE
+  particle: minecraft:portal
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 15, y / 8, z / 15) > 0.4 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128
+
+firefly_particles:
+  type: PARTICLE
+  particle: minecraft:glow
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 5, z / 10) > 0.5 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 80
+
+water_drip:
+  type: PARTICLE
+  particle: minecraft:dripping_water
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 4, z / 8) > 0.4 ? 1 : 0
+  density: 0.3
+  min-y: -64
+  max-y: 64
+
+lava_drip:
+  type: PARTICLE
+  particle: minecraft:dripping_lava
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 4, z / 8) > 0.5 ? 1 : 0
+  density: 0.2
+  min-y: -64
+  max-y: 32
+
+spore_particles:
+  type: PARTICLE
+  particle: minecraft:spore_blossom_air
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, y / 3, z / 6) > 0.3 ? 1 : 0
+  density: 0.4
+  min-y: -64
+  max-y: 0
+
+ambient_motes:
+  type: PARTICLE
+  particle: minecraft:ambient_entity_effect
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 25, y / 12, z / 25) > 0.6 ? 1 : 0
+  density: 0.1
+  min-y: 0
+  max-y: 128
+
+falling_leaves:
+  type: PARTICLE
+  particle: minecraft:falling_spore_blossom
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 12, y / 6, z / 12) > 0.5 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 128
+
+snow_fall:
+  type: PARTICLE
+  particle: minecraft:snowflake
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 20, y / 10, z / 20) > 0.2 ? 1 : 0
+  density: 0.5
+  min-y: 60
+  max-y: 128

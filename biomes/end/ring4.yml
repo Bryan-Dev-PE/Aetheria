@@ -1,0 +1,136 @@
+# ============================================================
+# AETHERIA — biomes/end/ring4.yml
+# Anillo 4: Paraíso (3200+ bloques)
+# Llanuras hermosas, colores brillantes, abundancia.
+# ============================================================
+
+ENDRA_IVORY_EMPYREAN:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_IVORY_EMPYREAN
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 70;
+        noise = simplex(x / 60, z / 60) * 1.5 + simplex(x / 15, z / 15) * 0.3;
+        base + noise
+    height: 70
+    base: 40
+  palette:
+    - BLOCK:minecraft:quartz_block: 255
+    - BLOCK:minecraft:smooth_quartz: 180
+    - BLOCK:minecraft:end_stone: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/ivory_tree.yml
+    flora:
+      - features/end/ivory_grass.yml
+      - features/end/chorus_plant.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_IVORY_EMPYREAN_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_IVORY_EMPYREAN_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 67;
+        noise = simplex(x / 60, z / 60) * 1.0 + simplex(x / 15, z / 15) * 0.2;
+        base + noise
+    height: 67
+    base: 40
+  palette:
+    - BLOCK:minecraft:quartz_block: 255
+    - BLOCK:minecraft:end_stone: 150
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_ROSETTE_POOLS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_ROSETTE_POOLS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 65;
+        noise = simplex(x / 55, z / 55) * 2.0 + simplex(x / 14, z / 14) * 0.5;
+        base + noise
+    height: 65
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:pink_wool: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/rosette_pool.yml
+    flora:
+      - features/end/rosette_flower.yml
+      - features/end/chorus_plant.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_ROSETTE_POOLS_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_ROSETTE_POOLS_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 62;
+        noise = simplex(x / 55, z / 55) * 1.5 + simplex(x / 14, z / 14) * 0.4;
+        base + noise
+    height: 62
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:pink_wool: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_MARBLEDLANDSCAPES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_MARBLEDLANDSCAPES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 68;
+        noise = simplex(x / 50, z / 50) * 2.0 + simplex(x / 12, z / 12) * 0.5;
+        base + noise
+    height: 68
+    base: 40
+  palette:
+    - BLOCK:minecraft:calcite: 255
+    - BLOCK:minecraft:diorite: 180
+    - BLOCK:minecraft:end_stone: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/marble_pillar.yml
+    flora:
+      - features/end/marble_grass.yml
+      - features/end/chorus_plant.yml
+    ores:
+      - ores/end/end_ores.yml

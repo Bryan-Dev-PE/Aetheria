@@ -1,0 +1,250 @@
+# ============================================================
+# AETHERIA — biomes/nether/custom.yml
+# Biomas custom del Nether (Tartarus expansion).
+# ============================================================
+
+NETHERRA_BLOODY_REMNANTS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:crimson_forest
+  colors: $biomes/colors.yml:NETHERRA_BLOODY_REMNANTS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 55, z / 55) * 2.5 + simplex(x / 14, z / 14) * 0.6;
+        base + noise
+    height: 64
+    base: 32
+  palette:
+    - BLOCK:minecraft:crimson_nylium: 255
+    - BLOCK:minecraft:netherrack: 150
+    - BLOCK:minecraft:red_nether_bricks: 100
+    - BLOCK:minecraft:nether_wart_block: 80
+    - BLOCK:minecraft:blackstone: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/crimson_fungus.yml
+      - structures/nether/crimson_fungus_large.yml
+    flora:
+      - features/nether/crimson_roots.yml
+      - features/nether/nether_wart.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+
+NETHERRA_CORRUPTED_WASTES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:warped_forest
+  colors: $biomes/colors.yml:NETHERRA_CORRUPTED_WASTES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 63;
+        noise = simplex(x / 60, z / 60) * 2.0 + simplex(x / 15, z / 15) * 0.5;
+        base + noise
+    height: 63
+    base: 32
+  palette:
+    - BLOCK:minecraft:warped_nylium: 255
+    - BLOCK:minecraft:netherrack: 150
+    - BLOCK:minecraft:crimson_nylium: 80
+    - BLOCK:minecraft:blackstone: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/warped_fungus.yml
+      - structures/nether/crimson_fungus.yml
+    flora:
+      - features/nether/warped_roots.yml
+      - features/nether/crimson_roots.yml
+      - features/nether/nether_sprouts.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+
+NETHERRA_CRYSTALLINE_VELDTS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:nether_wastes
+  colors: $biomes/colors.yml:NETHERRA_CRYSTALLINE_VELDTS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 50, z / 50) * 1.5 + simplex(x / 12, z / 12) * 0.3;
+        base + noise
+    height: 66
+    base: 32
+  palette:
+    - BLOCK:minecraft:quartz_block: 255
+    - BLOCK:minecraft:smooth_quartz: 180
+    - BLOCK:minecraft:quartz_pillar: 120
+    - BLOCK:minecraft:netherrack: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/quartz_spire.yml
+      - structures/nether/quartz_cluster.yml
+    flora:
+      - features/nether/quartz_crystal.yml
+    ores:
+      - ores/nether/quartz.yml
+      - ores/nether/nether_gold.yml
+
+NETHERRA_LIFELESS_SPIRES:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:soul_sand_valley
+  colors: $biomes/colors.yml:NETHERRA_LIFELESS_SPIRES
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 70;
+        noise = simplex(x / 45, z / 45) * 4.0 + simplex(x / 10, z / 10) * 1.0;
+        base + noise
+    height: 70
+    base: 32
+  palette:
+    - BLOCK:minecraft:blackstone: 255
+    - BLOCK:minecraft:basalt: 180
+    - BLOCK:minecraft:smooth_basalt: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/basalt_spire.yml
+      - structures/nether/basalt_pillar.yml
+    flora:
+      - features/nether/dead_bush.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+      - ores/nether/ancient_debris.yml
+
+NETHERRA_SERRATED_MOUNTAINS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:basalt_deltas
+  colors: $biomes/colors.yml:NETHERRA_SERRATED_MOUNTAINS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 85;
+        noise = simplex(x / 40, z / 40) * 6.0 + simplex(x / 8, z / 8) * 2.0;
+        base + noise
+    height: 85
+    base: 32
+  palette:
+    - BLOCK:minecraft:obsidian: 255
+    - BLOCK:minecraft:crying_obsidian: 150
+    - BLOCK:minecraft:blackstone: 120
+    - BLOCK:minecraft:magma_block: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/obsidian_pillar.yml
+      - structures/nether/obsidian_spike.yml
+    flora:
+      - features/nether/fire.yml
+    ores:
+      - ores/nether/ancient_debris.yml
+      - ores/nether/nether_gold.yml
+
+NETHERRA_TORRID_CRAGS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:nether_wastes
+  colors: $biomes/colors.yml:NETHERRA_TORRID_CRAGS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 72;
+        noise = simplex(x / 50, z / 50) * 3.5 + simplex(x / 12, z / 12) * 0.9;
+        base + noise
+    height: 72
+    base: 32
+  palette:
+    - BLOCK:minecraft:netherrack: 255
+    - BLOCK:minecraft:magma_block: 180
+    - BLOCK:minecraft:blackstone: 120
+    - BLOCK:minecraft:lava: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/magma_column.yml
+      - structures/nether/lava_fall.yml
+    flora:
+      - features/nether/fire.yml
+      - features/nether/lava_geyser.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+      - ores/nether/ancient_debris.yml
+
+NETHERRA_BLOODLESS_UNDERGROWTH:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:crimson_forest
+  colors: $biomes/colors.yml:NETHERRA_BLOODLESS_UNDERGROWTH
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 60, z / 60) * 2.0 + simplex(x / 15, z / 15) * 0.5;
+        base + noise
+    height: 64
+    base: 32
+  palette:
+    - BLOCK:minecraft:crimson_nylium: 255
+    - BLOCK:minecraft:netherrack: 150
+    - BLOCK:minecraft:warped_nylium: 80
+    - BLOCK:minecraft:blackstone: 60
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/crimson_fungus.yml
+      - structures/nether/warped_fungus.yml
+    flora:
+      - features/nether/crimson_roots.yml
+      - features/nether/warped_roots.yml
+      - features/nether/nether_sprouts.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+
+NETHERRA_THE_BOUNDARY:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:nether_wastes
+  colors: $biomes/colors.yml:NETHERRA_THE_BOUNDARY
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 70, z / 70) * 1.0 + simplex(x / 18, z / 18) * 0.2;
+        base + noise
+    height: 66
+    base: 32
+  palette:
+    - BLOCK:minecraft:bedrock: 255
+    - BLOCK:minecraft:obsidian: 180
+    - BLOCK:minecraft:crying_obsidian: 120
+    - BLOCK:minecraft:blackstone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/bedrock_pillar.yml
+    flora:
+      - features/nether/void_particles.yml
+    ores:
+      - ores/nether/ancient_debris.yml

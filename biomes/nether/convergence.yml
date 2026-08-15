@@ -1,0 +1,160 @@
+# ============================================================
+# AETHERIA — biomes/nether/convergence.yml
+# Biomas híbridos donde otras dimensiones se filtran en el Nether.
+# ============================================================
+
+NETHERRA_OVERGROWN_CAVERNS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:warped_forest
+  colors: $biomes/colors.yml:NETHERRA_OVERGROWN_CAVERNS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 40;
+        noise = simplex(x / 40, y / 20, z / 40) * 3.0 + simplex(x / 10, y / 5, z / 10) * 0.8;
+        base + noise
+    height: 40
+    base: 20
+  palette:
+    - BLOCK:minecraft:moss_block: 255
+    - BLOCK:minecraft:mossy_cobblestone: 180
+    - BLOCK:minecraft:stone: 120
+    - BLOCK:minecraft:netherrack: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/glow_berry_vines.yml
+    flora:
+      - features/nether/glow_lichen.yml
+      - features/nether/moss_carpet.yml
+      - features/nether/spore_blossom.yml
+      - features/nether/dripping_water.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+
+NETHERRA_END_TAINTED:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:warped_forest
+  colors: $biomes/colors.yml:NETHERRA_END_TAINTED
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 60, z / 60) * 2.0 + simplex(x / 15, z / 15) * 0.5;
+        base + noise
+    height: 64
+    base: 32
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:warped_nylium: 150
+    - BLOCK:minecraft:netherrack: 100
+    - BLOCK:minecraft:purpur_block: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/chorus_tree_small.yml
+      - structures/nether/warped_fungus.yml
+    flora:
+      - features/nether/chorus_flower.yml
+      - features/nether/warped_roots.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+    postprocessors:
+      - features/nether/void_particles.yml
+
+NETHERRA_OVERWORLD_REMNANTS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:crimson_forest
+  colors: $biomes/colors.yml:NETHERRA_OVERWORLD_REMNANTS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 60, z / 60) * 2.0 + simplex(x / 15, z / 15) * 0.5;
+        base + noise
+    height: 64
+    base: 32
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:crimson_nylium: 150
+    - BLOCK:minecraft:netherrack: 100
+    - BLOCK:minecraft:dirt: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/oak_tree_small.yml
+      - structures/nether/crimson_fungus.yml
+    flora:
+      - features/nether/grass.yml
+      - features/nether/crimson_roots.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+
+NETHERRA_AETHER_POCKETS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:warped_forest
+  colors: $biomes/colors.yml:NETHERRA_AETHER_POCKETS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 70;
+        noise = simplex(x / 50, z / 50) * 2.0 + simplex(x / 12, z / 12) * 0.5;
+        base + noise
+    height: 70
+    base: 32
+  palette:
+    - BLOCK:minecraft:grass_block: 255
+    - BLOCK:minecraft:warped_nylium: 150
+    - BLOCK:minecraft:netherrack: 100
+    - BLOCK:minecraft:dirt: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/nether/birch_tree_small.yml
+      - structures/nether/warped_fungus.yml
+    flora:
+      - features/nether/grass.yml
+      - features/nether/azure_bluet.yml
+      - features/nether/warped_roots.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+
+NETHERRA_LAVA_SEA:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:nether_wastes
+  colors: $biomes/colors.yml:NETHERRA_LAVA_SEA
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 32;
+        noise = simplex(x / 80, z / 80) * 0.5 + simplex(x / 20, z / 20) * 0.1;
+        base + noise
+    height: 32
+    base: 28
+  palette:
+    - BLOCK:minecraft:lava: 255
+    - BLOCK:minecraft:netherrack: 200
+    - BLOCK:minecraft:magma_block: 150
+    - BLOCK:minecraft:blackstone: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/nether/lava_bubble.yml
+    ores:
+      - ores/nether/nether_gold.yml
+      - ores/nether/quartz.yml
+      - ores/nether/ancient_debris.yml

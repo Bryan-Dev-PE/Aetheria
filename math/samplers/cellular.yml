@@ -1,0 +1,72 @@
+# ============================================================
+# AETHERIA — math/samplers/cellular.yml
+# Ruido cellular (Worley) para distribución de biomas y regiones.
+# ============================================================
+
+samplers:
+  # --- Cellular para biomas del Overworld ---
+  overworldCellular:
+    type: EXPRESSION
+    expression: |
+      cellular(x / 300, z / 300, 12345)
+
+  overworldCellularEdge:
+    type: EXPRESSION
+    expression: |
+      cellularEdge(x / 300, z / 300, 12345)
+
+  # --- Cellular para biomas del Nether ---
+  netherCellular:
+    type: EXPRESSION
+    expression: |
+      cellular(x / 250, z / 250, 44444)
+
+  netherCellularEdge:
+    type: EXPRESSION
+    expression: |
+      cellularEdge(x / 250, z / 250, 44444)
+
+  # --- Cellular para biomas del End ---
+  endCellular:
+    type: EXPRESSION
+    expression: |
+      cellular(x / 250, z / 250, 66666)
+
+  endCellularEdge:
+    type: EXPRESSION
+    expression: |
+      cellularEdge(x / 250, z / 250, 66666)
+
+  # --- Cellular para islas del End ---
+  endIslandCellular:
+    type: EXPRESSION
+    expression: |
+      cellular(x / 180, z / 180, 77777)
+
+  endIslandCellularEdge:
+    type: EXPRESSION
+    expression: |
+      cellularEdge(x / 180, z / 180, 77777)
+
+  # --- Cellular para cuevas ---
+  caveCellular:
+    type: EXPRESSION
+    expression: |
+      cellular(x / 100, z / 100, 33333)
+
+  caveCellular3D:
+    type: EXPRESSION
+    expression: |
+      cellular(x / 100, y / 50, z / 100, 33333)
+
+  # --- Cellular para Aether Pockets ---
+  aetherCellular:
+    type: EXPRESSION
+    expression: |
+      cellular(x / 350, z / 350, 88888)
+
+  # --- Cellular para islas flotantes ---
+  floatingIslandCellular:
+    type: EXPRESSION
+    expression: |
+      cellular(x / 500, z / 500, 88888 + 1)

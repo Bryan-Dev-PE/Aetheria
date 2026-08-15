@@ -1,0 +1,146 @@
+# ============================================================
+# AETHERIA — math/functions/terrain.yml
+# Funciones de generación de terreno.
+# Útil para: altitud, erosión, formación de montañas y valles.
+# ============================================================
+
+functions:
+  fbm:
+    type: EXPRESSION
+    expression: |
+      # Fractal Brownian Motion (ruido fractal)
+      # x, z: coordenadas
+      # octaves: número de octavas
+      # lacunarity: factor de escala por octava (default 2.0)
+      # gain: factor de amplitud por octava (default 0.5)
+      # seed: semilla
+      fbm(x, z, octaves, lacunarity, gain, seed) =
+        sum = 0;
+        amp = 1;
+        freq = 1;
+        maxAmp = 0;
+
+        for(i = 0; i < octaves; i = i + 1) {
+          sum = sum + simplex(x * freq / 100, z * freq / 100, seed + i) * amp;
+          maxAmp = maxAmp + amp;
+          amp = amp * gain;
+          freq = freq * lacunarity;
+        }
+
+        sum / maxAmp
+
+  fbm3D:
+    type: EXPRESSION
+    expression: |
+      fbm3D(x, y, z, octaves, lacunarity, gain, seed) =
+        sum = 0;
+        amp = 1;
+        freq = 1;
+        maxAmp = 0;
+
+        for(i = 0; i < octaves; i = i + 1) {
+          sum = sum + simplex(x * freq / 100, y * freq / 100, z * freq / 100, seed + i) * amp;
+          maxAmp = maxAmp + amp;
+          amp = amp * gain;
+          freq = freq * lacunarity;
+        }
+
+        sum / maxAmp
+
+  ridged:
+    type: EXPRESSION
+    expression: |
+      # Ridged multi-fractal (para ríos, crestas)
+      ridged(x, z, octaves, lacunarity, gain, seed) =
+        sum = 0;
+        amp = 1;
+        freq = 1;
+        maxAmp = 0;
+
+        for(i = 0; i < octaves; i = i + 1) {
+          noise = simplex(x * freq / 100, z * freq / 100, seed + i);
+          ridgedNoise = 1 - abs(noise);
+          sum = sum + ridgedNoise * amp;
+          maxAmp = maxAmp + amp;
+          amp = amp * gain;
+          freq = freq * lacunarity;
+        }
+
+        sum / maxAmp
+
+  ridged3D:
+    type: EXPRESSION
+    expression: |
+      ridged3D(x, y, z, octaves, lacunarity, gain, seed) =
+        sum = 0;
+        amp = 1;
+        freq = 1;
+        maxAmp = 0;
+
+        for(i = 0; i < octaves; i = i + 1) {
+          noise = simplex(x * freq / 100, y * freq / 100, z * freq / 100, seed + i);
+          ridgedNoise = 1 - abs(noise);
+          sum = sum + ridgedNoise * amp;
+          maxAmp = maxAmp + amp;
+          amp = amp * gain;
+          freq = freq * lacunarity;
+        }
+
+        sum / maxAmp
+
+  turbulence:
+    type: EXPRESSION
+    expression: |
+      # Turbulencia (ruido distorsionado por sí mismo)
+      turbulence(x, z, octaves, lacunarity, gain, seed) =
+        dx = simplex(x / 50, z / 50, seed) * 20;
+        dz = simplex(x / 50 + 100, z / 50 + 100, seed) * 20;
+        fbm(x + dx, z + dz, octaves, lacunarity, gain, seed + 1)
+
+  domainWarp:
+    type: EXPRESSION
+    expression: |
+      # Domain warping (distorsión de dominio)
+      # warpStrength: intensidad de la distorsión
+      domainWarp(x, z, warpStrength, seed) =
+        qx = fbm(x, z, 3, 2.0, 0.5, seed);
+        qz = fbm(x + 5.2, z + 1.3, 3, 2.0, 0.5, seed + 1);
+
+        rx = fbm(x + warpStrength * qx, z + warpStrength * qz, 3, 2.0, 0.5, seed + 2);
+        rz = fbm(x + warpStrength * qx + 1.7, z + warpStrength * qz + 9.2, 3, 2.0, 0.5, seed + 3);
+
+        fbm(x + warpStrength * rx, z + warpStrength * rz, 4, 2.0, 0.5, seed + 4)
+
+  erosion:
+    type: EXPRESSION
+    expression: |
+      # Simulación de erosión simple
+      # height: altura del terreno
+      # erosionStrength: intensidad de la erosión
+      erosion(height, erosionStrength, seed) =
+        erosionNoise = simplex(x / 30, z / 30, seed);
+        height - abs(erosionNoise) * erosionStrength
+
+  thermalErosion:
+    type: EXPRESSION
+    expression: |
+      # Erosión térmica (suaviza picos pronunciados)
+      thermalErosion(height, talusAngle, seed) =
+        # Simplificación: suavizado basado en gradiente local
+        hN = simplex((x+1) / 50, z / 50, seed) * height;
+        hS = simplex((x-1) / 50, z / 50, seed) * height;
+        hE = simplex(x / 50, (z+1) / 50, seed) * height;
+        hW = simplex(x / 50, (z-1) / 50, seed) * height;
+
+        avg = (hN + hS + hE + hW) / 4;
+        diff = height - avg;
+
+        if(diff > talusAngle, height - diff * 0.5, height)
+
+  hydraulicErosion:
+    type: EXPRESSION
+    expression: |
+      # Erosión hidráulica simple (canales)
+      hydraulicErosion(height, waterAmount, seed) =
+        waterNoise = ridged(x, z, 4, 2.0, 0.5, seed);
+        height - waterNoise * waterAmount

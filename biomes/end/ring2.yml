@@ -1,0 +1,263 @@
+# ============================================================
+# AETHERIA — biomes/end/ring2.yml
+# Anillo 2: Transición (1500-2200 bloques)
+# Vegetación básica, colores más vivos.
+# ============================================================
+
+ENDRA_AMETHYST_END:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_AMETHYST_END
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 68;
+        noise = simplex(x / 55, z / 55) * 2.5 + simplex(x / 14, z / 14) * 0.6;
+        base + noise
+    height: 68
+    base: 40
+  palette:
+    - BLOCK:minecraft:amethyst_block: 255
+    - BLOCK:minecraft:budding_amethyst: 120
+    - BLOCK:minecraft:end_stone: 150
+    - BLOCK:minecraft:calcite: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/amethyst_spire.yml
+    flora:
+      - features/end/amethyst_cluster.yml
+      - features/end/chorus_plant.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_AMETHYST_END_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_AMETHYST_END_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 65;
+        noise = simplex(x / 55, z / 55) * 2.0 + simplex(x / 14, z / 14) * 0.5;
+        base + noise
+    height: 65
+    base: 40
+  palette:
+    - BLOCK:minecraft:amethyst_block: 255
+    - BLOCK:minecraft:end_stone: 180
+    - BLOCK:minecraft:calcite: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_TAINTED_END:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_TAINTED_END
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 66;
+        noise = simplex(x / 50, z / 50) * 2.0 + simplex(x / 12, z / 12) * 0.5;
+        base + noise
+    height: 66
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:purpur_block: 150
+    - BLOCK:minecraft:purpur_pillar: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/purpur_pillar.yml
+    flora:
+      - features/end/chorus_plant.yml
+      - features/end/chorus_flower.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_TAINTED_END_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_TAINTED_END_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 63;
+        noise = simplex(x / 50, z / 50) * 1.5 + simplex(x / 12, z / 12) * 0.4;
+        base + noise
+    height: 63
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:purpur_block: 180
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_STYGIAN_BARRENS:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_STYGIAN_BARRENS
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 62;
+        noise = simplex(x / 60, z / 60) * 1.5 + simplex(x / 15, z / 15) * 0.3;
+        base + noise
+    height: 62
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:blackstone: 180
+    - BLOCK:minecraft:obsidian: 120
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/chorus_plant_sparse.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_STYGIAN_BARRENS_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_STYGIAN_BARRENS_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 60;
+        noise = simplex(x / 60, z / 60) * 1.0 + simplex(x / 15, z / 15) * 0.2;
+        base + noise
+    height: 60
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:blackstone: 200
+    - BLOCK:minecraft:obsidian: 150
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora: []
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_CRAGGY_END:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_CRAGGY_END
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 72;
+        noise = simplex(x / 45, z / 45) * 4.0 + simplex(x / 10, z / 10) * 1.0;
+        base + noise
+    height: 72
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:stone: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/craggy_pillar.yml
+    flora:
+      - features/end/chorus_plant.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_CRAGGY_END_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_CRAGGY_END_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 70;
+        noise = simplex(x / 45, z / 45) * 3.5 + simplex(x / 10, z / 10) * 0.9;
+        base + noise
+    height: 70
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:cobblestone: 120
+    - BLOCK:minecraft:stone: 80
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_SHATTERED_FOREST:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_SHATTERED_FOREST
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 64;
+        noise = simplex(x / 50, z / 50) * 2.5 + simplex(x / 12, z / 12) * 0.6;
+        base + noise
+    height: 64
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:chorus_plant: 150
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/chorus_tree.yml
+      - structures/end/chorus_tree_large.yml
+    flora:
+      - features/end/chorus_plant_dense.yml
+      - features/end/chorus_flower.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_SHATTERED_FOREST_DESOLATE:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:end_highlands
+  colors: $biomes/colors.yml:ENDRA_SHATTERED_FOREST_DESOLATE
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 62;
+        noise = simplex(x / 50, z / 50) * 2.0 + simplex(x / 12, z / 12) * 0.5;
+        base + noise
+    height: 62
+    base: 40
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:chorus_plant: 100
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/dead_chorus.yml
+    ores:
+      - ores/end/end_ores.yml

@@ -1,0 +1,152 @@
+# ============================================================
+# AETHERIA — biomes/end/void.yml
+# Biomas que aparecen en el vacío entre islas del End.
+# ============================================================
+
+ENDRA_STARFIELD:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:the_end
+  colors: $biomes/colors.yml:ENDRA_STARFIELD
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 0;
+        noise = 0;
+        base + noise
+    height: 0
+    base: 0
+  palette:
+    - BLOCK:minecraft:air: 255
+    - BLOCK:minecraft:void_air: 0
+  features:
+    postprocessors:
+      - features/end/star_particles.yml
+
+ENDRA_ASTEROID_FIELD:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:the_end
+  colors: $biomes/colors.yml:ENDRA_ASTEROID_FIELD
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 0;
+        noise = simplex(x / 30, z / 30) * 2.0;
+        if(noise > 0.7, noise, 0)
+    height: 0
+    base: 0
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:stone: 0
+  features:
+    trees:
+      - structures/end/asteroid.yml
+    ores:
+      - ores/end/end_ores.yml
+
+ENDRA_NEBULA:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:the_end
+  colors: $biomes/colors.yml:ENDRA_NEBULA
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 0;
+        noise = 0;
+        base + noise
+    height: 0
+    base: 0
+  palette:
+    - BLOCK:minecraft:air: 255
+    - BLOCK:minecraft:void_air: 0
+  features:
+    postprocessors:
+      - features/end/nebula_particles.yml
+
+ENDRA_AURORA:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:the_end
+  colors: $biomes/colors.yml:ENDRA_AURORA
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 0;
+        noise = 0;
+        base + noise
+    height: 0
+    base: 0
+  palette:
+    - BLOCK:minecraft:air: 255
+    - BLOCK:minecraft:void_air: 0
+  features:
+    postprocessors:
+      - features/end/aurora_particles.yml
+
+ENDRA_WEBBED_VOID:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:the_end
+  colors: $biomes/colors.yml:ENDRA_WEBBED_VOID
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 0;
+        noise = simplex(x / 20, z / 20) * 1.5;
+        if(noise > 0.6, noise, 0)
+    height: 0
+    base: 0
+  palette:
+    - BLOCK:minecraft:cobweb: 255
+    - BLOCK:minecraft:end_stone: 150
+    - BLOCK:minecraft:stone: 0
+  features:
+    postprocessors:
+      - features/end/web_particles.yml
+
+ENDRA_VOID_SEA:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:the_end
+  colors: $biomes/colors.yml:ENDRA_VOID_SEA
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 0;
+        noise = 0;
+        base + noise
+    height: 0
+    base: 0
+  palette:
+    - BLOCK:minecraft:air: 255
+    - BLOCK:minecraft:void_air: 0
+  features: {}
+
+ENDRA_VOID_SEA_BORDER:
+  type: BIOME
+  extends: ABSTRACT_BASE
+  vanilla: minecraft:the_end
+  colors: $biomes/colors.yml:ENDRA_VOID_SEA_BORDER
+  terrain:
+    sampler:
+      type: EXPRESSION
+      expression: |
+        base = 0;
+        noise = simplex(x / 40, z / 40) * 1.0;
+        if(noise > 0.5, noise, 0)
+    height: 0
+    base: 0
+  palette:
+    - BLOCK:minecraft:end_stone: 255
+    - BLOCK:minecraft:stone: 0
+  features:
+    flora:
+      - features/end/chorus_plant_sparse.yml

@@ -1,0 +1,339 @@
+# ============================================================
+# AETHERIA — features/end/vegetation.yml
+# Vegetación del End: chorus, flores endémicas, etc.
+# ============================================================
+
+chorus_plant:
+  type: FLORA
+  blocks:
+    - minecraft:chorus_plant: 1
+    - minecraft:chorus_flower: 0.3
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.3 ? 1 : 0
+  density: 0.4
+  y-offset: 1
+
+chorus_plant_dense:
+  type: FLORA
+  blocks:
+    - minecraft:chorus_plant: 1
+    - minecraft:chorus_flower: 0.5
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.2 ? 1 : 0
+  density: 0.6
+  y-offset: 1
+
+chorus_plant_sparse:
+  type: FLORA
+  blocks:
+    - minecraft:chorus_plant: 1
+    - minecraft:chorus_flower: 0.2
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, z / 8) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+chorus_flower:
+  type: FLORA
+  blocks:
+    - minecraft:chorus_flower: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+dead_chorus:
+  type: FLORA
+  blocks:
+    - minecraft:dead_bush: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+mauve_vine:
+  type: FLORA
+  blocks:
+    - minecraft:weeping_vines: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: -1
+
+twisted_vine:
+  type: FLORA
+  blocks:
+    - minecraft:twisting_vines: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+wild_grass:
+  type: FLORA
+  blocks:
+    - minecraft:grass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.3 ? 1 : 0
+  density: 0.5
+  y-offset: 1
+
+wild_grass_end:
+  type: FLORA
+  blocks:
+    - minecraft:grass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.3 ? 1 : 0
+  density: 0.4
+  y-offset: 1
+
+vermilion_grass:
+  type: FLORA
+  blocks:
+    - minecraft:grass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.3 ? 1 : 0
+  density: 0.5
+  y-offset: 1
+
+crim_vine:
+  type: FLORA
+  blocks:
+    - minecraft:weeping_vines: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: -1
+
+ivory_grass:
+  type: FLORA
+  blocks:
+    - minecraft:grass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.3 ? 1 : 0
+  density: 0.4
+  y-offset: 1
+
+rosette_flower:
+  type: FLORA
+  blocks:
+    - minecraft:pink_tulip: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+marble_grass:
+  type: FLORA
+  blocks:
+    - minecraft:grass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.3 ? 1 : 0
+  density: 0.4
+  y-offset: 1
+
+# --- Aether Pocket vegetation ---
+aether_grass:
+  type: FLORA
+  blocks:
+    - minecraft:grass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.2 ? 1 : 0
+  density: 0.6
+  y-offset: 1
+
+aether_snow:
+  type: FLORA
+  blocks:
+    - minecraft:snow: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.2 ? 1 : 0
+  density: 0.5
+  y-offset: 1
+
+claret_flower:
+  type: FLORA
+  blocks:
+    - minecraft:poppy: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+wispy_flower:
+  type: FLORA
+  blocks:
+    - minecraft:cornflower: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+bramble_bush:
+  type: FLORA
+  blocks:
+    - minecraft:dead_bush: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+golden_flower:
+  type: FLORA
+  blocks:
+    - minecraft:dandelion: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+honey_flower:
+  type: FLORA
+  blocks:
+    - minecraft:orange_tulip: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+orchard_flower:
+  type: FLORA
+  blocks:
+    - minecraft:pink_petals: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+prismatic_flower:
+  type: FLORA
+  blocks:
+    - minecraft:allium: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+# --- Convergence vegetation ---
+grass:
+  type: FLORA
+  blocks:
+    - minecraft:grass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.3 ? 1 : 0
+  density: 0.5
+  y-offset: 1
+
+oak_leaves:
+  type: FLORA
+  blocks:
+    - minecraft:oak_leaves: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+fire:
+  type: FLORA
+  blocks:
+    - minecraft:fire: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+crimson_roots:
+  type: FLORA
+  blocks:
+    - minecraft:crimson_roots: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+ash_particles:
+  type: PARTICLE
+  particle: minecraft:ash
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 15, y / 8, z / 15) > 0.3 ? 1 : 0
+  density: 0.4
+  min-y: 0
+  max-y: 128
+
+lava_drip:
+  type: PARTICLE
+  particle: minecraft:dripping_lava
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, y / 4, z / 8) > 0.5 ? 1 : 0
+  density: 0.2
+  min-y: 0
+  max-y: 128
+
+dragon_breath:
+  type: PARTICLE
+  particle: minecraft:dragon_breath
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, y / 5, z / 10) > 0.4 ? 1 : 0
+  density: 0.3
+  min-y: 0
+  max-y: 128

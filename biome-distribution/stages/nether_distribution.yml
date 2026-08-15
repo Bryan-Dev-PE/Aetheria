@@ -1,0 +1,222 @@
+# ============================================================
+# AETHERIA — Nether Biome Distribution
+# Basado en: Tartarus (JaddotWuzHere / PolyhedralDev)
+# Sistema: Cellular noise con variación de altitud (Y-level)
+# El Nether usa generación 3D completa con ruido en Y
+# ============================================================
+
+biomes:
+  type: PIPELINE
+  source:
+    type: SAMPLER
+    sampler:
+      type: EXPRESSION
+      expression: |
+        # Ruido base 3D para el Nether
+        baseNoise = simplex(x / (200 * ${meta.yml:scale.nether-biome}), y / (60 * ${meta.yml:scale.nether-biome}), z / (200 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome});
+
+        # Ruido de bioma 2D (para distribución horizontal)
+        biomeNoise = cellular(x / (250 * ${meta.yml:scale.nether-biome}), z / (250 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome});
+
+        # Ruido de altitud (afecta qué biomas aparecen en qué Y)
+        heightBias = simplex(x / (300 * ${meta.yml:scale.nether-biome}), z / (300 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome} + 100);
+
+        # Ruido de "calor" (afecta biomas de lava vs hielo/fuego)
+        heat = simplex(x / (400 * ${meta.yml:scale.nether-biome}), z / (400 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome} + 200);
+
+        # Ruido de "corruption" (afecta biomas corruptos)
+        corruption = simplex(x / (350 * ${meta.yml:scale.nether-biome}), z / (350 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome} + 300);
+
+        baseNoise * 0.4 + biomeNoise * 0.4 + heat * 0.1 + corruption * 0.1
+
+  stages:
+    # ==========================================================
+    # ETAPA 1: Distribución base del Nether
+    # ==========================================================
+    - type: REPLACE
+      from: ALL
+      to:
+        # --- BIOMAS VANILLA REWORKED (Tartarus) ---
+        - NETHERRA_FLAMING_HELLSCAPES: 3
+        - NETHERRA_SOUL_VALLEY: 2.5
+        - NETHERRA_CRIMSON_FOREST: 3
+        - NETHERRA_WARPED_FOREST: 2.5
+        - NETHERRA_BASALTIC_DELTAS: 2
+
+        # --- BIOMAS CUSTOM (Tartarus) ---
+        - NETHERRA_BLOODY_REMNANTS: 1.5
+        - NETHERRA_CORRUPTED_WASTES: 2
+        - NETHERRA_CRYSTALLINE_VELDTS: 1.5
+        - NETHERRA_LIFELESS_SPIRES: 2
+        - NETHERRA_SERRATED_MOUNTAINS: 1.5
+        - NETHERRA_TORRID_CRAGS: 2
+        - NETHERRA_BLOODLESS_UNDERGROWTH: 1.5
+        - NETHERRA_THE_BOUNDARY: 0.8
+
+        # --- FRACTURAS DIMENSIONALES ---
+        - NETHERRA_OVERGROWN_CAVERNS: 0.5
+        - NETHERRA_END_TAINTED: 0.4
+        - NETHERRA_OVERWORLD_REMNANTS: 0.3
+        - NETHERRA_AETHER_POCKETS: 0.2
+      noise:
+        type: EXPRESSION
+        expression: |
+          biomeNoise = cellular(x / (250 * ${meta.yml:scale.nether-biome}), z / (250 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome});
+          heat = simplex(x / (400 * ${meta.yml:scale.nether-biome}), z / (400 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome} + 200);
+          corruption = simplex(x / (350 * ${meta.yml:scale.nether-biome}), z / (350 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome} + 300);
+          heightBias = simplex(x / (300 * ${meta.yml:scale.nether-biome}), z / (300 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome} + 100);
+
+          # Altitud del jugador afecta la distribución
+          yLevel = y / 128;  # Normalizado 0-1
+
+          # Categorías de bioma basadas en heat + corruption
+          heatCategory = if(heat < -0.4, 0,         # Frío (Soul, Warped)
+                       if(heat < 0.0, 1,           # Templado (Crimson, Forest)
+                       if(heat < 0.4, 2,           # Cálido (Hellscapes, Deltas)
+                       3)));                        # Muy cálido (Torrid, Boundary)
+
+          corruptionLevel = if(corruption < -0.3, 0,  # Puro
+                           if(corruption < 0.3, 1,   # Moderado
+                           2));                       # Corrupto
+
+          # Altitud afecta: arriba = montañas/espinas, abajo = valles/cavernas
+          heightCategory = if(yLevel > 0.7, 0,       # Alto (montañas, techos)
+                         if(yLevel > 0.4, 1,        # Medio-alto
+                         if(yLevel > 0.2, 2,        # Medio
+                         3)));                       # Bajo (valles, lava)
+
+          # Fracturas
+          fracture = simplex(x / (150 * ${meta.yml:scale.fracture}), z / (150 * ${meta.yml:scale.fracture}), ${meta.yml:noise-seeds.fracture});
+          isFracture = fracture > (1.0 - ${meta.yml:fractures.global-rarity}) ? 1 : 0;
+
+          heatCategory * 100 + corruptionLevel * 10 + heightCategory + isFracture * 1000
+
+    # ==========================================================
+    # ETAPA 2: Zonas de lava (mares de lava)
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - NETHERRA_FLAMING_HELLSCAPES
+        - NETHERRA_BASALTIC_DELTAS
+        - NETHERRA_TORRID_CRAGS
+        - NETHERRA_THE_BOUNDARY
+      to:
+        - NETHERRA_LAVA_SEA: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          # Grandes depresiones llenas de lava
+          lavaNoise = simplex(x / (300 * ${meta.yml:scale.nether-biome}), z / (300 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome} + 500);
+
+          # Solo en áreas bajas
+          if(y < 35 && lavaNoise < -0.4, 1, -1)
+
+    # ==========================================================
+    # ETAPA 3: Cuevas del Nether
+    # ==========================================================
+    - type: REPLACE
+      from: ALL
+      to:
+        - NETHERRA_LUSH_NETHER_CAVERNS: 1.5
+        - NETHERRA_QUARTZ_CAVERNS: 2
+        - NETHERRA_MAGMA_CHAMBERS: 1.5
+        - NETHERRA_BONE_CAVERNS: 1
+        - NETHERRA_GLOWSTONE_CAVERNS: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          if(y > 60 || y < 20, -1,
+            caveNoise = cellular(x / (120 * ${meta.yml:scale.nether-cave}), z / (120 * ${meta.yml:scale.nether-cave}), ${meta.yml:noise-seeds.nether-cave});
+            caveType = simplex(x / (80 * ${meta.yml:scale.nether-cave}), z / (80 * ${meta.yml:scale.nether-cave}), y / (40 * ${meta.yml:scale.nether-cave}), ${meta.yml:noise-seeds.nether-cave} + 100);
+
+            if(caveNoise > 0.4,
+              if(caveType < -0.4, 0,       # Lush caverns (Overworld influence)
+              if(caveType < 0.0, 1,        # Quartz caverns
+              if(caveType < 0.3, 2,        # Magma chambers
+              if(caveType < 0.6, 3,        # Bone caverns (Soul Sand Valley caves)
+              4)))),                        # Glowstone caverns
+              -1)
+          )
+
+    # ==========================================================
+    # ETAPA 4: Fracturas dimensionales del Nether
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - NETHERRA_FLAMING_HELLSCAPES
+        - NETHERRA_CRIMSON_FOREST
+        - NETHERRA_WARPED_FOREST
+        - NETHERRA_LIFELESS_SPIRES
+      to:
+        - NETHERRA_OVERGROWN_CAVERNS: 3
+        - NETHERRA_END_TAINTED: 2
+        - NETHERRA_OVERWORLD_REMNANTS: 1.5
+        - NETHERRA_AETHER_POCKETS: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          fractureNoise = simplex(x / (150 * ${meta.yml:scale.fracture}), z / (150 * ${meta.yml:scale.fracture}), ${meta.yml:noise-seeds.fracture});
+          fractureType = simplex(x / (80 * ${meta.yml:scale.fracture}), z / (80 * ${meta.yml:scale.fracture}), ${meta.yml:noise-seeds.fracture} + 100);
+
+          if(fractureNoise > (1.0 - ${meta.yml:fractures.global-rarity}),
+            if(fractureType < -0.4, 0,     # Overgrown (Overworld)
+            if(fractureType < 0.0, 1,      # End Tainted
+            if(fractureType < 0.4, 2,      # Overworld Remnants
+            3))),                           # Aether Pockets
+            -1)
+
+    # ==========================================================
+    # ETAPA 5: Techos del Nether (Nether Roof variation)
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - NETHERRA_FLAMING_HELLSCAPES
+        - NETHERRA_SERRATED_MOUNTAINS
+        - NETHERRA_LIFELESS_SPIRES
+      to:
+        - NETHERRA_BASALT_CANOPY: 2
+        - NETHERRA_NETHERRACK_SPIRES: 1.5
+        - NETHERRA_OBSIDIAN_PILLARS: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          # Cerca del techo del Nether (Y > 110)
+          if(y < 110, -1,
+            roofNoise = simplex(x / (100 * ${meta.yml:scale.nether-biome}), z / (100 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome} + 600);
+
+            if(roofNoise > 0.3,
+              if(roofNoise > 0.7, 2,       # Obsidian pillars
+              if(roofNoise > 0.5, 1,       # Netherrack spires
+              0)),                          # Basalt canopy
+              -1)
+          )
+
+    # ==========================================================
+    # ETAPA 6: Bordes entre biomas (transiciones suaves)
+    # ==========================================================
+    - type: REPLACE
+      from:
+        - NETHERRA_CRIMSON_FOREST
+      to:
+        - NETHERRA_CRIMSON_WARPED_EDGE: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          # Detectar borde con Warped Forest
+          edge = cellularEdge(x / (250 * ${meta.yml:scale.nether-biome}), z / (250 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome});
+          neighborCheck = simplex(x / (250 * ${meta.yml:scale.nether-biome}) + 0.1, z / (250 * ${meta.yml:scale.nether-biome}) + 0.1, ${meta.yml:noise-seeds.nether-biome});
+
+          if(edge < 0.08 && neighborCheck > 0.5, 1, -1)
+
+    - type: REPLACE
+      from:
+        - NETHERRA_SOUL_VALLEY
+      to:
+        - NETHERRA_SOUL_CRIMSON_EDGE: 1
+      noise:
+        type: EXPRESSION
+        expression: |
+          edge = cellularEdge(x / (250 * ${meta.yml:scale.nether-biome}), z / (250 * ${meta.yml:scale.nether-biome}), ${meta.yml:noise-seeds.nether-biome});
+          neighborCheck = simplex(x / (250 * ${meta.yml:scale.nether-biome}) - 0.1, z / (250 * ${meta.yml:scale.nether-biome}) - 0.1, ${meta.yml:noise-seeds.nether-biome});
+
+          if(edge < 0.08 && neighborCheck < -0.3, 1, -1)

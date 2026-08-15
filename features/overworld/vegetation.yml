@@ -1,0 +1,474 @@
+# ============================================================
+# AETHERIA — features/overworld/vegetation.yml
+# Vegetación del Overworld: flores, hierba, arbustos, setas, etc.
+# ============================================================
+
+# --- HIERBA ---
+tall_grass:
+  type: FLORA
+  blocks:
+    - minecraft:tall_grass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, z / 8) > 0.3 ? 1 : 0
+  density: 0.6
+  y-offset: 1
+
+grass:
+  type: FLORA
+  blocks:
+    - minecraft:grass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.2 ? 1 : 0
+  density: 0.8
+  y-offset: 1
+
+fern:
+  type: FLORA
+  blocks:
+    - minecraft:fern: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.3 ? 1 : 0
+  density: 0.5
+  y-offset: 1
+
+# --- FLORES ---
+azure_bluet:
+  type: FLORA
+  blocks:
+    - minecraft:azure_bluet: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, z / 10) > 0.6 ? 1 : 0
+  density: 0.15
+  y-offset: 1
+
+oxeye_daisy:
+  type: FLORA
+  blocks:
+    - minecraft:oxeye_daisy: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, z / 10) > 0.6 ? 1 : 0
+  density: 0.15
+  y-offset: 1
+
+cornflower:
+  type: FLORA
+  blocks:
+    - minecraft:cornflower: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, z / 10) > 0.6 ? 1 : 0
+  density: 0.15
+  y-offset: 1
+
+poppy:
+  type: FLORA
+  blocks:
+    - minecraft:poppy: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, z / 10) > 0.6 ? 1 : 0
+  density: 0.15
+  y-offset: 1
+
+dandelion:
+  type: FLORA
+  blocks:
+    - minecraft:dandelion: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, z / 10) > 0.6 ? 1 : 0
+  density: 0.15
+  y-offset: 1
+
+lilac:
+  type: FLORA
+  blocks:
+    - minecraft:lilac: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 12, z / 12) > 0.7 ? 1 : 0
+  density: 0.1
+  y-offset: 1
+
+rose_bush:
+  type: FLORA
+  blocks:
+    - minecraft:rose_bush: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 12, z / 12) > 0.7 ? 1 : 0
+  density: 0.1
+  y-offset: 1
+
+peony:
+  type: FLORA
+  blocks:
+    - minecraft:peony: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 12, z / 12) > 0.7 ? 1 : 0
+  density: 0.1
+  y-offset: 1
+
+lily_of_the_valley:
+  type: FLORA
+  blocks:
+    - minecraft:lily_of_the_valley: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, z / 10) > 0.65 ? 1 : 0
+  density: 0.12
+  y-offset: 1
+
+sunflower:
+  type: FLORA
+  blocks:
+    - minecraft:sunflower: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 15, z / 15) > 0.75 ? 1 : 0
+  density: 0.08
+  y-offset: 1
+
+pink_petals:
+  type: FLORA
+  blocks:
+    - minecraft:pink_petals: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, z / 8) > 0.5 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+# --- ARBUSTOS Y SETAS ---
+dead_bush:
+  type: FLORA
+  blocks:
+    - minecraft:dead_bush: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, z / 8) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
+
+cactus:
+  type: FLORA
+  blocks:
+    - minecraft:cactus: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 10, z / 10) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+sugar_cane:
+  type: FLORA
+  blocks:
+    - minecraft:sugar_cane: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, z / 8) > 0.3 ? 1 : 0
+  density: 0.25
+  y-offset: 1
+
+mushroom_red:
+  type: FLORA
+  blocks:
+    - minecraft:red_mushroom: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.4 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+mushroom_brown:
+  type: FLORA
+  blocks:
+    - minecraft:brown_mushroom: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.4 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+# --- BAMBÚ Y MELÓN ---
+bamboo:
+  type: FLORA
+  blocks:
+    - minecraft:bamboo: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.3 ? 1 : 0
+  density: 0.4
+  y-offset: 1
+
+bamboo_dense:
+  type: FLORA
+  blocks:
+    - minecraft:bamboo: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.2 ? 1 : 0
+  density: 0.7
+  y-offset: 1
+
+melon:
+  type: FLORA
+  blocks:
+    - minecraft:melon: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 15, z / 15) > 0.8 ? 1 : 0
+  density: 0.05
+  y-offset: 1
+
+# --- NIEVE ---
+snow:
+  type: FLORA
+  blocks:
+    - minecraft:snow: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, z / 8) > 0.1 ? 1 : 0
+  density: 0.9
+  y-offset: 1
+
+# --- ACUÁTICOS ---
+seagrass:
+  type: FLORA
+  blocks:
+    - minecraft:seagrass: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.2 ? 1 : 0
+  density: 0.6
+  y-offset: -1
+
+kelp:
+  type: FLORA
+  blocks:
+    - minecraft:kelp: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, z / 8) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: -1
+
+kelp_dense:
+  type: FLORA
+  blocks:
+    - minecraft:kelp: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.2 ? 1 : 0
+  density: 0.6
+  y-offset: -1
+
+coral:
+  type: FLORA
+  blocks:
+    - minecraft:brain_coral: 1
+    - minecraft:bubble_coral: 1
+    - minecraft:fire_coral: 1
+    - minecraft:horn_coral: 1
+    - minecraft:tube_coral: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, z / 5) > 0.3 ? 1 : 0
+  density: 0.4
+  y-offset: -1
+
+coral_fan:
+  type: FLORA
+  blocks:
+    - minecraft:brain_coral_fan: 1
+    - minecraft:bubble_coral_fan: 1
+    - minecraft:fire_coral_fan: 1
+    - minecraft:horn_coral_fan: 1
+    - minecraft:tube_coral_fan: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, z / 6) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: -1
+
+sea_pickle:
+  type: FLORA
+  blocks:
+    - minecraft:sea_pickle: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: -1
+
+lily_pad:
+  type: FLORA
+  blocks:
+    - minecraft:lily_pad: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 8, z / 8) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+# --- CUEVAS ---
+moss_carpet:
+  type: FLORA
+  blocks:
+    - minecraft:moss_carpet: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.3 ? 1 : 0
+  density: 0.5
+  y-offset: 1
+
+glow_lichen:
+  type: FLORA
+  blocks:
+    - minecraft:glow_lichen: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 4, y / 3, z / 4) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 0
+
+spore_blossom:
+  type: FLORA
+  blocks:
+    - minecraft:spore_blossom: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, y / 4, z / 6) > 0.6 ? 1 : 0
+  density: 0.15
+  y-offset: -1
+
+glow_berry_vines:
+  type: FLORA
+  blocks:
+    - minecraft:cave_vines: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 3, z / 5) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: -1
+
+small_dripleaf:
+  type: FLORA
+  blocks:
+    - minecraft:small_dripleaf: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 6, y / 3, z / 6) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 1
+
+big_dripleaf:
+  type: FLORA
+  blocks:
+    - minecraft:big_dripleaf: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, y / 3, z / 7) > 0.6 ? 1 : 0
+  density: 0.15
+  y-offset: 1
+
+cave_vines:
+  type: FLORA
+  blocks:
+    - minecraft:cave_vines: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 4, y / 3, z / 4) > 0.4 ? 1 : 0
+  density: 0.25
+  y-offset: -1
+
+pointed_dripstone:
+  type: FLORA
+  blocks:
+    - minecraft:pointed_dripstone: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 5, y / 4, z / 5) > 0.5 ? 1 : 0
+  density: 0.3
+  y-offset: 0
+
+amethyst_bud:
+  type: FLORA
+  blocks:
+    - minecraft:small_amethyst_bud: 3
+    - minecraft:medium_amethyst_bud: 2
+    - minecraft:large_amethyst_bud: 1
+    - minecraft:amethyst_cluster: 0.5
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 4, y / 3, z / 4) > 0.5 ? 1 : 0
+  density: 0.2
+  y-offset: 0
+
+sculk_vein:
+  type: FLORA
+  blocks:
+    - minecraft:sculk_vein: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 3, y / 2, z / 3) > 0.3 ? 1 : 0
+  density: 0.4
+  y-offset: 0
+
+# --- BAYAS ---
+sweet_berry_bush:
+  type: FLORA
+  blocks:
+    - minecraft:sweet_berry_bush: 1
+  sampler:
+    type: EXPRESSION
+    expression: |
+      simplex(x / 7, z / 7) > 0.4 ? 1 : 0
+  density: 0.3
+  y-offset: 1
