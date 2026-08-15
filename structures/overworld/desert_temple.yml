@@ -1,0 +1,67 @@
+# ==========================================
+# AETHERIA — Overworld: Templo del Desierto
+# ==========================================
+
+id: AETHERIA_OW_DESERT_TEMPLE
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 50-80
+  rarity: 0.006
+  spacing: 32
+  separation: 8
+  biomes:
+    - desert
+
+scripts:
+  - id: "desert_temple_main"
+    file: "structures/scripts/desert_temple.tesf"
+    palette: AETHERIA_OW_DESERT
+
+structure:
+  layout:
+    type: TEMPLE
+    size: 21x15x21
+    pyramid: true
+    underground-chamber: true
+
+  materials:
+    walls:
+      "minecraft:cut_sandstone": 4
+      "minecraft:chiseled_sandstone": 2
+      "minecraft:smooth_sandstone": 2
+      "minecraft:sandstone": 1
+      "minecraft:orange_terracotta": 1
+    floors:
+      "minecraft:smooth_sandstone": 3
+      "minecraft:cut_sandstone": 2
+      "minecraft:sandstone": 1
+    accents:
+      "minecraft:terracotta": 2
+      "minecraft:orange_stained_glass": 1
+      "minecraft:sandstone_stairs": 1
+
+  pyramid:
+    tiers: 4
+    tier-height: 3
+    top-platform: true
+
+  underground-chamber:
+    size: 9x5x9
+    floor-pattern: CHECKERBOARD
+    floor-materials:
+      "minecraft:orange_terracotta": 1
+      "minecraft:blue_terracotta": 1
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/desert_pyramid"
+      count: 4
+      position: chamber_floor
+    
+    - type: TNT_TRAP
+      material: "minecraft:tnt"
+      position: chamber_floor
+      pressure-plate: "minecraft:stone_pressure_plate"
+      count: 9

@@ -1,0 +1,97 @@
+# ==========================================
+# AETHERIA — End: Nexo de Fractura Dimensional
+# Punto de conexión entre las 3 dimensiones
+# ==========================================
+
+id: AETHERIA_DIMENSIONAL_FRACTURE_NEXUS
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 40-100
+  rarity: 0.001
+  spacing: 128
+  separation: 32
+  biomes:
+    - end
+
+scripts:
+  - id: "fracture_nexus_main"
+    file: "structures/scripts/fracture_nexus.tesf"
+    palette: AETHERIA_END_VOID
+
+structure:
+  layout:
+    type: NEXUS
+    size: 20x15x20
+    central-chamber: true
+    floating: true
+
+  materials:
+    frame:
+      "minecraft:obsidian": 4
+      "minecraft:crying_obsidian": 3
+      "minecraft:bedrock": 2
+      "minecraft:purpur_block": 1
+    floor:
+      "minecraft:purpur_block": 3
+      "minecraft:purpur_pillar[axis=y]": 2
+      "minecraft:end_stone_bricks": 1
+    accents:
+      "minecraft:end_rod": 2
+      "minecraft:dragon_head": 1
+      "minecraft:beacon": 1
+
+  central-chamber:
+    size: 8x6x8
+    material: "minecraft:air"
+    particles: "minecraft:portal"
+    floating-crystals: true
+
+  portals:
+    - type: OVERWORLD_GATE
+      material: "minecraft:end_portal_frame"
+      destination: overworld
+      position: north_side
+    
+    - type: NETHER_GATE
+      material: "minecraft:nether_portal"
+      destination: nether
+      position: south_side
+    
+    - type: END_GATE
+      material: "minecraft:end_portal"
+      destination: end_spawn
+      position: center
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/end_city_treasure"
+      count: 2-3
+      position: chamber_corners
+    
+    - type: SPAWNER
+      mob: "minecraft:shulker"
+      position: nexus_walls
+      count: 2-4
+    
+    - type: SPAWNER
+      mob: "minecraft:enderman"
+      position: nexus_area
+      count: 4-8
+    
+    - type: BEACON
+      material: "minecraft:beacon"
+      position: chamber_center
+      activated: true
+    
+    - type: DRAGON_HEAD
+      material: "minecraft:dragon_head"
+      position: nexus_pillars
+      count: 4
+
+  connection:
+    type: FRACTURE_NEXUS
+    links:
+      - AETHERIA_OW_AETHER_GATES
+      - AETHERIA_NETHER_BOUNDARY_RIFT

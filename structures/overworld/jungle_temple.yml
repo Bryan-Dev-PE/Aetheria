@@ -1,0 +1,64 @@
+# ==========================================
+# AETHERIA — Overworld: Templo de la Jungla
+# ==========================================
+
+id: AETHERIA_OW_JUNGLE_TEMPLE
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 50-80
+  rarity: 0.005
+  spacing: 40
+  separation: 10
+  biomes:
+    - jungle
+
+scripts:
+  - id: "jungle_temple_main"
+    file: "structures/scripts/jungle_temple.tesf"
+    palette: AETHERIA_OW_JUNGLE
+
+structure:
+  layout:
+    type: TEMPLE
+    size: 15x12x15
+    floors: 2
+    secret-chamber: true
+
+  materials:
+    walls:
+      "minecraft:cobblestone": 4
+      "minecraft:mossy_cobblestone": 3
+      "minecraft:chiseled_stone_bricks": 1
+      "minecraft:stone_bricks": 1
+    floors:
+      "minecraft:cobblestone": 3
+      "minecraft:mossy_cobblestone": 2
+      "minecraft:stone": 1
+    accents:
+      "minecraft:cobblestone_stairs": 2
+      "minecraft:vine": 2
+      "minecraft:chiseled_stone_bricks": 1
+
+  traps:
+    - type: ARROW_TRAP
+      dispensers: 2
+      tripwire: true
+      arrows: 16
+    
+    - type: PUZZLE
+      levers: 3
+      correct-combination: random
+      reward-chest: true
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/jungle_temple"
+      count: 2
+      position: secret_chamber
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/jungle_temple_dispenser"
+      count: 1
+      position: trap_room

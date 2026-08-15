@@ -1,0 +1,40 @@
+# ==========================================
+# AETHERIA — End: Plataforma de Obsidiana
+# Spawn point al entrar al End
+# ==========================================
+
+id: AETHERIA_END_OBSIDIAN_PLATFORM
+type: STRUCTURE
+
+locator:
+  type: FIXED
+  position: 100, 48, 0
+  dimension: end
+
+scripts:
+  - id: "obsidian_platform_main"
+    file: "structures/scripts/obsidian_platform.tesf"
+    palette: AETHERIA_END_MAIN_ISLAND
+
+structure:
+  layout:
+    type: PLATFORM
+    size: 5x1x5
+    height: 48
+
+  materials:
+    platform:
+      "minecraft:obsidian": 1
+    air-gap:
+      "minecraft:air": 1
+      radius: 2
+
+  features:
+    - type: SPAWN_POINT
+      position: center
+      yaw: 90
+    
+    - type: RETURN_PORTAL
+      material: "minecraft:end_portal"
+      position: center
+      activated: false

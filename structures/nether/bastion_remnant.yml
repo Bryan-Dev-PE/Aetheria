@@ -1,0 +1,95 @@
+# ==========================================
+# AETHERIA — Nether: Remanente de Bastión
+# Fortaleza piglin parcialmente destruida
+# ==========================================
+
+id: AETHERIA_NETHER_BASTION_REMNANT
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 32-100
+  rarity: 0.006
+  spacing: 40
+  separation: 10
+  biomes:
+    - nether_wastes
+    - soul_sand_valley
+    - NETHERRA_FLAMING_HELLSCAPES
+
+scripts:
+  - id: "bastion_remnant_main"
+    file: "structures/scripts/bastion_remnant.tesf"
+    palette: AETHERIA_NETHER_WASTES
+
+structure:
+  layout:
+    type: FORTRESS
+    size: 20x12x20
+    rooms: 5-10
+    courtyards: 1-2
+    walls-thickness: 2-3
+  
+  materials:
+    walls:
+      "minecraft:blackstone": 5
+      "minecraft:polished_blackstone": 3
+      "minecraft:blackstone_bricks": 2
+      "minecraft:cracked_polished_blackstone_bricks": 1
+    floors:
+      "minecraft:blackstone": 3
+      "minecraft:polished_blackstone": 2
+      "minecraft:basalt": 2
+      "minecraft:gold_block": 1
+    accents:
+      "minecraft:chiseled_polished_blackstone": 2
+      "minecraft:gilded_blackstone": 2
+      "minecraft:lantern": 1
+  
+  rooms:
+    - type: TREASURE_ROOM
+      size: 6x5x6
+      loot-table: "minecraft:chests/bastion_treasure"
+      gold-piles: true
+    
+    - type: BRIDGE
+      length: 8-15
+      width: 2-3
+      magma-pools: true
+    
+    - type: HOGBLIN_STABLE
+      size: 8x4x6
+      spawners:
+        - "minecraft:hoglin"
+    
+    - type: HOUSING_UNITS
+      count: 3-5
+      size: 4x4x4
+      beds: true
+    
+    - type: MAGMA_CHAMBER
+      size: 5x4x5
+      floor: "minecraft:magma_block"
+      lava-pool: true
+
+  features:
+    - type: SPAWNER
+      mob: "minecraft:piglin"
+      count: 3-6
+      position: housing_units
+    
+    - type: SPAWNER
+      mob: "minecraft:piglin_brute"
+      count: 1-2
+      position: treasure_room
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/bastion_other"
+      count: 4-8
+      position: random_rooms
+
+  decay:
+    enabled: true
+    level: 0.2-0.5
+    lava-damage: true
+    collapsed-sections: 0.1

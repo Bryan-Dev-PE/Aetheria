@@ -1,0 +1,75 @@
+# ==========================================
+# AETHERIA — Overworld: Puesto de Saqueadores
+# ==========================================
+
+id: AETHERIA_OW_PILLAGER_OUTPOST
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 60-100
+  rarity: 0.006
+  spacing: 32
+  separation: 8
+  biomes:
+    - all
+
+scripts:
+  - id: "pillager_outpost_main"
+    file: "structures/scripts/pillager_outpost.tesf"
+    palette: AETHERIA_OW_PLAINS
+
+structure:
+  layout:
+    type: TOWER
+    size: 7x15x7
+    base: 7x7
+    watchtower: true
+    tents: 2-4
+
+  materials:
+    walls:
+      "minecraft:dark_oak_planks": 3
+      "minecraft:cobblestone": 2
+      "minecraft:cobblestone_wall": 1
+      "minecraft:dark_oak_log": 1
+    floors:
+      "minecraft:dark_oak_planks": 2
+      "minecraft:cobblestone": 2
+      "minecraft:grass_block": 1
+    accents:
+      "minecraft:dark_oak_fence": 2
+      "minecraft:cobblestone_stairs": 1
+      "minecraft:white_wool": 1
+
+  watchtower:
+    height: 12-15
+    lookout-platform: true
+    torch-chance: 0.8
+
+  tents:
+    count: 2-4
+    size: 3x3x3
+    material: "minecraft:white_wool"
+
+  features:
+    - type: PILLAGER
+      mob: "minecraft:pillager"
+      count: 4-8
+      position: outpost_area
+    
+    - type: VINDICATOR
+      mob: "minecraft:vindicator"
+      count: 0-2
+      position: outpost_area
+    
+    - type: IRON_GOLEM_CAGE
+      material: "minecraft:iron_bars"
+      position: outpost_base
+      chance: 0.5
+      iron-golem: true
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/pillager_outpost"
+      count: 1-2
+      position: tower_top

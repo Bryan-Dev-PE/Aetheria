@@ -1,0 +1,89 @@
+# ==========================================
+# AETHERIA — Nether: Fortaleza del Nether
+# Estructura clásica mejorada con variaciones
+# ==========================================
+
+id: AETHERIA_NETHER_NETHER_FORTRESS
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 48-100
+  rarity: 0.007
+  spacing: 36
+  separation: 9
+  biomes:
+    - nether_wastes
+    - soul_sand_valley
+
+scripts:
+  - id: "nether_fortress_main"
+    file: "structures/scripts/nether_fortress.tesf"
+    palette: AETHERIA_NETHER_WASTES
+
+structure:
+  layout:
+    type: FORTRESS
+    size: 30x10x30
+    corridors: 8-15
+    intersections: 3-6
+    towers: 2-4
+  
+  materials:
+    walls:
+      "minecraft:nether_bricks": 5
+      "minecraft:cracked_nether_bricks": 2
+      "minecraft:chiseled_nether_bricks": 1
+      "minecraft:red_nether_bricks": 1
+      "minecraft:blackstone": 1
+    floors:
+      "minecraft:nether_bricks": 3
+      "minecraft:cracked_nether_bricks": 2
+      "minecraft:soul_sand": 1
+    accents:
+      "minecraft:nether_brick_fence": 2
+      "minecraft:nether_wart_block": 1
+      "minecraft:blaze_rod": 1
+
+  rooms:
+    - type: BLAZE_SPAWNER_ROOM
+      size: 7x5x7
+      spawners:
+        - "minecraft:blaze"
+      balconies: true
+    
+    - type: NETHER_WART_FARM
+      size: 5x4x5
+      crops:
+        "minecraft:nether_wart": 1
+      soul_sand_floor: true
+    
+    - type: CORRIDOR_BRIDGE
+      length: 10-20
+      width: 2
+      lava_below: true
+    
+    - type: STAIRCASE_TOWER
+      height: 8-15
+      spiral: true
+
+  features:
+    - type: SPAWNER
+      mob: "minecraft:blaze"
+      count: 1-2
+      position: blaze_rooms
+    
+    - type: SPAWNER
+      mob: "minecraft:wither_skeleton"
+      count: 2-4
+      position: corridors
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/nether_bridge"
+      count: 3-5
+      position: corridor_ends
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/nether_bridge"
+      count: 1-2
+      position: tower_tops

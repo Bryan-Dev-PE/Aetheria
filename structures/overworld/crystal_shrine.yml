@@ -1,0 +1,72 @@
+# ==========================================
+# AETHERIA — Overworld: Santuario de Cristal
+# Estructura sagrada con geodas expuestas
+# ==========================================
+
+id: AETHERIA_OW_CRYSTAL_SHRINE
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 30-100
+  rarity: 0.004
+  spacing: 56
+  separation: 14
+  biomes:
+    - mountain
+    - extreme_hills
+    - AETHERIA_FLOATING_ISLES
+
+scripts:
+  - id: "crystal_shrine_main"
+    file: "structures/scripts/crystal_shrine.tesf"
+    palette: AETHERIA_OW_MOUNTAIN
+
+structure:
+  layout:
+    type: SHRINE
+    size: 8x5x8
+    symmetry: RADIAL
+  
+  materials:
+    base:
+      "minecraft:calcite": 4
+      "minecraft:smooth_basalt": 3
+      "minecraft:polished_andesite": 2
+      "minecraft:amethyst_block": 1
+    pillars:
+      "minecraft:amethyst_pillar": 3
+      "minecraft:calcite": 2
+      "minecraft:quartz_pillar[axis=y]": 1
+    altar:
+      "minecraft:amethyst_block": 3
+      "minecraft:budding_amethyst": 2
+      "minecraft:gold_block": 1
+  
+  crystal-chamber:
+    enabled: true
+    size: 4x4x4
+    crystals:
+      "minecraft:amethyst_cluster": 3
+      "minecraft:large_amethyst_bud": 2
+      "minecraft:medium_amethyst_bud": 1
+      "minecraft:small_amethyst_bud": 1
+    lighting:
+      "minecraft:shroomlight": 1
+      "minecraft:glowstone": 1
+  
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/desert_pyramid"
+      count: 1-2
+      position: altar_base
+    
+    - type: SPAWNER
+      mob: "minecraft:witch"
+      position: crystal_chamber
+      chance: 0.3
+    
+    - type: POTION_STAND
+      material: "minecraft:brewing_stand"
+      position: altar
+      chance: 0.4

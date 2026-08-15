@@ -1,0 +1,73 @@
+# ==========================================
+# AETHERIA — Overworld: Naufragio
+# ==========================================
+
+id: AETHERIA_OW_SHIPWRECK
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 20-60
+  rarity: 0.008
+  spacing: 24
+  separation: 6
+  biomes:
+    - ocean
+    - beach
+
+scripts:
+  - id: "shipwreck_main"
+    file: "structures/scripts/shipwreck.tesf"
+    palette: AETHERIA_OW_OCEAN
+
+structure:
+  layout:
+    type: SHIP
+    size: 15x8x5
+    hull: true
+    deck: true
+    cabins: 1-2
+    damage-level: 0.3-0.7
+
+  materials:
+    hull:
+      "minecraft:oak_planks": 3
+      "minecraft:spruce_planks": 2
+      "minecraft:dark_oak_planks": 1
+      "minecraft:oak_log": 1
+    deck:
+      "minecraft:oak_planks": 2
+      "minecraft:spruce_planks": 2
+      "minecraft:oak_slab": 1
+    accents:
+      "minecraft:oak_fence": 2
+      "minecraft:spruce_fence": 1
+      "minecraft:oak_stairs": 1
+
+  variants:
+    - type: UPSIDE_DOWN
+      chance: 0.3
+    
+    - type: BROKEN_IN_HALF
+      chance: 0.2
+    
+    - type: PARTIALLY_BURIED
+      chance: 0.3
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/shipwreck_supply"
+      count: 1
+      position: supply_room
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/shipwreck_treasure"
+      count: 1
+      position: treasure_room
+      chance: 0.5
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/shipwreck_map"
+      count: 1
+      position: map_room
+      chance: 0.3

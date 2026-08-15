@@ -1,0 +1,79 @@
+# ==========================================
+# AETHERIA — Overworld: Monumento Oceánico
+# ==========================================
+
+id: AETHERIA_OW_OCEAN_MONUMENT
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 20-50
+  rarity: 0.003
+  spacing: 48
+  separation: 12
+  biomes:
+    - deep_ocean
+    - ocean
+
+scripts:
+  - id: "ocean_monument_main"
+    file: "structures/scripts/ocean_monument.tesf"
+    palette: AETHERIA_OW_OCEAN
+
+structure:
+  layout:
+    type: FORTRESS
+    size: 30x20x30
+    rooms: 12-20
+    central-chamber: true
+
+  materials:
+    walls:
+      "minecraft:prismarine": 5
+      "minecraft:prismarine_bricks": 3
+      "minecraft:dark_prismarine": 2
+    floors:
+      "minecraft:prismarine": 3
+      "minecraft:prismarine_bricks": 2
+      "minecraft:sea_lantern": 1
+    accents:
+      "minecraft:sea_lantern": 3
+      "minecraft:dark_prismarine": 2
+      "minecraft:wet_sponge": 1
+
+  rooms:
+    - type: TREASURE_ROOM
+      size: 8x6x8
+      gold-blocks: true
+      elder-guardian: true
+    
+    - type: WING_ROOM
+      count: 2
+      size: 8x5x8
+      sponge-room: true
+    
+    - type: CORRIDOR
+      width: 3
+      height: 3
+      water-filled: true
+
+  features:
+    - type: ELDER_GUARDIAN
+      mob: "minecraft:elder_guardian"
+      count: 3
+      position: monument_rooms
+    
+    - type: GUARDIAN_SPAWNER
+      mob: "minecraft:guardian"
+      position: corridors
+      density: 0.3
+    
+    - type: WET_SPONGE
+      material: "minecraft:wet_sponge"
+      position: sponge_rooms
+      count: 20-30
+    
+    - type: GOLD_BLOCKS
+      material: "minecraft:gold_block"
+      position: treasure_room
+      count: 8

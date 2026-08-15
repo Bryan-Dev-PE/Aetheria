@@ -1,0 +1,86 @@
+# ==========================================
+# AETHERIA — Nether: Grieta del Límite
+# Estructura que conecta con el vacío dimensional
+# ==========================================
+
+id: AETHERIA_NETHER_BOUNDARY_RIFT
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 20-80
+  rarity: 0.003
+  spacing: 64
+  separation: 16
+  biomes:
+    - NETHERRA_THE_BOUNDARY
+    - basalt_deltas
+
+scripts:
+  - id: "boundary_rift_main"
+    file: "structures/scripts/boundary_rift.tesf"
+    palette: NETHERRA_THE_BOUNDARY
+
+structure:
+  layout:
+    type: FISSURE
+    size: 8x20x8
+    depth: 15-40
+    vertical: true
+
+  materials:
+    walls:
+      "minecraft:obsidian": 4
+      "minecraft:crying_obsidian": 3
+      "minecraft:bedrock": 2
+      "minecraft:blackstone": 1
+    floor:
+      "minecraft:obsidian": 3
+      "minecraft:crying_obsidian": 2
+      "minecraft:magma_block": 1
+    accents:
+      "minecraft:amethyst_cluster": 2
+      "minecraft:crying_obsidian": 2
+      "minecraft:end_rod": 1
+
+  rift-core:
+    material: "minecraft:air"
+    size: 3x15x3
+    particles: "minecraft:portal"
+    sound: "ambient.cave"
+
+  floating-fragments:
+    materials:
+      "minecraft:obsidian": 2
+      "minecraft:crying_obsidian": 2
+      "minecraft:bedrock": 1
+    count: 5-12
+    size: 2-4
+    offset: 3-10
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/nether_bridge"
+      count: 1-2
+      position: rift_sides
+    
+    - type: SPAWNER
+      mob: "minecraft:ghast"
+      position: rift_top
+      chance: 0.3
+    
+    - type: SPAWNER
+      mob: "minecraft:enderman"
+      position: rift_bottom
+      chance: 0.2
+    
+    - type: ANCIENT_DEBRIS
+      material: "minecraft:ancient_debris"
+      position: rift_walls
+      count: 2-4
+      chance: 0.4
+
+  connection:
+    type: DIMENSIONAL_FRACTURE
+    target: end
+    target-structure: AETHERIA_DIMENSIONAL_FRACTURE_NEXUS

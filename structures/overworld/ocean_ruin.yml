@@ -1,0 +1,71 @@
+# ==========================================
+# AETHERIA — Overworld: Ruinas Oceánicas
+# ==========================================
+
+id: AETHERIA_OW_OCEAN_RUIN
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 20-50
+  rarity: 0.01
+  spacing: 20
+  separation: 5
+  biomes:
+    - ocean
+    - warm_ocean
+    - cold_ocean
+
+scripts:
+  - id: "ocean_ruin_main"
+    file: "structures/scripts/ocean_ruin.tesf"
+    palette: AETHERIA_OW_OCEAN
+
+structure:
+  layout:
+    type: RUIN
+    size: 5x4x5
+    rooms: 1-3
+    mossy: true
+
+  materials:
+    walls:
+      "minecraft:mossy_stone_bricks": 4
+      "minecraft:stone_bricks": 2
+      "minecraft:cracked_stone_bricks": 2
+      "minecraft:chiseled_stone_bricks": 1
+    floors:
+      "minecraft:mossy_stone_bricks": 3
+      "minecraft:gravel": 2
+      "minecraft:sand": 1
+    accents:
+      "minecraft:polished_granite": 2
+      "minecraft:polished_diorite": 1
+      "minecraft:polished_andesite": 1
+
+  variants:
+    - type: WARM
+      materials:
+        sand: "minecraft:sand"
+        accent: "minecraft:cut_sandstone"
+    
+    - type: COLD
+      materials:
+        sand: "minecraft:gravel"
+        accent: "minecraft:mossy_cobblestone"
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/underwater_ruin_small"
+      count: 1
+      position: ruin_center
+    
+    - type: DROWNED_SPAWNER
+      mob: "minecraft:drowned"
+      position: ruin_area
+      chance: 0.3
+    
+    - type: MAGMA_BLOCK
+      material: "minecraft:magma_block"
+      position: ruin_floor
+      chance: 0.2

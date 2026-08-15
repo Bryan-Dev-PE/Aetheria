@@ -1,0 +1,56 @@
+# ==========================================
+# AETHERIA — Overworld: Calabozo
+# ==========================================
+
+id: AETHERIA_OW_DUNGEON
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: -48 to 48
+  rarity: 0.01
+  spacing: 16
+  separation: 4
+
+scripts:
+  - id: "dungeon_main"
+    file: "structures/scripts/dungeon.tesf"
+    palette: AETHERIA_OW_CAVE
+
+structure:
+  layout:
+    type: ROOM
+    size: 7x5x7
+    rooms: 1-2
+    corridors: false
+
+  materials:
+    walls:
+      "minecraft:cobblestone": 4
+      "minecraft:mossy_cobblestone": 2
+      "minecraft:cracked_stone_bricks": 1
+      "minecraft:stone_bricks": 1
+    floor:
+      "minecraft:cobblestone": 3
+      "minecraft:mossy_cobblestone": 2
+      "minecraft:stone": 1
+
+  features:
+    - type: SPAWNER
+      mob: random
+      options:
+        - "minecraft:zombie"
+        - "minecraft:skeleton"
+        - "minecraft:spider"
+      position: center
+      count: 1
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/simple_dungeon"
+      count: 1-2
+      position: room_corners
+    
+    - type: COBWEB
+      material: "minecraft:cobweb"
+      density: 0.2
+      position: ceiling

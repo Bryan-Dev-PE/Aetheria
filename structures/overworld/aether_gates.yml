@@ -1,0 +1,72 @@
+# ==========================================
+# AETHERIA — Overworld: Puertas del Éter
+# Estructura que conecta con las fracturas dimensionales
+# ==========================================
+
+id: AETHERIA_OW_AETHER_GATES
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 50-120
+  rarity: 0.002
+  spacing: 80
+  separation: 20
+  biomes:
+    - all
+
+scripts:
+  - id: "aether_gates_main"
+    file: "structures/scripts/aether_gates.tesf"
+    palette: AETHERIA_OW_PLAINS
+
+structure:
+  layout:
+    type: GATEWAY
+    size: 10x8x10
+    orientation: CIRCULAR
+  
+  materials:
+    frame:
+      "minecraft:obsidian": 4
+      "minecraft:crying_obsidian": 3
+      "minecraft:crying_obsidian": 2
+      "minecraft:bedrock": 1
+    pillars:
+      "minecraft:obsidian": 3
+      "minecraft:crying_obsidian": 2
+      "minecraft:amethyst_block": 1
+    platform:
+      "minecraft:polished_andesite": 3
+      "minecraft:smooth_stone": 2
+      "minecraft:stone_bricks": 2
+      "minecraft:chiseled_stone_bricks": 1
+  
+  portal:
+    type: DIMENSIONAL_RIFT
+    center-material: "minecraft:end_portal"
+    frame-material: "minecraft:obsidian"
+    particles: "minecraft:portal"
+    sound: "block.portal.ambient"
+  
+  decorations:
+    - type: CRYSTAL_PILLAR
+      material: "minecraft:amethyst_cluster"
+      height: 3-6
+      count: 4
+      position: corners
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/stronghold_library"
+      count: 1-2
+      position: platform_center
+    
+    - type: SPAWNER
+      mob: "minecraft:enderman"
+      position: portal_room
+      chance: 0.4
+
+  connection:
+    type: FRACTURE_NEXUS
+    target-dimension: end
+    target-structure: AETHERIA_DIMENSIONAL_FRACTURE_NEXUS

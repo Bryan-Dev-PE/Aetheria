@@ -1,0 +1,44 @@
+# ==========================================
+# AETHERIA — End: Portal de Salida
+# Se activa al derrotar al dragón
+# ==========================================
+
+id: AETHERIA_END_EXIT_PORTAL
+type: STRUCTURE
+
+locator:
+  type: FIXED
+  position: 0, 64, 0
+  dimension: end
+
+scripts:
+  - id: "exit_portal_main"
+    file: "structures/scripts/exit_portal.tesf"
+    palette: AETHERIA_END_MAIN_ISLAND
+
+structure:
+  layout:
+    type: PORTAL
+    size: 7x1x7
+    height: 64
+
+  materials:
+    rim:
+      "minecraft:bedrock": 1
+    center:
+      "minecraft:end_portal": 1
+      activated: false
+    pillars:
+      "minecraft:bedrock": 1
+      height: 4
+      count: 4
+      position: corners
+    torches:
+      "minecraft:torch": 1
+      position: pillar_tops
+
+  activation:
+    triggered-by: dragon_death
+    particles: "minecraft:dragon_breath"
+    sound: "ui.toast.challenge_complete"
+    end-gateway-spawn: true

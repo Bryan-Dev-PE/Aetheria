@@ -1,0 +1,103 @@
+# ==========================================
+# AETHERIA — Overworld: Fortaleza
+# ==========================================
+
+id: AETHERIA_OW_STRONGHOLD
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: -48 to 32
+  rarity: 0.003
+  spacing: 128
+  separation: 32
+  count-per-world: 3
+
+scripts:
+  - id: "stronghold_main"
+    file: "structures/scripts/stronghold.tesf"
+    palette: AETHERIA_OW_CAVE
+
+structure:
+  layout:
+    type: DUNGEON
+    size: 40x15x40
+    rooms: 8-16
+    corridors: true
+    spiral-staircase: true
+
+  materials:
+    walls:
+      "minecraft:stone_bricks": 5
+      "minecraft:mossy_stone_bricks": 2
+      "minecraft:cracked_stone_bricks": 2
+      "minecraft:chiseled_stone_bricks": 1
+    floors:
+      "minecraft:stone_bricks": 3
+      "minecraft:cracked_stone_bricks": 2
+      "minecraft:smooth_stone": 1
+    doors:
+      "minecraft:iron_door": 1
+      "minecraft:oak_door": 1
+    accents:
+      "minecraft:stone_brick_stairs": 2
+      "minecraft:stone_brick_slab": 1
+      "minecraft:iron_bars": 1
+
+  rooms:
+    - type: PORTAL_ROOM
+      size: 9x7x9
+      end-portal: true
+      silverfish-spawner: true
+    
+    - type: LIBRARY
+      size: 9x6x9
+      bookshelves: true
+      cobwebs: true
+      loot-chests: 1-2
+    
+    - type: PRISON
+      size: 5x4x5
+      iron-bars: true
+      spawner: "minecraft:silverfish"
+    
+    - type: STORAGE
+      size: 7x5x7
+      barrels: true
+      loot-chests: 1-2
+    
+    - type: FOUNTAIN_ROOM
+      size: 7x5x7
+      central-fountain: true
+    
+    - type: CORRIDOR
+      width: 3
+      height: 3
+      length: 5-15
+      torch-chance: 0.5
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/stronghold_corridor"
+      count: 3-6
+      position: room_centers
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/stronghold_library"
+      count: 1-2
+      position: library
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/stronghold_crossing"
+      count: 1-2
+      position: intersections
+    
+    - type: SPAWNER
+      mob: "minecraft:silverfish"
+      position: portal_room
+      count: 1
+    
+    - type: END_PORTAL
+      material: "minecraft:end_portal_frame"
+      position: portal_room_center
+      eyes-filled: 0-12

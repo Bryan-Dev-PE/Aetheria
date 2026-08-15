@@ -1,0 +1,67 @@
+# ==========================================
+# AETHERIA — Nether: Pilar de Obsidiana
+# Formación natural de obsidiana con cristales
+# ==========================================
+
+id: AETHERIA_NETHER_OBSIDIAN_PILLAR
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 20-100
+  rarity: 0.005
+  spacing: 32
+  separation: 8
+  biomes:
+    - basalt_deltas
+    - NETHERRA_FLAMING_HELLSCAPES
+    - NETHERRA_CRYSTALLINE_VELDTS
+
+scripts:
+  - id: "obsidian_pillar_main"
+    file: "structures/scripts/obsidian_pillar.tesf"
+    palette: NETHERRA_FLAMING_HELLSCAPES
+
+structure:
+  layout:
+    type: PILLAR
+    height: 8-20
+    radius: 2-4
+    taper: 0.5
+  
+  materials:
+    core:
+      "minecraft:obsidian": 5
+      "minecraft:crying_obsidian": 3
+      "minecraft:magma_block": 2
+    outer:
+      "minecraft:obsidian": 3
+      "minecraft:crying_obsidian": 2
+      "minecraft:blackstone": 2
+      "minecraft:basalt": 1
+    top:
+      "minecraft:crying_obsidian": 2
+      "minecraft:obsidian": 2
+      "minecraft:fire": 1
+  
+  crystal-formations:
+    enabled: true
+    materials:
+      "minecraft:amethyst_cluster": 2
+      "minecraft:large_amethyst_bud": 1
+      "minecraft:medium_amethyst_bud": 1
+    position: pillar_sides
+    density: 0.4
+    height-range: 2-6
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/nether_bridge"
+      count: 1
+      position: pillar_top
+      chance: 0.3
+    
+    - type: SPAWNER
+      mob: "minecraft:magma_cube"
+      position: pillar_base
+      chance: 0.4

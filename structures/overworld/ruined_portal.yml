@@ -1,0 +1,53 @@
+# ==========================================
+# AETHERIA — Overworld: Portal en Ruinas
+# ==========================================
+
+id: AETHERIA_OW_RUINED_PORTAL
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 40-120
+  rarity: 0.008
+  spacing: 32
+  separation: 8
+
+scripts:
+  - id: "ruined_portal_base"
+    file: "structures/scripts/ruined_portal.tesf"
+    palette: AETHERIA_OW_PLAINS
+
+structure:
+  base:
+    size: 5x3x5
+    materials:
+      frame:
+        "minecraft:obsidian": 6
+        "minecraft:crying_obsidian": 3
+        "minecraft:magma_block": 1
+      center:
+        "minecraft:nether_portal[axis=z]": 1
+        "minecraft:air": 2
+  
+  decorations:
+    - type: LOOT_CHEST
+      material: "minecraft:chest"
+      loot-table: "minecraft:chests/ruined_portal"
+      position: random_edge
+    
+    - type: FIRE
+      material: "minecraft:fire"
+      position: near_portal
+      chance: 0.6
+    
+    - type: GOLD_BLOCK
+      material: "minecraft:gold_block"
+      position: hidden
+      chance: 0.15
+
+  decay:
+    enabled: true
+    level: 0.3-0.7
+    mossy-replacement:
+      "minecraft:stone": "minecraft:mossy_stone_bricks"
+      "minecraft:cobblestone": "minecraft:mossy_cobblestone"

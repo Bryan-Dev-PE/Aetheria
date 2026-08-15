@@ -1,0 +1,92 @@
+# ==========================================
+# AETHERIA — Overworld: Cámara de Pruebas
+# ==========================================
+
+id: AETHERIA_OW_TRIAL_CHAMBER
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: -32 to 16
+  rarity: 0.004
+  spacing: 48
+  separation: 12
+
+scripts:
+  - id: "trial_chamber_main"
+    file: "structures/scripts/trial_chamber.tesf"
+    palette: AETHERIA_OW_CAVE
+
+structure:
+  layout:
+    type: DUNGEON
+    size: 25x12x25
+    rooms: 6-10
+    corridors: true
+    trial-spawners: true
+
+  materials:
+    walls:
+      "minecraft:tuff": 4
+      "minecraft:tuff_bricks": 3
+      "minecraft:polished_tuff": 2
+      "minecraft:chiseled_tuff": 1
+    floors:
+      "minecraft:tuff": 3
+      "minecraft:polished_tuff": 2
+      "minecraft:chiseled_tuff": 1
+    accents:
+      "minecraft:waxed_copper_block": 2
+      "minecraft:waxed_chiseled_copper": 1
+      "minecraft:waxed_copper_grate": 1
+      "minecraft:copper_bulb": 1
+
+  rooms:
+    - type: TRIAL_ROOM
+      count: 3-5
+      size: 9x6x9
+      trial-spawner: true
+      reward-chest: true
+    
+    - type: CORRIDOR
+      width: 3
+      height: 4
+      length: 5-12
+    
+    - type: SUPPLY_ROOM
+      size: 5x4x5
+      barrels: true
+    
+    - type: VAULT_ROOM
+      size: 7x5x7
+      ominous-vault: true
+
+  features:
+    - type: TRIAL_SPAWNER
+      mob: random
+      options:
+        - "minecraft:zombie"
+        - "minecraft:skeleton"
+        - "minecraft:spider"
+        - "minecraft:cave_spider"
+        - "minecraft:slime"
+        - "minecraft:silverfish"
+      position: trial_rooms
+    
+    - type: OMINOUS_TRIAL_SPAWNER
+      condition: ominous_bottle
+      position: trial_rooms
+    
+    - type: REWARD_CHEST
+      loot-table: "minecraft:chests/trial_chambers/reward"
+      position: trial_room_center
+    
+    - type: OMINOUS_VAULT
+      material: "minecraft:vault"
+      position: vault_room
+      requires-ominous: true
+    
+    - type: DECORATED_POT
+      material: "minecraft:decorated_pot"
+      position: corridor_sides
+      chance: 0.3

@@ -1,0 +1,42 @@
+# ==========================================
+# AETHERIA — End: Vacío
+# Paleta para el espacio entre islas del End
+# ==========================================
+
+id: AETHERIA_END_VOID
+type: PALETTE
+
+# El vacío no tiene bloques sólidos
+# Solo partículas y efectos atmosféricos
+
+atmosphere:
+  particles:
+    type: "minecraft:portal"
+    density: 0.02
+    height: 0-256
+  
+  ambient-sound:
+    sound: "ambient.cave"
+    volume: 0.3
+    pitch: 0.5
+
+# Islas diminutas flotantes (micro-fragmentos)
+micro-fragments:
+  materials:
+    "minecraft:end_stone": 3
+    "minecraft:purpur_block": 1
+    "minecraft:obsidian": 1
+  type: FLOATING_ISLAND
+  rarity: 0.1
+  size: 1-4
+  height-offset: 20-80
+
+# Cristales del vacío
+void-crystals:
+  materials:
+    "minecraft:obsidian": 2
+    "minecraft:crying_obsidian": 2
+    "minecraft:end_rod": 1
+  type: FLOATING_CRYSTAL
+  rarity: 0.05
+  size: 1-3

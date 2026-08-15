@@ -1,0 +1,64 @@
+# ==========================================
+# AETHERIA — Nether: Fósil del Nether
+# Huesos gigantes enterrados en arena de almas
+# ==========================================
+
+id: AETHERIA_NETHER_FOSSIL
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 20-60
+  rarity: 0.005
+  spacing: 40
+  separation: 10
+  biomes:
+    - soul_sand_valley
+    - NETHERRA_THE_BOUNDARY
+
+scripts:
+  - id: "fossil_nether_main"
+    file: "structures/scripts/fossil_nether.tesf"
+    palette: AETHERIA_NETHER_SOUL_SAND_VALLEY
+
+structure:
+  layout:
+    type: FOSSIL
+    size: 12x8x12
+    partially-buried: true
+    bone-type: random
+
+  materials:
+    bones:
+      "minecraft:bone_block[axis=y]": 4
+      "minecraft:bone_block[axis=x]": 2
+      "minecraft:bone_block[axis=z]": 2
+      "minecraft:coal_block": 1
+    surrounding:
+      "minecraft:soul_sand": 3
+      "minecraft:soul_soil": 2
+      "minecraft:basalt": 1
+
+  variants:
+    - type: SPINE
+      length: 8-12
+      vertebrae: 5-8
+    
+    - type: RIBCAGE
+      width: 6-10
+      ribs: 6-10
+    
+    - type: SKULL
+      size: 4x4x5
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/nether_bridge"
+      count: 1
+      position: skull_cavity
+      chance: 0.3
+    
+    - type: SOUL_FIRE
+      material: "minecraft:soul_fire"
+      position: bone_surface
+      chance: 0.2

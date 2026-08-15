@@ -1,0 +1,56 @@
+# ==========================================
+# AETHERIA — Nether: Portal en Ruinas (Nether)
+# ==========================================
+
+id: AETHERIA_NETHER_RUINED_PORTAL
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 32-100
+  rarity: 0.008
+  spacing: 32
+  separation: 8
+
+scripts:
+  - id: "ruined_portal_nether_main"
+    file: "structures/scripts/ruined_portal_nether.tesf"
+    palette: AETHERIA_NETHER_WASTES
+
+structure:
+  base:
+    size: 5x3x5
+    materials:
+      frame:
+        "minecraft:obsidian": 5
+        "minecraft:crying_obsidian": 3
+        "minecraft:magma_block": 2
+      center:
+        "minecraft:nether_portal[axis=z]": 1
+        "minecraft:air": 2
+
+  decorations:
+    - type: LOOT_CHEST
+      material: "minecraft:chest"
+      loot-table: "minecraft:chests/ruined_portal"
+      position: random_edge
+    
+    - type: FIRE
+      material: "minecraft:fire"
+      position: near_portal
+      chance: 0.8
+    
+    - type: NETHERRACK_PILE
+      material: "minecraft:netherrack"
+      position: around_portal
+      chance: 0.5
+    
+    - type: GOLD_BLOCK
+      material: "minecraft:gold_block"
+      position: hidden
+      chance: 0.1
+
+  decay:
+    enabled: true
+    level: 0.4-0.8
+    lava-damage: true

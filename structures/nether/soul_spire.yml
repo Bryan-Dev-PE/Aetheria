@@ -1,0 +1,78 @@
+# ==========================================
+# AETHERIA — Nether: Aguja de Almas
+# Torre espiritual en el valle de arena de almas
+# ==========================================
+
+id: AETHERIA_NETHER_SOUL_SPIRE
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 32-80
+  rarity: 0.004
+  spacing: 48
+  separation: 12
+  biomes:
+    - soul_sand_valley
+    - NETHERRA_THE_BOUNDARY
+
+scripts:
+  - id: "soul_spire_main"
+    file: "structures/scripts/soul_spire.tesf"
+    palette: AETHERIA_NETHER_SOUL_SAND_VALLEY
+
+structure:
+  layout:
+    type: SPIRE
+    height: 12-25
+    base-radius: 3-5
+    top-radius: 1-2
+    twist: 0.3
+  
+  materials:
+    core:
+      "minecraft:soul_sand": 4
+      "minecraft:soul_soil": 3
+      "minecraft:bone_block[axis=y]": 2
+      "minecraft:basalt": 1
+    outer:
+      "minecraft:bone_block[axis=y]": 3
+      "minecraft:bone_block[axis=x]": 2
+      "minecraft:bone_block[axis=z]": 2
+      "minecraft:quartz_block": 1
+    top:
+      "minecraft:soul_fire": 2
+      "minecraft:soul_lantern": 1
+      "minecraft:quartz_pillar[axis=y]": 1
+  
+  decorations:
+    - type: SOUL_FIRE_RING
+      radius: 2-4
+      height: 1
+      position: base
+    
+    - type: HANGING_SOUL_LANTERNS
+      material: "minecraft:soul_lantern"
+      count: 4-8
+      height-offset: 2-6
+    
+    - type: FOSSIL_EMBEDDED
+      material: "minecraft:bone_block"
+      position: spire_wall
+      chance: 0.3
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/nether_bridge"
+      count: 1
+      position: spire_top
+    
+    - type: SPAWNER
+      mob: "minecraft:skeleton"
+      position: spire_base
+      chance: 0.5
+    
+    - type: SPAWNER
+      mob: "minecraft:ghast"
+      position: spire_top
+      chance: 0.2

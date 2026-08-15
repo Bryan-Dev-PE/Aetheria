@@ -1,0 +1,94 @@
+# ==========================================
+# AETHERIA — Overworld: Mansión del Bosque
+# ==========================================
+
+id: AETHERIA_OW_WOODLAND_MANSION
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: 60-100
+  rarity: 0.002
+  spacing: 80
+  separation: 20
+  biomes:
+    - dark_forest
+
+scripts:
+  - id: "woodland_mansion_main"
+    file: "structures/scripts/woodland_mansion.tesf"
+    palette: AETHERIA_OW_FOREST
+
+structure:
+  layout:
+    type: MANSION
+    size: 40x20x40
+    floors: 3
+    wings: 2
+    secret-rooms: 3-5
+
+  materials:
+    walls:
+      "minecraft:dark_oak_planks": 4
+      "minecraft:cobblestone": 2
+      "minecraft:cobblestone_wall": 1
+      "minecraft:dark_oak_log": 1
+    floors:
+      "minecraft:birch_planks": 3
+      "minecraft:dark_oak_planks": 2
+      "minecraft:white_wool": 1
+    accents:
+      "minecraft:dark_oak_stairs": 2
+      "minecraft:dark_oak_fence": 1
+      "minecraft:glass_pane": 1
+      "minecraft:cobblestone_stairs": 1
+
+  rooms:
+    - type: ENTRANCE_HALL
+      size: 9x6x9
+      grand-staircase: true
+    
+    - type: DINING_ROOM
+      size: 7x5x7
+      table: true
+    
+    - type: BEDROOM
+      count: 3-5
+      size: 5x4x5
+      beds: true
+    
+    - type: LIBRARY
+      size: 7x5x7
+      bookshelves: true
+    
+    - type: CHAPEL
+      size: 7x6x7
+      altar: true
+    
+    - type: STORAGE
+      size: 5x4x5
+      chests: true
+    
+    - type: PRISON
+      size: 5x4x5
+      iron-bars: true
+    
+    - type: MAP_ROOM
+      size: 7x5x7
+      item-frame-map: true
+
+  features:
+    - type: EVOKER
+      mob: "minecraft:evoker"
+      count: 1-2
+      position: random_rooms
+    
+    - type: VINDICATOR
+      mob: "minecraft:vindicator"
+      count: 2-4
+      position: random_rooms
+    
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/woodland_mansion"
+      count: 5-10
+      position: room_corners

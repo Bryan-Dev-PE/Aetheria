@@ -1,0 +1,72 @@
+# ==========================================
+# AETHERIA — Dimensional: Puente del Éter
+# Estructura que conecta dimensiones a través de fracturas
+# ==========================================
+
+id: AETHERIA_DIMENSIONAL_AETHER_BRIDGE
+type: STRUCTURE
+
+locator:
+  type: FRACTURE_SPAWN
+  rarity: 0.005
+  requires-fracture: true
+
+scripts:
+  - id: "aether_bridge_main"
+    file: "structures/scripts/aether_bridge.tesf"
+    palette: AETHERIA_END_VOID
+
+structure:
+  layout:
+    type: BRIDGE
+    length: 30-80
+    width: 3-5
+    floating: true
+
+  materials:
+    path:
+      "minecraft:obsidian": 3
+      "minecraft:crying_obsidian": 2
+      "minecraft:purpur_block": 2
+      "minecraft:end_stone_bricks": 1
+    railings:
+      "minecraft:end_rod": 2
+      "minecraft:obsidian_wall": 1
+      "minecraft:purpur_slab": 1
+    accents:
+      "minecraft:amethyst_cluster": 2
+      "minecraft:crying_obsidian": 1
+      "minecraft:dragon_head": 1
+
+  supports:
+    enabled: true
+    material: "minecraft:obsidian"
+    height: 5-15
+    spacing: 10-15
+
+  midpoints:
+    - type: SHRINE
+      size: 5x4x5
+      loot-chest: true
+      chance: 0.3
+    
+    - type: CRYSTAL_CLUSTER
+      material: "minecraft:amethyst_cluster"
+      size: 3-6
+      chance: 0.5
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/end_city_treasure"
+      count: 1-2
+      position: midpoints
+    
+    - type: SPAWNER
+      mob: "minecraft:enderman"
+      position: bridge_area
+      chance: 0.2
+    
+    - type: SPAWNER
+      mob: "minecraft:phantom"
+      position: bridge_area
+      chance: 0.1

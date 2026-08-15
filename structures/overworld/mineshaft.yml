@@ -1,0 +1,81 @@
+# ==========================================
+# AETHERIA — Overworld: Mina Abandonada
+# ==========================================
+
+id: AETHERIA_OW_MINESHAFT
+type: STRUCTURE
+
+locator:
+  type: RANDOM
+  height: -48 to 48
+  rarity: 0.008
+  spacing: 24
+  separation: 6
+
+scripts:
+  - id: "mineshaft_main"
+    file: "structures/scripts/mineshaft.tesf"
+    palette: AETHERIA_OW_CAVE
+
+structure:
+  layout:
+    type: MAZE
+    corridor-width: 3
+    corridor-height: 3
+    length: 40-120
+    intersections: 4-10
+    rooms: 2-5
+
+  materials:
+    supports:
+      "minecraft:oak_fence": 3
+      "minecraft:oak_planks": 2
+      "minecraft:cobblestone": 1
+    rails:
+      "minecraft:rail": 3
+      "minecraft:powered_rail": 1
+      "minecraft:detector_rail": 1
+    floor:
+      "minecraft:oak_planks": 3
+      "minecraft:cobblestone": 2
+      "minecraft:dirt": 1
+    ceiling:
+      "minecraft:oak_planks": 2
+      "minecraft:cobblestone": 2
+      "minecraft:stone": 1
+
+  rooms:
+    - type: INTERSECTION
+      size: 5x4x5
+      loot-chests: 0-1
+    
+    - type: STAIRWELL
+      height: 6-10
+      direction: up_or_down
+    
+    - type: LOOT_ROOM
+      size: 5x4x5
+      loot-chests: 1-2
+      spawners: 0-1
+
+  features:
+    - type: LOOT_CHEST
+      loot-table: "minecraft:chests/abandoned_mineshaft"
+      count: 2-4
+      position: room_centers
+    
+    - type: SPAWNER
+      mob: "minecraft:cave_spider"
+      position: intersection
+      chance: 0.3
+    
+    - type: MINECART_CHEST
+      material: "minecraft:chest_minecart"
+      position: rail_section
+      chance: 0.1
+      loot-table: "minecraft:chests/abandoned_mineshaft"
+    
+    - type: TORCH
+      material: "minecraft:wall_torch"
+      position: support_posts
+      chance: 0.6
