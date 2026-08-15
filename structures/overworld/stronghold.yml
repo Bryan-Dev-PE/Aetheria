@@ -49,27 +49,27 @@ structure:
       size: 9x7x9
       end-portal: true
       silverfish-spawner: true
-    
+
     - type: LIBRARY
       size: 9x6x9
       bookshelves: true
       cobwebs: true
       loot-chests: 1-2
-    
+
     - type: PRISON
       size: 5x4x5
       iron-bars: true
       spawner: "minecraft:silverfish"
-    
+
     - type: STORAGE
       size: 7x5x7
       barrels: true
       loot-chests: 1-2
-    
+
     - type: FOUNTAIN_ROOM
       size: 7x5x7
       central-fountain: true
-    
+
     - type: CORRIDOR
       width: 3
       height: 3
@@ -81,22 +81,22 @@ structure:
       loot-table: "minecraft:chests/stronghold_corridor"
       count: 3-6
       position: room_centers
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/stronghold_library"
       count: 1-2
       position: library
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/stronghold_crossing"
       count: 1-2
       position: intersections
-    
+
     - type: SPAWNER
       mob: "minecraft:silverfish"
       position: portal_room
       count: 1
-    
+
     - type: END_PORTAL
       material: "minecraft:end_portal_frame"
       position: portal_room_center

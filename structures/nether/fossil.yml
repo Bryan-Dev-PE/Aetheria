@@ -43,11 +43,11 @@ structure:
     - type: SPINE
       length: 8-12
       vertebrae: 5-8
-    
+
     - type: RIBCAGE
       width: 6-10
       ribs: 6-10
-    
+
     - type: SKULL
       size: 4x4x5
 
@@ -57,7 +57,7 @@ structure:
       count: 1
       position: skull_cavity
       chance: 0.3
-    
+
     - type: SOUL_FIRE
       material: "minecraft:soul_fire"
       position: bone_surface

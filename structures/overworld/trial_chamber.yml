@@ -47,16 +47,16 @@ structure:
       size: 9x6x9
       trial-spawner: true
       reward-chest: true
-    
+
     - type: CORRIDOR
       width: 3
       height: 4
       length: 5-12
-    
+
     - type: SUPPLY_ROOM
       size: 5x4x5
       barrels: true
-    
+
     - type: VAULT_ROOM
       size: 7x5x7
       ominous-vault: true
@@ -72,20 +72,20 @@ structure:
         - "minecraft:slime"
         - "minecraft:silverfish"
       position: trial_rooms
-    
+
     - type: OMINOUS_TRIAL_SPAWNER
       condition: ominous_bottle
       position: trial_rooms
-    
+
     - type: REWARD_CHEST
       loot-table: "minecraft:chests/trial_chambers/reward"
       position: trial_room_center
-    
+
     - type: OMINOUS_VAULT
       material: "minecraft:vault"
       position: vault_room
       requires-ominous: true
-    
+
     - type: DECORATED_POT
       material: "minecraft:decorated_pot"
       position: corridor_sides

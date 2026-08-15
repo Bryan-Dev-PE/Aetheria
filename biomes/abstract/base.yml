@@ -18,15 +18,15 @@ terrain:
     expression: |
       # Altura base del terreno
       baseHeight = 64;
-      
+
       # Ruido de terreno general
       terrainNoise = simplex(x / 50, z / 50) * 2;
-      
+
       # Ruido de detalle
       detailNoise = simplex(x / 10, z / 10) * 0.5;
-      
+
       baseHeight + terrainNoise + detailNoise
-  
+
   height: 64
   base: 60
 

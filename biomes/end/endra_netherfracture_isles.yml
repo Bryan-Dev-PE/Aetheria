@@ -19,22 +19,22 @@ terrain:
 
 palette:
   - BLOCK:minecraft:end_stone: 255
-  - BLOCK:minecraft:netherrack: 120        # De Nether
-  - BLOCK:minecraft:magma_block: 80        # De Nether
-  - BLOCK:minecraft:blackstone: 60         # De Nether
-  - BLOCK:minecraft:crimson_nylium: 40     # De Nether
+  - BLOCK:minecraft:netherrack: 120 # De Nether
+  - BLOCK:minecraft:magma_block: 80 # De Nether
+  - BLOCK:minecraft:blackstone: 60 # De Nether
+  - BLOCK:minecraft:crimson_nylium: 40 # De Nether
   - BLOCK:minecraft:obsidian: 20
   - BLOCK:minecraft:lava: 0
 
 features:
   trees:
     - structures/chorus_tree.yml
-    - structures/crimson_fungus_end.yml     # Hongos crimson adaptados
+    - structures/crimson_fungus_end.yml # Hongos crimson adaptados
   flora:
     - features/chorus_flower.yml
     - features/nether_wart_end.yml
-    - features/fire_patch.yml               # Fuego eterno
+    - features/fire_patch.yml # Fuego eterno
   ores:
     - ores/end_ores.yml
   postprocessors:
-    - features/lava_drips.yml               # Goteo de lava desde islas
+    - features/lava_drips.yml # Goteo de lava desde islas

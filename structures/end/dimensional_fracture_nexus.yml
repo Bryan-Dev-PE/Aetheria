@@ -53,12 +53,12 @@ structure:
       material: "minecraft:end_portal_frame"
       destination: overworld
       position: north_side
-    
+
     - type: NETHER_GATE
       material: "minecraft:nether_portal"
       destination: nether
       position: south_side
-    
+
     - type: END_GATE
       material: "minecraft:end_portal"
       destination: end_spawn
@@ -69,22 +69,22 @@ structure:
       loot-table: "minecraft:chests/end_city_treasure"
       count: 2-3
       position: chamber_corners
-    
+
     - type: SPAWNER
       mob: "minecraft:shulker"
       position: nexus_walls
       count: 2-4
-    
+
     - type: SPAWNER
       mob: "minecraft:enderman"
       position: nexus_area
       count: 4-8
-    
+
     - type: BEACON
       material: "minecraft:beacon"
       position: chamber_center
       activated: true
-    
+
     - type: DRAGON_HEAD
       material: "minecraft:dragon_head"
       position: nexus_pillars

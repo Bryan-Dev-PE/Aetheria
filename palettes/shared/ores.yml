@@ -13,21 +13,21 @@ ore-veins:
       "minecraft:deepslate_coal_ore": 2
       "minecraft:stone": 10
     rarity: 0.15
-  
+
   iron:
     materials:
       "minecraft:iron_ore": 3
       "minecraft:deepslate_iron_ore": 2
       "minecraft:stone": 12
     rarity: 0.12
-  
+
   copper:
     materials:
       "minecraft:copper_ore": 2
       "minecraft:deepslate_copper_ore": 2
       "minecraft:stone": 15
     rarity: 0.10
-  
+
   gold:
     materials:
       "minecraft:gold_ore": 2
@@ -35,7 +35,7 @@ ore-veins:
       "minecraft:stone": 20
     rarity: 0.08
     min-y: -32
-  
+
   redstone:
     materials:
       "minecraft:redstone_ore": 2
@@ -43,7 +43,7 @@ ore-veins:
       "minecraft:stone": 18
     rarity: 0.09
     min-y: -16
-  
+
   lapis:
     materials:
       "minecraft:lapis_ore": 2
@@ -51,7 +51,7 @@ ore-veins:
       "minecraft:stone": 16
     rarity: 0.07
     min-y: -32
-  
+
   diamond:
     materials:
       "minecraft:diamond_ore": 1
@@ -59,7 +59,7 @@ ore-veins:
       "minecraft:stone": 25
     rarity: 0.05
     min-y: -48
-  
+
   emerald:
     materials:
       "minecraft:emerald_ore": 1

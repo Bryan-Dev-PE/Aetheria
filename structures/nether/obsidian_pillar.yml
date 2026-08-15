@@ -28,7 +28,7 @@ structure:
     height: 8-20
     radius: 2-4
     taper: 0.5
-  
+
   materials:
     core:
       "minecraft:obsidian": 5
@@ -43,7 +43,7 @@ structure:
       "minecraft:crying_obsidian": 2
       "minecraft:obsidian": 2
       "minecraft:fire": 1
-  
+
   crystal-formations:
     enabled: true
     materials:
@@ -60,7 +60,7 @@ structure:
       count: 1
       position: pillar_top
       chance: 0.3
-    
+
     - type: SPAWNER
       mob: "minecraft:magma_cube"
       position: pillar_base

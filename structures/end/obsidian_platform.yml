@@ -33,7 +33,7 @@ structure:
     - type: SPAWN_POINT
       position: center
       yaw: 90
-    
+
     - type: RETURN_PORTAL
       material: "minecraft:end_portal"
       position: center

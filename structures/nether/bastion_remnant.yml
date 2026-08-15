@@ -29,7 +29,7 @@ structure:
     rooms: 5-10
     courtyards: 1-2
     walls-thickness: 2-3
-  
+
   materials:
     walls:
       "minecraft:blackstone": 5
@@ -45,28 +45,28 @@ structure:
       "minecraft:chiseled_polished_blackstone": 2
       "minecraft:gilded_blackstone": 2
       "minecraft:lantern": 1
-  
+
   rooms:
     - type: TREASURE_ROOM
       size: 6x5x6
       loot-table: "minecraft:chests/bastion_treasure"
       gold-piles: true
-    
+
     - type: BRIDGE
       length: 8-15
       width: 2-3
       magma-pools: true
-    
+
     - type: HOGBLIN_STABLE
       size: 8x4x6
       spawners:
         - "minecraft:hoglin"
-    
+
     - type: HOUSING_UNITS
       count: 3-5
       size: 4x4x4
       beds: true
-    
+
     - type: MAGMA_CHAMBER
       size: 5x4x5
       floor: "minecraft:magma_block"
@@ -77,12 +77,12 @@ structure:
       mob: "minecraft:piglin"
       count: 3-6
       position: housing_units
-    
+
     - type: SPAWNER
       mob: "minecraft:piglin_brute"
       count: 1-2
       position: treasure_room
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/bastion_other"
       count: 4-8

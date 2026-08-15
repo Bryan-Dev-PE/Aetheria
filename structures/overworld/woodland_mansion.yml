@@ -47,32 +47,32 @@ structure:
     - type: ENTRANCE_HALL
       size: 9x6x9
       grand-staircase: true
-    
+
     - type: DINING_ROOM
       size: 7x5x7
       table: true
-    
+
     - type: BEDROOM
       count: 3-5
       size: 5x4x5
       beds: true
-    
+
     - type: LIBRARY
       size: 7x5x7
       bookshelves: true
-    
+
     - type: CHAPEL
       size: 7x6x7
       altar: true
-    
+
     - type: STORAGE
       size: 5x4x5
       chests: true
-    
+
     - type: PRISON
       size: 5x4x5
       iron-bars: true
-    
+
     - type: MAP_ROOM
       size: 7x5x7
       item-frame-map: true
@@ -82,12 +82,12 @@ structure:
       mob: "minecraft:evoker"
       count: 1-2
       position: random_rooms
-    
+
     - type: VINDICATOR
       mob: "minecraft:vindicator"
       count: 2-4
       position: random_rooms
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/woodland_mansion"
       count: 5-10

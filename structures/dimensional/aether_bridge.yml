@@ -49,7 +49,7 @@ structure:
       size: 5x4x5
       loot-chest: true
       chance: 0.3
-    
+
     - type: CRYSTAL_CLUSTER
       material: "minecraft:amethyst_cluster"
       size: 3-6
@@ -60,12 +60,12 @@ structure:
       loot-table: "minecraft:chests/end_city_treasure"
       count: 1-2
       position: midpoints
-    
+
     - type: SPAWNER
       mob: "minecraft:enderman"
       position: bridge_area
       chance: 0.2
-    
+
     - type: SPAWNER
       mob: "minecraft:phantom"
       position: bridge_area

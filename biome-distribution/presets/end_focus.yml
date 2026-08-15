@@ -16,22 +16,22 @@ dimensions:
   overworld:
     enabled: true
     stage: $biome-distribution/stages/overworld_distribution.yml:biomes
-    weight: 0.6  # Reducido
+    weight: 0.6 # Reducido
 
   nether:
     enabled: true
     stage: $biome-distribution/stages/nether_distribution.yml:biomes
-    weight: 0.7  # Reducido
+    weight: 0.7 # Reducido
 
   the_end:
     enabled: true
     stage: $biome-distribution/stages/end_distribution.yml:biomes
-    weight: 1.5  # Más peso
+    weight: 1.5 # Más peso
 
 # --- Configuración de fracturas ---
 fractures:
   enabled: true
-  global-rarity: 0.15  # Muchas fracturas para conectar con End
+  global-rarity: 0.15 # Muchas fracturas para conectar con End
   blend-intensity: 0.7
 
   overworld:
@@ -84,7 +84,7 @@ flora:
   end:
     vanilla: true
     custom: true
-    density: 1.3  # Más vegetación del End
+    density: 1.3 # Más vegetación del End
 
 # --- Configuración de cuevas ---
 caves:
@@ -127,7 +127,7 @@ floating-islands:
 # --- Configuración de Aether Pockets (End) ---
 aether-pockets:
   enabled: true
-  rarity: 0.40  # MUCHOS Aether Pockets
+  rarity: 0.40 # MUCHOS Aether Pockets
   biomes:
     - ENDRA_AETHER_AZURE_MEADOWS
     - ENDRA_AETHER_CLARET_GROVE
@@ -156,7 +156,7 @@ rings-of-life:
 # --- Configuración de Dragon Pit ---
 dragon-pit:
   enabled: true
-  radius: 50  # Más grande
+  radius: 50 # Más grande
   depth: 25
 
 # --- Biomas desactivados ---
@@ -195,7 +195,7 @@ biome-rarity:
   AETHERIA_LUSH_CAVES: 0.6
   AETHERIA_DRIPSTONE_CAVES: 0.6
   AETHERIA_SCORCHED_PLAINS: 0.6
-  AETHERIA_VOID_TAINTED: 1.2  # Más común (conexión con End)
+  AETHERIA_VOID_TAINTED: 1.2 # Más común (conexión con End)
 
   # Nether: menos comunes
   NETHERRA_FLAMING_HELLSCAPES: 0.8

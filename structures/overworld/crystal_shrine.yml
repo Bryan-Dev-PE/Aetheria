@@ -27,7 +27,7 @@ structure:
     type: SHRINE
     size: 8x5x8
     symmetry: RADIAL
-  
+
   materials:
     base:
       "minecraft:calcite": 4
@@ -42,7 +42,7 @@ structure:
       "minecraft:amethyst_block": 3
       "minecraft:budding_amethyst": 2
       "minecraft:gold_block": 1
-  
+
   crystal-chamber:
     enabled: true
     size: 4x4x4
@@ -54,18 +54,18 @@ structure:
     lighting:
       "minecraft:shroomlight": 1
       "minecraft:glowstone": 1
-  
+
   features:
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/desert_pyramid"
       count: 1-2
       position: altar_base
-    
+
     - type: SPAWNER
       mob: "minecraft:witch"
       position: crystal_chamber
       chance: 0.3
-    
+
     - type: POTION_STAND
       material: "minecraft:brewing_stand"
       position: altar

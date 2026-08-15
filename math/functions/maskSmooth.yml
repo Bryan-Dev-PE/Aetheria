@@ -48,9 +48,9 @@ functions:
   maskRadialSmooth:
     type: EXPRESSION
     expression: |
-        dist = sqrt((x - cx)^2 + (z - cz)^2);
-        t = dist / radius;
-        if(t > 1, 0, 1 - t * t * (3 - 2 * t))
+      dist = sqrt((x - cx)^2 + (z - cz)^2);
+      t = dist / radius;
+      if(t > 1, 0, 1 - t * t * (3 - 2 * t))
 
   maskNoise:
     type: EXPRESSION

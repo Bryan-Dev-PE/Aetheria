@@ -59,7 +59,7 @@ structure:
       loot-table: "minecraft:chests/desert_pyramid"
       count: 4
       position: chamber_floor
-    
+
     - type: TNT_TRAP
       material: "minecraft:tnt"
       position: chamber_floor

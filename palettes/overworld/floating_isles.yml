@@ -24,7 +24,7 @@ island-surface:
       "minecraft:mycelium": 1
       "minecraft:moss_block": 1
     layers: 1
-  
+
   sub:
     materials:
       "minecraft:dirt": 3

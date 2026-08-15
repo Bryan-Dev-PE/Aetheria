@@ -15,7 +15,7 @@ surface:
       "minecraft:gravel": 3
       "minecraft:clay": 1
     layers: 2-4
-  
+
   sub:
     materials:
       "minecraft:sandstone": 3
@@ -31,7 +31,7 @@ marine-vegetation:
       "minecraft:sea_pickel": 1
     depth: 1-8
     temperature: warm
-  
+
   cold:
     materials:
       "minecraft:seagrass": 3

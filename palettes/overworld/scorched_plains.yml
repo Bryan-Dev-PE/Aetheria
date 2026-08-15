@@ -17,7 +17,7 @@ surface:
       "minecraft:red_sandstone": 2
       "minecraft:coarse_dirt": 1
     layers: 2
-  
+
   sub:
     materials:
       "minecraft:red_sandstone": 3

@@ -46,12 +46,12 @@ structure:
       size: 8x6x8
       gold-blocks: true
       elder-guardian: true
-    
+
     - type: WING_ROOM
       count: 2
       size: 8x5x8
       sponge-room: true
-    
+
     - type: CORRIDOR
       width: 3
       height: 3
@@ -62,17 +62,17 @@ structure:
       mob: "minecraft:elder_guardian"
       count: 3
       position: monument_rooms
-    
+
     - type: GUARDIAN_SPAWNER
       mob: "minecraft:guardian"
       position: corridors
       density: 0.3
-    
+
     - type: WET_SPONGE
       material: "minecraft:wet_sponge"
       position: sponge_rooms
       count: 20-30
-    
+
     - type: GOLD_BLOCKS
       material: "minecraft:gold_block"
       position: treasure_room

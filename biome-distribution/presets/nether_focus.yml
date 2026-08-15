@@ -15,22 +15,22 @@ dimensions:
   overworld:
     enabled: true
     stage: $biome-distribution/stages/overworld_distribution.yml:biomes
-    weight: 0.7  # Reducido
+    weight: 0.7 # Reducido
 
   nether:
     enabled: true
     stage: $biome-distribution/stages/nether_distribution.yml:biomes
-    weight: 1.5  # Más peso
+    weight: 1.5 # Más peso
 
   the_end:
     enabled: true
     stage: $biome-distribution/stages/end_distribution.yml:biomes
-    weight: 0.6  # Reducido
+    weight: 0.6 # Reducido
 
 # --- Configuración de fracturas ---
 fractures:
   enabled: true
-  global-rarity: 0.15  # Muchas fracturas para conectar con OW
+  global-rarity: 0.15 # Muchas fracturas para conectar con OW
   blend-intensity: 0.7
 
   overworld:
@@ -79,7 +79,7 @@ flora:
   nether:
     vanilla: true
     custom: true
-    density: 1.3  # Más vegetación del Nether
+    density: 1.3 # Más vegetación del Nether
   end:
     vanilla: true
     custom: false
@@ -96,7 +96,7 @@ caves:
     enabled: true
     vanilla-caves: true
     custom-cave-biomes: true
-    density: 1.5  # Cuevas más densas
+    density: 1.5 # Cuevas más densas
   end:
     enabled: false
 
@@ -125,7 +125,7 @@ floating-islands:
 
 # --- Configuración de Aether Pockets (End) ---
 aether-pockets:
-  enabled: false  # Desactivado para enfocar en Nether
+  enabled: false # Desactivado para enfocar en Nether
 
 # --- Configuración de Rings of Life (End) ---
 rings-of-life:
@@ -189,7 +189,7 @@ biome-rarity:
   AETHERIA_DEEP_OCEAN: 0.8
   AETHERIA_LUSH_CAVES: 0.7
   AETHERIA_DRIPSTONE_CAVES: 0.7
-  AETHERIA_SCORCHED_PLAINS: 1.2  # Más común (conexión con Nether)
+  AETHERIA_SCORCHED_PLAINS: 1.2 # Más común (conexión con Nether)
   AETHERIA_VOID_TAINTED: 0.6
 
   # Nether: más comunes

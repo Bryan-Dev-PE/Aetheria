@@ -48,11 +48,11 @@ structure:
     - type: INTERSECTION
       size: 5x4x5
       loot-chests: 0-1
-    
+
     - type: STAIRWELL
       height: 6-10
       direction: up_or_down
-    
+
     - type: LOOT_ROOM
       size: 5x4x5
       loot-chests: 1-2
@@ -63,18 +63,18 @@ structure:
       loot-table: "minecraft:chests/abandoned_mineshaft"
       count: 2-4
       position: room_centers
-    
+
     - type: SPAWNER
       mob: "minecraft:cave_spider"
       position: intersection
       chance: 0.3
-    
+
     - type: MINECART_CHEST
       material: "minecraft:chest_minecart"
       position: rail_section
       chance: 0.1
       loot-table: "minecraft:chests/abandoned_mineshaft"
-    
+
     - type: TORCH
       material: "minecraft:wall_torch"
       position: support_posts

@@ -63,17 +63,17 @@ structure:
       loot-table: "minecraft:chests/nether_bridge"
       count: 1-2
       position: rift_sides
-    
+
     - type: SPAWNER
       mob: "minecraft:ghast"
       position: rift_top
       chance: 0.3
-    
+
     - type: SPAWNER
       mob: "minecraft:enderman"
       position: rift_bottom
       chance: 0.2
-    
+
     - type: ANCIENT_DEBRIS
       material: "minecraft:ancient_debris"
       position: rift_walls

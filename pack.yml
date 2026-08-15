@@ -58,7 +58,7 @@ addons:
 # ==========================================
 stages:
   # Pre-procesamiento
-  - id: 'global-preprocessors'
+  - id: "global-preprocessors"
     type: FEATURE
   - id: preprocessors
     type: FEATURE
@@ -126,9 +126,9 @@ palettes:
     - palettes/shared/ores.yml:palettes
     - palettes/shared/vegetation.yml:palettes
 
-# ==========================================
-# PALETAS POR DIMENSIÓN
-# ==========================================
+  # ==========================================
+  # PALETAS POR DIMENSIÓN
+  # ==========================================
   overworld:
     "<<":
       - palettes/overworld/plains.yml:palettes

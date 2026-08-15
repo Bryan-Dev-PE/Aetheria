@@ -44,12 +44,12 @@ structure:
         - "minecraft:spider"
       position: center
       count: 1
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/simple_dungeon"
       count: 1-2
       position: room_corners
-    
+
     - type: COBWEB
       material: "minecraft:cobweb"
       density: 0.2

@@ -46,7 +46,7 @@ structure:
       dispensers: 2
       tripwire: true
       arrows: 16
-    
+
     - type: PUZZLE
       levers: 3
       correct-combination: random
@@ -57,7 +57,7 @@ structure:
       loot-table: "minecraft:chests/jungle_temple"
       count: 2
       position: secret_chamber
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/jungle_temple_dispenser"
       count: 1

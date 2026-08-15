@@ -15,7 +15,7 @@ surface:
       "minecraft:coarse_dirt": 1
       "minecraft:moss_block": 1
     layers: 1
-  
+
   sub:
     materials:
       "minecraft:dirt": 1
@@ -40,7 +40,7 @@ patches:
       "minecraft:brown_mushroom": 1
     density: 0.8
     radius: 3-5
-  
+
   - materials:
       "minecraft:fallen_oak_log[axis=x]": 1
       "minecraft:fallen_birch_log[axis=z]": 1

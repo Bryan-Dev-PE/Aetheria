@@ -18,7 +18,7 @@ altitude-bands:
       "minecraft:packed_ice": 1
       "minecraft:stone": 1
     layers: 2-5
-  
+
   # Laderas altas (Y 120-160)
   high-slope:
     min-y: 120
@@ -28,7 +28,7 @@ altitude-bands:
       "minecraft:gravel": 2
       "minecraft:snow": 1
     layers: 2
-  
+
   # Laderas medias (Y 80-120)
   mid-slope:
     min-y: 80
@@ -38,7 +38,7 @@ altitude-bands:
       "minecraft:dirt": 2
       "minecraft:grass_block": 1
     layers: 2
-  
+
   # Pie de montaña (Y < 80)
   foothill:
     materials:

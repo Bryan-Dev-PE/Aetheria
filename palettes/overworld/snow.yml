@@ -16,7 +16,7 @@ surface:
       "minecraft:ice": 1
       "minecraft:snow": 1
     layers: 2-4
-  
+
   sub:
     materials:
       "minecraft:dirt": 3

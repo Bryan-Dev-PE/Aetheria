@@ -48,7 +48,7 @@ structure:
       materials:
         sand: "minecraft:sand"
         accent: "minecraft:cut_sandstone"
-    
+
     - type: COLD
       materials:
         sand: "minecraft:gravel"
@@ -59,12 +59,12 @@ structure:
       loot-table: "minecraft:chests/underwater_ruin_small"
       count: 1
       position: ruin_center
-    
+
     - type: DROWNED_SPAWNER
       mob: "minecraft:drowned"
       position: ruin_area
       chance: 0.3
-    
+
     - type: MAGMA_BLOCK
       material: "minecraft:magma_block"
       position: ruin_floor

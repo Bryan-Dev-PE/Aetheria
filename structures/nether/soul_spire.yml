@@ -28,7 +28,7 @@ structure:
     base-radius: 3-5
     top-radius: 1-2
     twist: 0.3
-  
+
   materials:
     core:
       "minecraft:soul_sand": 4
@@ -44,18 +44,18 @@ structure:
       "minecraft:soul_fire": 2
       "minecraft:soul_lantern": 1
       "minecraft:quartz_pillar[axis=y]": 1
-  
+
   decorations:
     - type: SOUL_FIRE_RING
       radius: 2-4
       height: 1
       position: base
-    
+
     - type: HANGING_SOUL_LANTERNS
       material: "minecraft:soul_lantern"
       count: 4-8
       height-offset: 2-6
-    
+
     - type: FOSSIL_EMBEDDED
       material: "minecraft:bone_block"
       position: spire_wall
@@ -66,12 +66,12 @@ structure:
       loot-table: "minecraft:chests/nether_bridge"
       count: 1
       position: spire_top
-    
+
     - type: SPAWNER
       mob: "minecraft:skeleton"
       position: spire_base
       chance: 0.5
-    
+
     - type: SPAWNER
       mob: "minecraft:ghast"
       position: spire_top

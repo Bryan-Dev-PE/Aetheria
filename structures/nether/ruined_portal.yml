@@ -34,17 +34,17 @@ structure:
       material: "minecraft:chest"
       loot-table: "minecraft:chests/ruined_portal"
       position: random_edge
-    
+
     - type: FIRE
       material: "minecraft:fire"
       position: near_portal
       chance: 0.8
-    
+
     - type: NETHERRACK_PILE
       material: "minecraft:netherrack"
       position: around_portal
       chance: 0.5
-    
+
     - type: GOLD_BLOCK
       material: "minecraft:gold_block"
       position: hidden

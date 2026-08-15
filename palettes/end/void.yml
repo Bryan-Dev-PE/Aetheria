@@ -14,7 +14,7 @@ atmosphere:
     type: "minecraft:portal"
     density: 0.02
     height: 0-256
-  
+
   ambient-sound:
     sound: "ambient.cave"
     volume: 0.3

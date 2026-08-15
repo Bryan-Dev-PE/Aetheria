@@ -101,8 +101,8 @@ structure-rarity:
   AETHERIA_NETHER_FOSSIL: 0.005
 
   # End
-  AETHERIA_END_OBSIDIAN_PLATFORM: 1.0  # Fijo, siempre presente
-  AETHERIA_END_EXIT_PORTAL: 1.0        # Fijo, siempre presente
+  AETHERIA_END_OBSIDIAN_PLATFORM: 1.0 # Fijo, siempre presente
+  AETHERIA_END_EXIT_PORTAL: 1.0 # Fijo, siempre presente
   AETHERIA_DIMENSIONAL_FRACTURE_NEXUS: 0.001
 
   # Dimensional
@@ -127,7 +127,7 @@ disabled:
 # ==========================================
 fractures:
   enabled: true
-  intensity: 0.08           # 0.0 a 1.0
+  intensity: 0.08 # 0.0 a 1.0
   overworld-nether: true
   overworld-end: true
   nether-end: true
@@ -140,7 +140,7 @@ fractures:
 # ==========================================
 # INTENSIDAD DE FRACTURAS (LEGACY)
 # ==========================================
-fracture-intensity: 0.08    # 0.0 a 1.0
+fracture-intensity: 0.08 # 0.0 a 1.0
 
 # ==========================================
 # GENERACIÓN DE MINERALES

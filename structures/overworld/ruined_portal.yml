@@ -28,18 +28,18 @@ structure:
       center:
         "minecraft:nether_portal[axis=z]": 1
         "minecraft:air": 2
-  
+
   decorations:
     - type: LOOT_CHEST
       material: "minecraft:chest"
       loot-table: "minecraft:chests/ruined_portal"
       position: random_edge
-    
+
     - type: FIRE
       material: "minecraft:fire"
       position: near_portal
       chance: 0.6
-    
+
     - type: GOLD_BLOCK
       material: "minecraft:gold_block"
       position: hidden

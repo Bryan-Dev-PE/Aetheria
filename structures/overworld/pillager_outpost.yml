@@ -57,18 +57,18 @@ structure:
       mob: "minecraft:pillager"
       count: 4-8
       position: outpost_area
-    
+
     - type: VINDICATOR
       mob: "minecraft:vindicator"
       count: 0-2
       position: outpost_area
-    
+
     - type: IRON_GOLEM_CAGE
       material: "minecraft:iron_bars"
       position: outpost_base
       chance: 0.5
       iron-golem: true
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/pillager_outpost"
       count: 1-2

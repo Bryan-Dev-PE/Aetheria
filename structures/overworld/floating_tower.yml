@@ -27,7 +27,7 @@ structure:
     base-radius: 4-6
     top-radius: 2-3
     taper: true
-  
+
   materials:
     walls:
       "minecraft:stone_bricks": 4
@@ -43,13 +43,13 @@ structure:
       "minecraft:amethyst_cluster": 2
       "minecraft:calcite": 2
       "minecraft:smooth_stone": 1
-  
+
   floors:
     count: 3-6
     height-per-floor: 4-5
     windows: true
     balcony-chance: 0.3
-  
+
   top:
     type: OBSERVATORY
     materials:
@@ -59,18 +59,18 @@ structure:
     beacon:
       material: "minecraft:beacon"
       chance: 0.2
-  
+
   features:
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/abandoned_mineshaft"
       count: 2-3
       position: floor_centers
-    
+
     - type: SPAWNER
       mob: "minecraft:phantom"
       position: top_floor
       chance: 0.5
-    
+
     - type: ENDER_CHEST
       position: top_observatory
       chance: 0.1

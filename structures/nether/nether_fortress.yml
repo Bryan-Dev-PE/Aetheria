@@ -28,7 +28,7 @@ structure:
     corridors: 8-15
     intersections: 3-6
     towers: 2-4
-  
+
   materials:
     walls:
       "minecraft:nether_bricks": 5
@@ -51,18 +51,18 @@ structure:
       spawners:
         - "minecraft:blaze"
       balconies: true
-    
+
     - type: NETHER_WART_FARM
       size: 5x4x5
       crops:
         "minecraft:nether_wart": 1
       soul_sand_floor: true
-    
+
     - type: CORRIDOR_BRIDGE
       length: 10-20
       width: 2
       lava_below: true
-    
+
     - type: STAIRCASE_TOWER
       height: 8-15
       spiral: true
@@ -72,17 +72,17 @@ structure:
       mob: "minecraft:blaze"
       count: 1-2
       position: blaze_rooms
-    
+
     - type: SPAWNER
       mob: "minecraft:wither_skeleton"
       count: 2-4
       position: corridors
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/nether_bridge"
       count: 3-5
       position: corridor_ends
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/nether_bridge"
       count: 1-2

@@ -47,10 +47,10 @@ structure:
   variants:
     - type: UPSIDE_DOWN
       chance: 0.3
-    
+
     - type: BROKEN_IN_HALF
       chance: 0.2
-    
+
     - type: PARTIALLY_BURIED
       chance: 0.3
 
@@ -59,13 +59,13 @@ structure:
       loot-table: "minecraft:chests/shipwreck_supply"
       count: 1
       position: supply_room
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/shipwreck_treasure"
       count: 1
       position: treasure_room
       chance: 0.5
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/shipwreck_map"
       count: 1

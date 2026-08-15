@@ -25,12 +25,11 @@ structure:
     type: GATEWAY
     size: 10x8x10
     orientation: CIRCULAR
-  
+
   materials:
     frame:
       "minecraft:obsidian": 4
       "minecraft:crying_obsidian": 3
-      "minecraft:crying_obsidian": 2
       "minecraft:bedrock": 1
     pillars:
       "minecraft:obsidian": 3
@@ -41,26 +40,26 @@ structure:
       "minecraft:smooth_stone": 2
       "minecraft:stone_bricks": 2
       "minecraft:chiseled_stone_bricks": 1
-  
+
   portal:
     type: DIMENSIONAL_RIFT
     center-material: "minecraft:end_portal"
     frame-material: "minecraft:obsidian"
     particles: "minecraft:portal"
     sound: "block.portal.ambient"
-  
+
   decorations:
     - type: CRYSTAL_PILLAR
       material: "minecraft:amethyst_cluster"
       height: 3-6
       count: 4
       position: corners
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/stronghold_library"
       count: 1-2
       position: platform_center
-    
+
     - type: SPAWNER
       mob: "minecraft:enderman"
       position: portal_room

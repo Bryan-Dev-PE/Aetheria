@@ -29,7 +29,7 @@ structure:
     size: 12x6x12
     rooms: 3-6
     corridors: true
-  
+
   materials:
     walls:
       "minecraft:stone_bricks": 5
@@ -45,23 +45,23 @@ structure:
       "minecraft:stone_brick_wall": 2
       "minecraft:cobblestone_wall": 1
       "minecraft:mossy_cobblestone_wall": 1
-  
+
   features:
     - type: SPAWNER
       mob: "minecraft:zombie"
       position: center_room
       chance: 0.4
-    
+
     - type: SPAWNER
       mob: "minecraft:skeleton"
       position: corridor
       chance: 0.3
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/simple_dungeon"
       count: 2-4
       position: room_corners
-    
+
     - type: DECAYED_FURNACE
       material: "minecraft:furnace"
       position: random_room

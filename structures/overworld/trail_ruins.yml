@@ -49,22 +49,22 @@ structure:
       material: "minecraft:suspicious_gravel"
       position: ruin_floor
       count: 10-20
-    
+
     - type: SUSPICIOUS_SAND
       material: "minecraft:suspicious_sand"
       position: ruin_area
       count: 5-10
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/trail_ruins_common"
       count: 1-2
       position: ruin_rooms
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/trail_ruins_rare"
       count: 1
       position: hidden_chamber
-    
+
     - type: DECORATED_POT
       material: "minecraft:decorated_pot"
       position: ruin_shelves

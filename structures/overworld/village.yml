@@ -37,38 +37,38 @@ structure:
       count: 2-4
       size: 5x4x5
       beds: 1-2
-    
+
     - type: LARGE_HOUSE
       count: 1-2
       size: 7x5x7
       beds: 2-4
-    
+
     - type: LIBRARY
       count: 0-1
       size: 7x5x7
       bookshelves: true
-    
+
     - type: BLACKSMITH
       count: 0-1
       size: 7x5x7
       furnace: true
       lava-pool: true
-    
+
     - type: CHURCH
       count: 0-1
       size: 5x8x5
       tower: true
-    
+
     - type: BUTCHER
       count: 0-1
       size: 5x4x5
       smoker: true
-    
+
     - type: FLETCHER
       count: 0-1
       size: 5x4x5
       fletching-table: true
-    
+
     - type: FARM
       count: 1-3
       size: 7x3x7
@@ -83,17 +83,17 @@ structure:
       mob: "minecraft:villager"
       count: 4-10
       professions: random
-    
+
     - type: IRON_GOLEM
       mob: "minecraft:iron_golem"
       count: 0-1
       position: village_center
-    
+
     - type: LOOT_CHEST
       loot-table: "minecraft:chests/village/village_plains_house"
       count: 2-4
       position: house_interiors
-    
+
     - type: BELL
       material: "minecraft:bell"
       position: village_center
